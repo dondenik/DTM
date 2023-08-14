@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc85aig6hvvoq"]
+
+[ext_resource type="Script" path="res://PlayerCamera.gd" id="1_csvlu"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_hw8h5"]
+slide_on_slope = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1iv2n"]
+
+[node name="CameraRoot" type="Node3D"]
+script = ExtResource("1_csvlu")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+collision_mask = 2
+shape = SubResource("SeparationRayShape3D_hw8h5")
+
+[node name="ThirdPersonCamera" type="Camera3D" parent="SpringArm3D"]
+
+[node name="Area3D" type="Area3D" parent="SpringArm3D/ThirdPersonCamera"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpringArm3D/ThirdPersonCamera/Area3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+shape = SubResource("SphereShape3D_1iv2n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="FirstPersonCamera" type="Camera3D" parent="."]
+
+[connection signal="body_shape_entered" from="SpringArm3D/ThirdPersonCamera/Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="body_shape_exited" from="SpringArm3D/ThirdPersonCamera/Area3D" to="." method="_on_area_3d_body_shape_exited"]
