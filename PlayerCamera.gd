@@ -12,6 +12,14 @@ func _ready():
 	$FirstPersonCamera.position = first_person_base_pos
 
 
+func _input(event):
+	if event is InputEventMouseMotion:
+		rotation.y -= event.relative.x * 0.01
+		rotation.x -= event.relative.y * 0.01
+		rotation.x = clamp(rotation.x,-PI/2.0,PI/2.0)
+
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

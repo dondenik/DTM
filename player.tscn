@@ -23,4 +23,7 @@ shape = SubResource("ConcavePolygonShape3D_d0w8s")
 
 [node name="CameraRoot" parent="." instance=ExtResource("2_3r3rg")]
 
+[node name="SpringArm3D" parent="CameraRoot" index="0"]
+spring_length = 1.4
+
 [editable path="CameraRoot"]
