@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cixav8akwpn2x"]
+[gd_scene load_steps=2 format=3 uid="uid://bgpow8agvrh5a"]
 
-[ext_resource type="PackedScene" uid="uid://bgy3w0jmtlunk" path="res://testman.glb" id="1_t04ru"]
+[ext_resource type="PackedScene" path="res://testman.glb" id="1_t04ru"]
 
 [node name="testman" instance=ExtResource("1_t04ru")]
 
