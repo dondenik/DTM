@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cixav8akwpn2x"]
+
+[ext_resource type="PackedScene" uid="uid://bgy3w0jmtlunk" path="res://testman.glb" id="1_t04ru"]
+
+[node name="testman" instance=ExtResource("1_t04ru")]
+
+[node name="GeneralSkeleton" parent="QuickRigCharacter_Reference" index="0"]
+bones/13/position = Vector3(34.6805, -6.70949e-05, -2.45822e-06)
+bones/13/rotation = Quaternion(0.732484, 0.0659608, 0.0117124, 0.67748)
+bones/13/scale = Vector3(1, 1, 1)

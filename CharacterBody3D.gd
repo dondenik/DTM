@@ -25,6 +25,8 @@ func _physics_process(delta):
 	# Change Player Rotation to match Camera if moving
 	# Note: if statement is somewhat inefficent
 	var is_moving = int((abs(input_dir.x) or abs(input_dir.y)))
+	if is_moving:
+		$AnimationPlayer.play("run")
 	self.rotation.y = lerp(self.rotation.y, self.rotation.y + $CameraRoot.rotation.y * is_moving, TURNING_SPEED)
 	$CameraRoot.rotation.y -= $CameraRoot.rotation.y  * TURNING_SPEED * is_moving
 	
