@@ -24,9 +24,12 @@ func _input(event):
 func _process(delta):
 	if rotation.y >= 2*PI:
 		rotation.y -= 2*PI
+	elif rotation.y <=  -1*PI:
+		rotation.y += 2*PI
 	if rotation.y <= -2*PI:
 		rotation.y -= -2*PI
-
+	elif rotation.y >=  PI:
+		rotation.y -= 2*PI
 func _on_area_3d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	num_clips += 1
 	if num_clips == 1:
