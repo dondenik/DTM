@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cwlmj1u6snqsd"]
 
-[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_s8ygi"]
+[ext_resource type="Script" path="res://Player.gd" id="1_8edhe"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cq8dn"]
@@ -632,7 +632,7 @@ _data = {
 }
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
-script = ExtResource("1_s8ygi")
+script = ExtResource("1_8edhe")
 
 [node name="testman" type="Node3D" parent="."]
 transform = Transform3D(-0.25, 8.71965e-17, -3.7749e-08, 8.71965e-17, 0.25, -8.71965e-17, 3.7749e-08, -8.71965e-17, -0.25, 0, 0, 0)
