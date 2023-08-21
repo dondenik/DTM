@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgy3w0jmtlunk"
+uid="uid://cdfie8soburf5"
 path="res://.godot/imported/testman.glb-afc492737de8872035357a41fbd8df52.scn"
 
 [deps]
@@ -28,18 +28,5 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Armature": {
-"import/skip_import": true
-},
-"PATH:QuickRigCharacter_Ctrl_Reference": {
-"import/skip_import": true
-},
-"PATH:QuickRigCharacter_Reference/Skeleton3D": {
-"retarget/bone_map": Object(BoneMap,"resource_local_to_scene":false,"resource_name":"","profile":null,"bonemap":null,"script":null)
-
-}
-}
-}
-gltf/embedded_image_handling=3
+_subresources={}
+gltf/embedded_image_handling=1
