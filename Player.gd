@@ -47,7 +47,6 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground:
-		if roll_timer <= 0 and on_ground:
 			roll_timer = ROLL_DURATION
 	roll_timer -= (1 * delta * is_rolling)
 	
