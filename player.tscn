@@ -161,8 +161,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m4v3u"]
-height = 2.5
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4q4jg"]
+height = 2.3
+radius = 0.3
 
 [sub_resource type="Animation" id="Animation_rhfkr"]
 length = 0.001
@@ -827,7 +828,7 @@ skin = SubResource("Skin_cyoxl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.68683, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1235, 0)
-shape = SubResource("CapsuleShape3D_m4v3u")
+shape = SubResource("CylinderShape3D_4q4jg")
 
 [node name="CameraRoot" parent="." instance=ExtResource("2_3r3rg")]
 
