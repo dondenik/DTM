@@ -38,12 +38,13 @@ func _physics_process(delta):
 	var is_falling = (not on_ground) and (not is_jumping)
 	var is_rolling = int(roll_timer > 0)
 	
-	if Input.is_action_just_pressed("roll"):
+	if Input.is_action_pressed("roll"):
 		roll_timer += ROLL_DURATION
-	roll_timer -= 1 * delta * is_rolling
+		$AnimationPlayer.play("run")
+	roll_timer -= (1 * delta * is_rolling)
 	
 	if is_rolling:
-		$AnimationPlayer.play("test")
+		print("is rollign")
 	elif in_water:
 		$AnimationPlayer.play("test")
 	elif on_ground:
