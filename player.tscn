@@ -831,6 +831,7 @@ transform = Transform3D(1.68683, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1235, 0)
 shape = SubResource("CylinderShape3D_4q4jg")
 
 [node name="CameraRoot" parent="." instance=ExtResource("2_3r3rg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78856, 0)
 
 [node name="SpringArm3D" parent="CameraRoot" index="0"]
 spring_length = 1.4

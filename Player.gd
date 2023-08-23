@@ -51,10 +51,13 @@ func _physics_process(delta):
 	roll_timer -= (1 * delta * is_rolling)
 	
 	if is_rolling:
+		print("rollign")
 		$AnimationPlayer.play("run")
 	elif in_water:
+		print("warter")
 		$AnimationPlayer.play("test")
 	elif on_ground:
+		print("ground")
 		if is_running:
 			if is_sprinting:
 				$AnimationPlayer.play("test")
@@ -63,11 +66,13 @@ func _physics_process(delta):
 		else:
 			$AnimationPlayer.play("test")
 	elif is_falling:
+		print("fall")
 		$AnimationPlayer.play("test")
 	elif is_jumping:
+		print("jump")
 		$AnimationPlayer.play("test")
-	
-	
+
+
 	# Change Player Rotation to match Camera if moving
 	self.rotation.y = lerp(self.rotation.y, self.rotation.y + $CameraRoot.rotation.y * is_running, TURNING_SPEED)
 	$CameraRoot.rotation.y -= $CameraRoot.rotation.y  * TURNING_SPEED * is_running
