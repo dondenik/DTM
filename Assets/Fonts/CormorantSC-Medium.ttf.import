@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://caf52fe8a36h"
-path="res://.godot/imported/CormorantSC-Medium.ttf-5f79c7a9e9e4fc1ffe3ec5c10bafcb74.fontdata"
+path="res://.godot/imported/CormorantSC-Medium.ttf-8fe56358de487b9a9a7956eb936add1d.fontdata"
 
 [deps]
 
-source_file="res://CormorantSC-Medium.ttf"
-dest_files=["res://.godot/imported/CormorantSC-Medium.ttf-5f79c7a9e9e4fc1ffe3ec5c10bafcb74.fontdata"]
+source_file="res://Assets/Fonts/CormorantSC-Medium.ttf"
+dest_files=["res://.godot/imported/CormorantSC-Medium.ttf-8fe56358de487b9a9a7956eb936add1d.fontdata"]
 
 [params]
 

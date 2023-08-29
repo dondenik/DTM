@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfll0qx4j45y"
-path.s3tc="res://.godot/imported/testman_Substance_Graph_BaseColor.png-7b700350bc6b9360c450bfd754611800.s3tc.ctex"
+path.s3tc="res://.godot/imported/testman_Substance_Graph_BaseColor.png-a893b86fb8e785b5bcc3695f0edf430e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://testman_Substance_Graph_BaseColor.png"
-dest_files=["res://.godot/imported/testman_Substance_Graph_BaseColor.png-7b700350bc6b9360c450bfd754611800.s3tc.ctex"]
+source_file="res://Assets/Models/Textures/testman_Substance_Graph_BaseColor.png"
+dest_files=["res://.godot/imported/testman_Substance_Graph_BaseColor.png-a893b86fb8e785b5bcc3695f0edf430e.s3tc.ctex"]
 
 [params]
 

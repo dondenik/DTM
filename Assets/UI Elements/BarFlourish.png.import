@@ -2,28 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdpyrva2u5oyn"
-path.s3tc="res://.godot/imported/testman_Skin_Human_002_SPEC.png-814555581e142e4a8ec42a56e885d1b4.s3tc.ctex"
+uid="uid://c2bwtu06cvyos"
+path="res://.godot/imported/BarFlourish.png-2181ef3a5c16ef7d2c8d40fad11ab498.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-source_file="res://testman_Skin_Human_002_SPEC.png"
-dest_files=["res://.godot/imported/testman_Skin_Human_002_SPEC.png-814555581e142e4a8ec42a56e885d1b4.s3tc.ctex"]
+source_file="res://Assets/UI Elements/BarFlourish.png"
+dest_files=["res://.godot/imported/BarFlourish.png-2181ef3a5c16ef7d2c8d40fad11ab498.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -33,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

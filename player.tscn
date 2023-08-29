@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://dyss8kyjnhmd7"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_8edhe"]
+[ext_resource type="Texture2D" uid="uid://bdpyrva2u5oyn" path="res://Assets/Models/Textures/testman_Skin_Human_002_SPEC.png" id="2_1e8ed"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
-[ext_resource type="Texture2D" uid="uid://bdpyrva2u5oyn" path="res://testman_Skin_Human_002_SPEC.png" id="2_yx1gf"]
-[ext_resource type="Texture2D" uid="uid://bc0a7u5427d4v" path="res://testman_Skin_Human_002_NRM.png" id="3_242ok"]
-[ext_resource type="Texture2D" uid="uid://cfll0qx4j45y" path="res://testman_Substance_Graph_BaseColor.png" id="4_exo8n"]
+[ext_resource type="Texture2D" uid="uid://bc0a7u5427d4v" path="res://Assets/Models/Textures/testman_Skin_Human_002_NRM.png" id="3_qt5ou"]
+[ext_resource type="Texture2D" uid="uid://cfll0qx4j45y" path="res://Assets/Models/Textures/testman_Substance_Graph_BaseColor.png" id="4_vwdh5"]
 [ext_resource type="PackedScene" uid="uid://dpfkiknn4524g" path="res://ui.tscn" id="6_4sntj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rtpy"]
@@ -12,12 +12,12 @@ resource_name = "aiStandardSurface3"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 0.797524, 0.675, 1)
-metallic_texture = ExtResource("2_yx1gf")
+metallic_texture = ExtResource("2_1e8ed")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("2_yx1gf")
+roughness_texture = ExtResource("2_1e8ed")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("3_242ok")
+normal_texture = ExtResource("3_qt5ou")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ayhr0"]
 resource_name = "testman_Mesh_002"
@@ -115,7 +115,7 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0.735357, 0.531693, 0.460605, 1)
 roughness = 0.552786
 normal_enabled = true
-normal_texture = ExtResource("3_242ok")
+normal_texture = ExtResource("3_qt5ou")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rf6fs"]
 resource_name = "testman_Mesh_001"
@@ -140,7 +140,7 @@ blend_shape_mode = 0
 resource_name = "patterned_fabric"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_exo8n")
+albedo_texture = ExtResource("4_vwdh5")
 roughness = 0.552786
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4ndp4"]

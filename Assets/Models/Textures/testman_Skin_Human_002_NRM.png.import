@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc0a7u5427d4v"
-path.s3tc="res://.godot/imported/testman_Skin_Human_002_NRM.png-82ae94ba8984f7e3ef2fcec21843f310.s3tc.ctex"
+path.s3tc="res://.godot/imported/testman_Skin_Human_002_NRM.png-c51d95c1fd36961ff4785b5c92581a41.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://testman_Skin_Human_002_NRM.png"
-dest_files=["res://.godot/imported/testman_Skin_Human_002_NRM.png-82ae94ba8984f7e3ef2fcec21843f310.s3tc.ctex"]
+source_file="res://Assets/Models/Textures/testman_Skin_Human_002_NRM.png"
+dest_files=["res://.godot/imported/testman_Skin_Human_002_NRM.png-c51d95c1fd36961ff4785b5c92581a41.s3tc.ctex"]
 
 [params]
 
