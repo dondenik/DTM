@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpfkiknn4524g"]
+[gd_scene load_steps=7 format=3 uid="uid://dpfkiknn4524g"]
 
+[ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_3vvkm"]
 [ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="1_lpwdt"]
 
 [sub_resource type="Gradient" id="Gradient_sv3q5"]
@@ -32,6 +33,7 @@ offset_left = 498.0
 offset_top = 7.0
 offset_right = 616.0
 offset_bottom = 47.0
+theme_override_fonts/normal_font = ExtResource("1_3vvkm")
 text = "Ur City Centre"
 
 [node name="Bars" type="TextureRect" parent="."]
