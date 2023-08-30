@@ -9,7 +9,7 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_stij7"]
 gradient = SubResource("Gradient_sv3q5")
-width = 297
+width = 522
 
 [sub_resource type="Gradient" id="Gradient_qrmtb"]
 interpolation_mode = 1
@@ -17,7 +17,7 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_2oqpo"]
 gradient = SubResource("Gradient_qrmtb")
-width = 255
+width = 449
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -29,39 +29,40 @@ grow_vertical = 2
 
 [node name="Location" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 498.0
-offset_top = 7.0
-offset_right = 616.0
-offset_bottom = 47.0
+offset_left = 872.0
+offset_top = 16.0
+offset_right = 1065.0
+offset_bottom = 66.0
 theme_override_fonts/normal_font = ExtResource("1_3vvkm")
+theme_override_font_sizes/normal_font_size = 25
 text = "Ur City Centre"
 
 [node name="Bars" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 5.0
-offset_right = 1211.0
-offset_bottom = 221.0
+offset_right = 2133.0
+offset_bottom = 390.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_lpwdt")
 
 [node name="Health" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 16.0
-offset_right = 331.0
-offset_bottom = 17.0
-scale = Vector2(1, 12.3)
+offset_left = 57.0
+offset_top = 27.0
+offset_right = 578.0
+offset_bottom = 28.0
+scale = Vector2(1, 22)
 value = 50.0
 fill_mode = 1
 texture_progress = SubResource("GradientTexture1D_stij7")
 
 [node name="Stamina" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 39.0
-offset_right = 289.0
-offset_bottom = 40.0
-scale = Vector2(1, 12.3)
+offset_left = 57.0
+offset_top = 69.0
+offset_right = 506.0
+offset_bottom = 70.0
+scale = Vector2(1, 22)
 value = 50.0
 fill_mode = 1
 texture_progress = SubResource("GradientTexture1D_2oqpo")
