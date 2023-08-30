@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpfkiknn4524g"]
+[gd_scene load_steps=8 format=3 uid="uid://dpfkiknn4524g"]
 
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_3vvkm"]
 [ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="1_lpwdt"]
+[ext_resource type="Texture2D" uid="uid://7bj2n23hitjo" path="res://Assets/UI Elements/icon.svg" id="3_f8qh4"]
 
 [sub_resource type="Gradient" id="Gradient_sv3q5"]
 interpolation_mode = 1
@@ -52,7 +53,7 @@ offset_top = 27.0
 offset_right = 578.0
 offset_bottom = 28.0
 scale = Vector2(1, 22)
-value = 50.0
+value = 20.0
 fill_mode = 1
 texture_progress = SubResource("GradientTexture1D_stij7")
 
@@ -66,3 +67,13 @@ scale = Vector2(1, 22)
 value = 50.0
 fill_mode = 1
 texture_progress = SubResource("GradientTexture1D_2oqpo")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport"]
+offset_left = 100.0
+offset_right = 228.0
+offset_bottom = 128.0
+texture = ExtResource("3_f8qh4")

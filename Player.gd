@@ -5,7 +5,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const TURNING_SPEED = 0.15 #should be between 0-1
 const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
-const ROLL_DURATION = 2
+const ROLL_DURATION = 1.5
 const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
 
 var jump_starting_point = self.position.y
@@ -51,27 +51,27 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground:
 			roll_timer = ROLL_DURATION
-			$AnimationPlayer.play("stand_to_roll")
+			$AnimationPlayer.play("Roll", -1, 1.5)
 	roll_timer -= (1 * delta * is_rolling)
 	
 	if is_rolling:
 		input_dir.y -= 1
-		print("rollign")
+		pass
 	elif in_water:
-		print("warter")
+		pass
 	elif on_ground:
-		print("ground")
+		pass
 		if is_running:
 			if is_sprinting:
-				print("spirnt")
+				pass
 			else:
-				print("walk")
+				$AnimationPlayer.play("Run")
 		else:
-			print("idle")
+			pass
 	elif is_falling:
-		print("fall")
+		pass
 	elif is_jumping:
-		print("jump")
+		pass
 
 
 	# Change Player Rotation to match Camera if moving
