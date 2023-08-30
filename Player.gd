@@ -51,29 +51,26 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground:
 			roll_timer = ROLL_DURATION
+			$AnimationPlayer.play("stand_to_roll")
 	roll_timer -= (1 * delta * is_rolling)
 	
 	if is_rolling:
 		print("rollign")
-		$AnimationPlayer.play("run")
 	elif in_water:
 		print("warter")
-		$AnimationPlayer.play("test")
 	elif on_ground:
 		print("ground")
 		if is_running:
 			if is_sprinting:
-				$AnimationPlayer.play("test")
+				print("spirnt")
 			else:
-				$AnimationPlayer.play("run")
+				print("walk")
 		else:
-			$AnimationPlayer.play("test")
+			print("idle")
 	elif is_falling:
 		print("fall")
-		$AnimationPlayer.play("test")
 	elif is_jumping:
 		print("jump")
-		$AnimationPlayer.play("test")
 
 
 	# Change Player Rotation to match Camera if moving
