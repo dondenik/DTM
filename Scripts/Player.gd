@@ -5,7 +5,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const TURNING_SPEED = 0.15 #should be between 0-1
 const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
-const ROLL_DURATION = 1.3
+const ROLL_DURATION = 1
 const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
 
 var jump_starting_point = self.position.y
@@ -30,11 +30,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump_starting_point = self.position.y
-		velocity.y = JUMP_VELOCITY
-
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
@@ -49,30 +44,35 @@ func _physics_process(delta):
 	var is_rolling = int(roll_timer > 0)
 	var is_attacking = 0
 	
+	
+		# Handle Jump.
+	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_rolling:
+		jump_starting_point = self.position.y
+		velocity.y = JUMP_VELOCITY
+	
 #	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground:
 			roll_timer = ROLL_DURATION
-			$AnimationPlayer.play("Roll", -1, 1.5)
+			$AnimationPlayer.play("Roll", -1, 1.6)
 	roll_timer -= (1 * delta * is_rolling)
 	
 	if is_rolling or roll_timer > 0:
 		input_dir.y -= 1
 	elif in_water:
-		pass
+		$AnimationPlayer.play("Swim")
 	elif on_ground:
-		pass
 		if is_running:
 			if is_sprinting:
-				pass
+				$AnimationPlayer.play("Sprint")
 			else:
 				$AnimationPlayer.play("Run")
 		else:
 			$AnimationPlayer.play("Idle")
 	elif is_falling:
-		pass
+		$AnimationPlayer.play("Fall")
 	elif is_jumping:
-		pass
+		$AnimationPlayer.play("Jump")
 
 
 	# Change Player Rotation to match Camera if moving
