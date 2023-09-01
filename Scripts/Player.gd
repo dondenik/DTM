@@ -8,10 +8,14 @@ const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they in
 const ROLL_DURATION = 1
 const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
 const ROLL_COOLDOWN_DURATION = 0.23 # time between rolling
+const ATTACK_DURATION = 1.5
+const ATTACK_COOLDOWN_DURATION = 0.23
 
 var jump_starting_point = self.position.y
 var roll_timer = 0
 var roll_cooldown = 0
+var attack_cooldown = 0
+var attack_timer = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -44,7 +48,7 @@ func _physics_process(delta):
 	var is_jumping = (not (self.position.y < (jump_starting_point - FALL_HEIGHT_OFFSET))) and (not on_ground)
 	var is_falling = (not on_ground) and (not is_jumping)
 	var is_rolling = int(roll_timer > 0)
-	var is_attacking = 0
+	var is_attacking = int(attack_timer > 0)
 	
 	
 		# Handle Jump.
@@ -55,15 +59,26 @@ func _physics_process(delta):
 #	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
-			print("rolling again")
 			roll_timer = ROLL_DURATION
 			$AnimationPlayer.play("Roll", -1, 1.6)
+	
+	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0:
+			attack_timer = ATTACK_DURATION
+			$AnimationPlayer.play("Thrust")
+	
 	roll_timer -= (1 * delta * is_rolling)
 	roll_cooldown -= (1 * delta * int(not is_rolling))
+	
+	attack_timer -= (1 * delta * is_attacking)
+	attack_cooldown -= (1 * delta * int(not is_attacking))
 	
 	if is_rolling or roll_timer > 0:
 		input_dir.y -= 1
 		roll_cooldown = ROLL_COOLDOWN_DURATION
+	elif is_attacking or attack_timer > 0:
+		input_dir.y = 0
+		print("aarat")
+		attack_cooldown = ATTACK_COOLDOWN_DURATION
 	elif in_water:
 		$AnimationPlayer.play("Swim")
 	elif on_ground:
