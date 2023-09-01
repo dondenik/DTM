@@ -7,7 +7,7 @@ const TURNING_SPEED = 0.15 #should be between 0-1
 const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
 const ROLL_DURATION = 1
 const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
-const ROLL_COOLDOWN_DURATION = 0.3 # time between rolling
+const ROLL_COOLDOWN_DURATION = 0.23 # time between rolling
 
 var jump_starting_point = self.position.y
 var roll_timer = 0
