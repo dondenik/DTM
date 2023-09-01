@@ -2,7 +2,7 @@ extends Node3D
 
 var num_clips = 0
 var third_person_base_pos = Vector3(0, 0, 0)
-var first_person_base_pos = Vector3(0, 0, -0.3)
+var first_person_base_pos = Vector3(0, 0, -1)
 
 
 # Called when the node enters the scene tree for the first time.
