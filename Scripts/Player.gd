@@ -5,7 +5,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const TURNING_SPEED = 0.15 #should be between 0-1
 const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
-const ROLL_DURATION = 1
+const ROLL_DURATION = 0.9
 const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
 const ROLL_COOLDOWN_DURATION = 0.23 # time between rolling
 const ATTACK_DURATION = 1.5
@@ -60,9 +60,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
 			roll_timer = ROLL_DURATION
-			$AnimationPlayer.play("Roll", -1, 1.6)
+			attack_timer = 0
+			$AnimationPlayer.play("Roll", -1, 1.7)
 	
-	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0:
+	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling:
 			attack_timer = ATTACK_DURATION
 			$AnimationPlayer.play("Thrust")
 	
@@ -96,7 +97,7 @@ func _physics_process(delta):
 
 
 	# Change Player Rotation to match Camera if moving
-	self.rotation.y = lerp(self.rotation.y, self.rotation.y + $CameraRoot.rotation.y * is_running, TURNING_SPEED)
+	self.rotation.y = lerp(self.rotation.y, self.rotation.y + (transform.basis * Vector3(input_dir.x, 0, input_dir.y) +  $CameraRoot.rotation.y * is_running, TURNING_SPEED)
 	$CameraRoot.rotation.y -= $CameraRoot.rotation.y  * TURNING_SPEED * is_running
 	
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
