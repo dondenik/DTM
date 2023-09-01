@@ -56,7 +56,7 @@ func _physics_process(delta):
 		jump_starting_point = self.position.y
 		velocity.y = JUMP_VELOCITY
 	
-#	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
+	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
 			roll_timer = ROLL_DURATION
@@ -97,7 +97,7 @@ func _physics_process(delta):
 
 
 	# Change Player Rotation to match Camera if moving
-	self.rotation.y = lerp(self.rotation.y, self.rotation.y + (transform.basis * Vector3(input_dir.x, 0, input_dir.y) +  $CameraRoot.rotation.y * is_running, TURNING_SPEED)
+	self.rotation.y = lerp(self.rotation.y, self.rotation.y +  $CameraRoot.rotation.y * is_running, TURNING_SPEED)
 	$CameraRoot.rotation.y -= $CameraRoot.rotation.y  * TURNING_SPEED * is_running
 	
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
