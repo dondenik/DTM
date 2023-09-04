@@ -6,7 +6,7 @@ data = PackedVector3Array(0, 1, 0, 0, 1, 0, 0, 0.9995, -0.0052, 0, 1, 0, -0.0005
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gi0dd"]
 radius = 0.03
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 
 [node name="Area3D" type="Area3D" parent="."]
 

@@ -1,12 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://da50typp0jffj"]
+[gd_scene load_steps=18 format=3 uid="uid://da50typp0jffj"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_036pf"]
-[ext_resource type="Texture2D" uid="uid://dkf31sxmoqdjg" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
-[ext_resource type="Texture2D" uid="uid://dquanawgmfhxv" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
-[ext_resource type="Texture2D" uid="uid://383jmfv1ptnk" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
-[ext_resource type="Texture2D" uid="uid://bwxn2t1vemkcp" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
-[ext_resource type="Texture2D" uid="uid://bbwph6swl1ik2" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_77421"]
-[ext_resource type="Texture2D" uid="uid://daq6fx44sxxhr" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ud4rl"]
+[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
+[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
+[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
+[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
+[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_77421"]
+[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ud4rl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8d81"]
 resource_name = "aiStandardSurface3"
@@ -167,6 +167,14 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ybx45"]
+
+[sub_resource type="Gradient" id="Gradient_xjguk"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_stij7"]
+gradient = SubResource("Gradient_xjguk")
+width = 522
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_036pf")
@@ -354,5 +362,22 @@ shape = SubResource("CapsuleShape3D_ybx45")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950222, 0)
 shape = SubResource("CapsuleShape3D_ybx45")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+modulate = Color(0, 1, 0, 1)
+billboard = 1
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+transparent_bg = true
+
+[node name="Health" type="TextureProgressBar" parent="Sprite3D/SubViewport"]
+offset_left = 57.0
+offset_top = 27.0
+offset_right = 579.0
+offset_bottom = 28.0
+scale = Vector2(1, 22)
+value = 100.0
+fill_mode = 1
+texture_progress = SubResource("GradientTexture1D_stij7")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
