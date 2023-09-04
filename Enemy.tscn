@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://da50typp0jffj"]
+[gd_scene load_steps=17 format=3 uid="uid://da50typp0jffj"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_036pf"]
 [ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
+[ext_resource type="Script" path="res://EnemyPhysics.gd" id="2_qantf"]
 [ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
 [ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
 [ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
@@ -178,6 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950222, 0)
 shape = SubResource("CapsuleShape3D_ybx45")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("2_qantf")
 
 [node name="mesoman1" type="Node3D" parent="CharacterBody3D"]
 transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 0, 0, -0.547385)
