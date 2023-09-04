@@ -22,6 +22,8 @@ shape = SubResource("SeparationRayShape3D_hw8h5")
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 shape = SubResource("SphereShape3D_1iv2n")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
 [node name="FirstPersonCamera" type="Camera3D" parent="."]
 
 [connection signal="body_shape_entered" from="SpringArm3D/ThirdPersonCamera/Area3D" to="." method="_on_area_3d_body_shape_entered"]

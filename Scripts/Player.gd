@@ -51,6 +51,7 @@ func _physics_process(delta):
 	var is_attacking = int(attack_timer > 0)
 	
 	
+	
 		# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_rolling:
 		jump_starting_point = self.position.y
@@ -74,11 +75,10 @@ func _physics_process(delta):
 	attack_cooldown -= (1 * delta * int(not is_attacking))
 	
 	if is_rolling or roll_timer > 0:
-		input_dir.y -= 1
+		input_dir = Vector2(0,-1)
 		roll_cooldown = ROLL_COOLDOWN_DURATION
 	elif is_attacking or attack_timer > 0:
-		input_dir.y = 0
-		print("aarat")
+		input_dir = Vector3(0,0,0)
 		attack_cooldown = ATTACK_COOLDOWN_DURATION
 	elif in_water:
 		$AnimationPlayer.play("Swim")
@@ -95,15 +95,8 @@ func _physics_process(delta):
 	elif is_jumping:
 		$AnimationPlayer.play("Jump")
 
-	
-	print($CameraRoot.rotation.y)
-	print(self.rotation.y)
-	print(">")
-	print(PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-	print($CameraRoot.rotation.y - 2*PI)
-	print("<")
-	print(-PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-	print($CameraRoot.rotation.y + 2*PI)
+	print(input_dir)
+
 	# Remove built up camera rotation to ensure goober turning is optimal
 	if $CameraRoot.rotation.y > PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)):
 		$CameraRoot.rotation.y -= 2*PI
@@ -112,11 +105,11 @@ func _physics_process(delta):
 	
 	
 	# Change Player Rotation to match Camera if moving
-	self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running, TURNING_SPEED)
-	$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running
+	self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running * int(not is_rolling), TURNING_SPEED)
+	$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling)
 
 
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), $CameraRoot.rotation.y)).normalized()
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), $CameraRoot.rotation.y * int( not is_rolling))).normalized()
 	if direction:
 		velocity.x = direction.x * (SPEED + (is_sprinting * SPRINT_SPEED))
 		velocity.z = direction.z * (SPEED + (is_sprinting * SPRINT_SPEED))
