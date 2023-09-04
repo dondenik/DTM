@@ -20,6 +20,8 @@ var attack_timer = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var locked_dir = Vector2(0,0)
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -51,22 +53,27 @@ func _physics_process(delta):
 	var is_attacking = int(attack_timer > 0)
 	
 	
-	
 		# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_rolling:
 		jump_starting_point = self.position.y
 		velocity.y = JUMP_VELOCITY
+		
 	
 	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
 			roll_timer = ROLL_DURATION
 			attack_timer = 0
+			locked_dir = input_dir
 			$AnimationPlayer.play("Roll", -1, 1.7)
+			self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+			$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+
 	
 	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling:
 			attack_timer = ATTACK_DURATION
 			$AnimationPlayer.play("Thrust")
+			locked_dir = Vector2(0,0)
 	
 	roll_timer -= (1 * delta * is_rolling)
 	roll_cooldown -= (1 * delta * int(not is_rolling))
@@ -75,10 +82,10 @@ func _physics_process(delta):
 	attack_cooldown -= (1 * delta * int(not is_attacking))
 	
 	if is_rolling or roll_timer > 0:
-		input_dir = Vector2(0,-1)
+		input_dir = locked_dir
 		roll_cooldown = ROLL_COOLDOWN_DURATION
 	elif is_attacking or attack_timer > 0:
-		input_dir = Vector3(0,0,0)
+		input_dir = locked_dir
 		attack_cooldown = ATTACK_COOLDOWN_DURATION
 	elif in_water:
 		$AnimationPlayer.play("Swim")
@@ -95,7 +102,6 @@ func _physics_process(delta):
 	elif is_jumping:
 		$AnimationPlayer.play("Jump")
 
-	print(input_dir)
 
 	# Remove built up camera rotation to ensure goober turning is optimal
 	if $CameraRoot.rotation.y > PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)):
@@ -109,7 +115,7 @@ func _physics_process(delta):
 	$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling)
 
 
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), $CameraRoot.rotation.y * int( not is_rolling))).normalized()
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), $CameraRoot.rotation.y )).normalized()
 	if direction:
 		velocity.x = direction.x * (SPEED + (is_sprinting * SPRINT_SPEED))
 		velocity.z = direction.z * (SPEED + (is_sprinting * SPRINT_SPEED))

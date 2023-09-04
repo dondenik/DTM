@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p1q17"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
-[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_b3gso"]
-[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_iawkg"]
-[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_uffni"]
-[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_urdjw"]
-[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_4hmx7"]
-[ext_resource type="PackedScene" uid="uid://bwlgx27edur1y" path="res://ui.tscn" id="6_4sntj"]
-[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
+[ext_resource type="Texture2D" uid="uid://dkf31sxmoqdjg" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_b3gso"]
+[ext_resource type="Texture2D" uid="uid://dquanawgmfhxv" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_iawkg"]
+[ext_resource type="Texture2D" uid="uid://383jmfv1ptnk" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_uffni"]
+[ext_resource type="Texture2D" uid="uid://bwxn2t1vemkcp" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_urdjw"]
+[ext_resource type="Texture2D" uid="uid://bbwph6swl1ik2" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_4hmx7"]
+[ext_resource type="PackedScene" uid="uid://dpfkiknn4524g" path="res://ui.tscn" id="6_4sntj"]
+[ext_resource type="Texture2D" uid="uid://daq6fx44sxxhr" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
 [ext_resource type="PackedScene" uid="uid://dcfdfwcgf13xv" path="res://Spear.tscn" id="8_2oq2f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8d81"]
@@ -6156,7 +6156,7 @@ mesh = SubResource("ArrayMesh_smsom")
 skin = SubResource("Skin_euyys")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D"]
-transform = Transform3D(0.513599, -0.35377, -0.781705, -0.479258, -0.873962, 0.0806377, -0.711708, 0.333223, -0.618413, -1.24481, -1.06574, -2.70022)
+transform = Transform3D(0.513599, -0.35377, -0.781705, -0.479258, -0.873962, 0.0806376, -0.711707, 0.333223, -0.618413, -1.24481, -1.06574, -2.70022)
 bone_name = "mesoman1_RightHand"
 bone_idx = 19
 
@@ -6179,7 +6179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78856, 0)
 [node name="SpringArm3D" parent="CameraRoot" index="0"]
 spring_length = 3.0
 
-[node name="FirstPersonCamera" parent="CameraRoot" index="1"]
+[node name="FirstPersonCamera" parent="CameraRoot" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.367473, 0)
 
 [node name="UI" parent="." instance=ExtResource("6_4sntj")]
