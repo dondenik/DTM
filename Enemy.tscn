@@ -364,7 +364,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950222, 0)
 shape = SubResource("CapsuleShape3D_ybx45")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-modulate = Color(0, 1, 0, 1)
 billboard = 1
 
 [node name="SubViewport" type="SubViewport" parent="Sprite3D"]
