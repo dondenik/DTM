@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpfkiknn4524g"]
+[gd_scene load_steps=9 format=3 uid="uid://dpfkiknn4524g"]
 
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_3vvkm"]
 [ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="1_lpwdt"]
+[ext_resource type="Script" path="res://ui.gd" id="1_tl65p"]
 [ext_resource type="Texture2D" uid="uid://7bj2n23hitjo" path="res://Assets/UI Elements/icon.svg" id="3_f8qh4"]
 
 [sub_resource type="Gradient" id="Gradient_sv3q5"]
@@ -27,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tl65p")
 
 [node name="Location" type="RichTextLabel" parent="."]
 layout_mode = 0

@@ -6185,3 +6185,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.367473, 0)
 [node name="UI" parent="." instance=ExtResource("6_4sntj")]
 
 [editable path="CameraRoot"]
+[editable path="UI"]

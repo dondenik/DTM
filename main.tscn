@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dyss8kyjnhmd7" path="res://player.tscn" id="1_jj07p"]
 [ext_resource type="PackedScene" uid="uid://da50typp0jffj" path="res://Enemy.tscn" id="2_dgw65"]
-[ext_resource type="Texture2D" uid="uid://s17qi8b8mrg4" path="res://Assets/skyimage.hdr" id="2_l5jxa"]
+[ext_resource type="Texture2D" uid="uid://cgsunsu2kj3j1" path="res://Assets/skyimage.hdr" id="2_l5jxa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_701ky"]
 
@@ -21,12 +21,13 @@ sky_material = SubResource("PanoramaSkyMaterial_bhoaq")
 
 [sub_resource type="Environment" id="Environment_kxqk5"]
 background_mode = 2
-background_energy_multiplier = 0.67
+background_energy_multiplier = 1.68
 sky = SubResource("Sky_kw12r")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_sky_contribution = 0.82
-ambient_light_energy = 2.27
+ambient_light_sky_contribution = 0.68
+ambient_light_energy = 1.6
+volumetric_fog_density = 1.0
 
 [node name="Node3D2" type="Node3D"]
 

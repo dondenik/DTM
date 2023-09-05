@@ -10,6 +10,11 @@ const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
 const ROLL_COOLDOWN_DURATION = 0.23 # time between rolling
 const ATTACK_DURATION = 1.5
 const ATTACK_COOLDOWN_DURATION = 0.23
+const ATTACK_STAMINA = 5
+const ROLL_STAMINA = 10
+const SPRINT_STAMINA = 5
+const STAMINA_RECOVERY = 10
+
 
 var jump_starting_point = self.position.y
 var roll_timer = 0
@@ -23,8 +28,13 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var locked_dir = Vector2(0,0)
 var locked_rot = 0
 
+var stamina = 100
+var health = 100
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$UI.bar_update(health, stamina)
+
 
 func _input(event):
 	if event.is_action_pressed("pause"):
@@ -56,15 +66,17 @@ func _physics_process(delta):
 	
 		# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_rolling:
+		stamina -= 5
 		jump_starting_point = self.position.y
 		velocity.y = JUMP_VELOCITY
 		
 	
 	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
 	
-	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
+	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0 and stamina >= ROLL_STAMINA:
 			roll_timer = ROLL_DURATION
 			attack_timer = 0
+			stamina -= ROLL_STAMINA
 			$AnimationPlayer.play("Roll", -1, 1.7)
 			self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
 			$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
@@ -75,10 +87,12 @@ func _physics_process(delta):
 
 
 	
-	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling:
+	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling and stamina >= ATTACK_STAMINA:
 			attack_timer = ATTACK_DURATION
 			$AnimationPlayer.play("Thrust")
 			locked_dir = Vector2(0,0)
+			stamina -= ATTACK_STAMINA
+	
 	
 	roll_timer -= (1 * delta * is_rolling)
 	roll_cooldown -= (1 * delta * int(not is_rolling))
@@ -98,10 +112,13 @@ func _physics_process(delta):
 		if is_running:
 			if is_sprinting:
 				$AnimationPlayer.play("Sprint")
+				stamina -= SPRINT_STAMINA * delta
 			else:
 				$AnimationPlayer.play("Run")
+				stamina += STAMINA_RECOVERY * delta
 		else:
 			$AnimationPlayer.play("Idle")
+			stamina += STAMINA_RECOVERY * delta
 	elif is_falling:
 		$AnimationPlayer.play("Fall")
 	elif is_jumping:
@@ -130,5 +147,13 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
+	if stamina >= 100:
+		stamina = 100
+	elif stamina <= 0:
+		stamina = 0
+	
+	$UI.bar_update(health, stamina)
+	
+	
 	move_and_slide()
