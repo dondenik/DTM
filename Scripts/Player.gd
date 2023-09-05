@@ -21,6 +21,7 @@ var attack_timer = 0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var locked_dir = Vector2(0,0)
+var locked_rot = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -64,10 +65,13 @@ func _physics_process(delta):
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
 			roll_timer = ROLL_DURATION
 			attack_timer = 0
-			locked_dir = input_dir
+			#if input_dir == Vector2(0, 0):
+			#	input_dir = Vector2(0, -1)
 			$AnimationPlayer.play("Roll", -1, 1.7)
 			self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
 			$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+			locked_rot = $CameraRoot.rotation.y
+			locked_dir = input_dir
 
 	
 	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling:
@@ -110,12 +114,15 @@ func _physics_process(delta):
 		$CameraRoot.rotation.y += 2*PI
 	
 	
+
+	
+	
 	# Change Player Rotation to match Camera if moving
 	self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running * int(not is_rolling), TURNING_SPEED)
 	$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling)
 
 
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), $CameraRoot.rotation.y )).normalized()
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), ($CameraRoot.rotation.y * int(not is_rolling)) + locked_rot * is_rolling)).normalized()
 	if direction:
 		velocity.x = direction.x * (SPEED + (is_sprinting * SPRINT_SPEED))
 		velocity.z = direction.z * (SPEED + (is_sprinting * SPRINT_SPEED))

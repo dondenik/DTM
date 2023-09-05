@@ -46,6 +46,7 @@ mesh = SubResource("BoxMesh_s84r3")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="."]
 transform = Transform3D(13.5097, 0, 0, 0, 4.90958, 0, 0, 0, 5, 2.08248, 2.96423, 3.85236)
+visible = false
 collision_layer = 3
 collision_mask = 3
 
