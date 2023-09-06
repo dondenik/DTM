@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2bwtu06cvyos"
-path="res://.godot/imported/BarFlourish.png-2181ef3a5c16ef7d2c8d40fad11ab498.ctex"
+uid="uid://8lg13iqvprmm"
+path="res://.godot/imported/HealthBar.png-c358c64a5b6f2189409e9143c1d90124.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI Elements/BarFlourish.png"
-dest_files=["res://.godot/imported/BarFlourish.png-2181ef3a5c16ef7d2c8d40fad11ab498.ctex"]
+source_file="res://Assets/UI Elements/HealthBar.png"
+dest_files=["res://.godot/imported/HealthBar.png-c358c64a5b6f2189409e9143c1d90124.ctex"]
 
 [params]
 

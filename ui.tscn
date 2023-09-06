@@ -5,12 +5,12 @@
 [ext_resource type="Script" path="res://ui.gd" id="1_tl65p"]
 [ext_resource type="Texture2D" uid="uid://7bj2n23hitjo" path="res://Assets/UI Elements/icon.svg" id="3_f8qh4"]
 
-[sub_resource type="Gradient" id="Gradient_sv3q5"]
+[sub_resource type="Gradient" id="Gradient_s40l0"]
 interpolation_mode = 1
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_stij7"]
-gradient = SubResource("Gradient_sv3q5")
+gradient = SubResource("Gradient_s40l0")
 width = 522
 
 [sub_resource type="Gradient" id="Gradient_qrmtb"]

@@ -6,10 +6,10 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+var health = 100
 func _ready():
 	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
-
+	$Sprite3D/SubViewport/Health.value = 100 - health
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -36,4 +36,5 @@ func _physics_process(delta):
 
 
 func _on_area_3d_area_entered(area):
-	$Sprite3D/SubViewport/Health.value -= 10
+	health -= 10
+	$Sprite3D/SubViewport/Health.value = 100 - health
