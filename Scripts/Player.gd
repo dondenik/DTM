@@ -13,7 +13,9 @@ const ATTACK_COOLDOWN_DURATION = 0.23
 const ATTACK_STAMINA = 5
 const ROLL_STAMINA = 10
 const SPRINT_STAMINA = 5
-const STAMINA_RECOVERY = 10
+const STAMINA_RECOVERY = 20
+const STAMINA_RECOVERY_CD = 0.7
+const JUMP_STAMINA = 5
 
 
 var jump_starting_point = self.position.y
@@ -21,6 +23,7 @@ var roll_timer = 0
 var roll_cooldown = 0
 var attack_cooldown = 0
 var attack_timer = 0
+var recovery_timer = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -44,6 +47,16 @@ func _input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 
+func stamina_cost(cost):
+	if stamina >= cost:
+		stamina -= cost
+		recovery_timer = STAMINA_RECOVERY_CD
+		return true
+	else:
+		return false
+
+
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -66,32 +79,32 @@ func _physics_process(delta):
 	
 		# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_rolling:
-		stamina -= 5
-		jump_starting_point = self.position.y
-		velocity.y = JUMP_VELOCITY
+		if stamina_cost(JUMP_STAMINA) == true:
+			jump_starting_point = self.position.y
+			velocity.y = JUMP_VELOCITY
 		
 	
 	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
 	
-	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0 and stamina >= ROLL_STAMINA:
-			roll_timer = ROLL_DURATION
-			attack_timer = 0
-			stamina -= ROLL_STAMINA
-			$AnimationPlayer.play("Roll", -1, 1.7)
-			self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-			$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-			if input_dir == Vector2(0, 0):
-				input_dir = Vector2(0, -1)
-			locked_rot = $CameraRoot.rotation.y
-			locked_dir = input_dir
+	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
+			if stamina_cost(ROLL_STAMINA) == true:
+				roll_timer = ROLL_DURATION
+				attack_timer = 0
+				$AnimationPlayer.play("Roll", -1, 1.7)
+				self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+				$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+				if input_dir == Vector2(0, 0):
+					input_dir = Vector2(0, -1)
+				locked_rot = $CameraRoot.rotation.y
+				locked_dir = input_dir
 
 
 	
-	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling and stamina >= ATTACK_STAMINA:
+	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling :
+		if stamina_cost(ATTACK_STAMINA) == true:
 			attack_timer = ATTACK_DURATION
 			$AnimationPlayer.play("Thrust")
 			locked_dir = Vector2(0,0)
-			stamina -= ATTACK_STAMINA
 	
 	
 	roll_timer -= (1 * delta * is_rolling)
@@ -112,13 +125,19 @@ func _physics_process(delta):
 		if is_running:
 			if is_sprinting:
 				$AnimationPlayer.play("Sprint")
-				stamina -= SPRINT_STAMINA * delta
+				stamina_cost(SPRINT_STAMINA * delta)
 			else:
 				$AnimationPlayer.play("Run")
-				stamina += STAMINA_RECOVERY * delta
+				if recovery_timer <= 0:
+					stamina += STAMINA_RECOVERY * delta
+				else:
+					recovery_timer -= 1 * delta
 		else:
 			$AnimationPlayer.play("Idle")
-			stamina += STAMINA_RECOVERY * delta
+			if recovery_timer <= 0:
+				stamina += STAMINA_RECOVERY * delta
+			else:
+				recovery_timer -= 1 * delta
 	elif is_falling:
 		$AnimationPlayer.play("Fall")
 	elif is_jumping:

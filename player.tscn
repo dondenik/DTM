@@ -5977,6 +5977,7 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_in1r6"]
+height = 1.9
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_p1q17")

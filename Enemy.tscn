@@ -168,6 +168,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ybx45"]
+height = 1.9
 
 [sub_resource type="Gradient" id="Gradient_sv3q5"]
 interpolation_mode = 1
