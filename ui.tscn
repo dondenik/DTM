@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpfkiknn4524g"]
+[gd_scene load_steps=8 format=3 uid="uid://bwlgx27edur1y"]
 
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_3vvkm"]
 [ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="1_lpwdt"]
