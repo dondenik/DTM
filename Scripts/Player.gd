@@ -1,20 +1,28 @@
 extends CharacterBody3D
 
+# ROLL CONSTANTS
+const ROLL_DURATION = 0.9
+const ROLL_COOLDOWN_DURATION = 0.23 # time between rolling
 
+# ATTACK CONSTANTS
+const ATTACK_DURATION = 1
+const ATTACK_COOLDOWN_DURATION = 0.23
+
+# MOVEMENT CONSTANTS
 const SPEED = 5.0
 const JUMP_VELOCITY = 4
 const TURNING_SPEED = 0.15 #should be between 0-1, higher = fast
-const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
-const ROLL_DURATION = 0.9
 const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
-const ROLL_COOLDOWN_DURATION = 0.23 # time between rolling
-const ATTACK_DURATION = 1.5
-const ATTACK_COOLDOWN_DURATION = 0.23
+const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
+
+# STAMINA RECOVERY 
+const STAMINA_RECOVERY = 20
+const STAMINA_RECOVERY_CD = 0.7
+
+# STAMINA COSTS
 const ATTACK_STAMINA = 5
 const ROLL_STAMINA = 10
 const SPRINT_STAMINA = 5
-const STAMINA_RECOVERY = 20
-const STAMINA_RECOVERY_CD = 0.7
 const JUMP_STAMINA = 5
 
 
@@ -103,7 +111,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling :
 		if stamina_cost(ATTACK_STAMINA) == true:
 			attack_timer = ATTACK_DURATION
-			$AnimationPlayer.play("Thrust")
+			$AnimationPlayer.play("Thrust", -1, 1.3)
 			locked_dir = Vector2(0,0)
 	
 	
