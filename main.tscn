@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bxuislbnjonsu"]
 
 [ext_resource type="PackedScene" uid="uid://dyss8kyjnhmd7" path="res://player.tscn" id="1_jj07p"]
-[ext_resource type="Texture2D" uid="uid://b1ybj2uy7xahp" path="res://skyimage.hdr" id="2_aarv2"]
 [ext_resource type="PackedScene" uid="uid://da50typp0jffj" path="res://Enemy.tscn" id="2_dgw65"]
+[ext_resource type="Texture2D" uid="uid://b1ybj2uy7xahp" path="res://Assets/skyimage.hdr" id="2_w3grx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_701ky"]
 
@@ -14,7 +14,7 @@
 data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bhoaq"]
-panorama = ExtResource("2_aarv2")
+panorama = ExtResource("2_w3grx")
 
 [sub_resource type="Sky" id="Sky_kw12r"]
 sky_material = SubResource("PanoramaSkyMaterial_bhoaq")
