@@ -16,14 +16,14 @@ const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
 const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
 
 # STAMINA RECOVERY 
-const STAMINA_RECOVERY = 20
-const STAMINA_RECOVERY_CD = 0.7
+const STAMINA_RECOVERY = 50
+const STAMINA_RECOVERY_CD = 0.3
 
 # STAMINA COSTS
-const ATTACK_STAMINA = 5
-const ROLL_STAMINA = 10
-const SPRINT_STAMINA = 5
-const JUMP_STAMINA = 5
+const ATTACK_STAMINA = 15
+const ROLL_STAMINA = 20
+const SPRINT_STAMINA = 10
+const JUMP_STAMINA = 10
 
 
 var jump_starting_point = self.position.y
@@ -32,6 +32,8 @@ var roll_cooldown = 0
 var attack_cooldown = 0
 var attack_timer = 0
 var recovery_timer = 0
+var fighting = 1
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -92,7 +94,7 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 		
 	
-	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
+#	get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/Node3D/Area3D/CollisionShape3D").disabled = not is_attacking
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
 			if stamina_cost(ROLL_STAMINA) == true:
@@ -141,7 +143,10 @@ func _physics_process(delta):
 				else:
 					recovery_timer -= 1 * delta
 		else:
-			$AnimationPlayer.play("Idle")
+			if fighting == 1:
+				$AnimationPlayer.play("Fight Idle")
+			else:
+				$AnimationPlayer.play("Idle")
 			if recovery_timer <= 0:
 				stamina += STAMINA_RECOVERY * delta
 			else:
