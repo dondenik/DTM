@@ -32,7 +32,7 @@ var roll_cooldown = 0
 var attack_cooldown = 0
 var attack_timer = 0
 var recovery_timer = 0
-var fighting = 1
+var fighting = 0
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
