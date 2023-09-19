@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p1q17"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
-[ext_resource type="Texture2D" uid="uid://dx00yw7nfpky7" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_b3gso"]
-[ext_resource type="Texture2D" uid="uid://dgu1jktds0vjb" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_iawkg"]
-[ext_resource type="Texture2D" uid="uid://ci3scjloxgwte" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_uffni"]
-[ext_resource type="Texture2D" uid="uid://1dutqxg3kdcl" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_urdjw"]
-[ext_resource type="Texture2D" uid="uid://c4p4rvfjg5sh" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_4hmx7"]
+[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_b3gso"]
+[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_iawkg"]
+[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_uffni"]
+[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_urdjw"]
+[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_4hmx7"]
 [ext_resource type="PackedScene" uid="uid://bwlgx27edur1y" path="res://ui.tscn" id="6_4sntj"]
-[ext_resource type="Texture2D" uid="uid://ceyio5mwt3t68" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
+[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i76r5"]
 resource_name = "aiStandardSurface3"
