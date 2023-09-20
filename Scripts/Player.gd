@@ -12,7 +12,7 @@ const ATTACK_COOLDOWN_DURATION = 0.23
 const SPEED = 5.0
 const JUMP_VELOCITY = 4
 const TURNING_SPEED = 0.15 #should be between 0-1, higher = fast
-const SPRINT_SPEED = 5.0 #this is added to SPEED when sprinting
+const SPRINT_SPEED = 2.5 #this is added to SPEED when sprinting
 const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
 
 # STAMINA RECOVERY 
@@ -71,7 +71,6 @@ func _physics_process(delta):
 	# Change compass input
 	get_node("UI/Mesocompass").material.set_shader_parameter("direction", $CameraRoot.global_rotation.y)
 
-	print($CameraRoot.global_rotation.y)
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -118,7 +117,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling :
 		if stamina_cost(ATTACK_STAMINA) == true:
 			attack_timer = ATTACK_DURATION
-			$AnimationPlayer.play("Thrust", -1, 1.3)
+			$AnimationPlayer.play("Slash")
 			locked_dir = Vector2(0,0)
 	
 	
@@ -173,11 +172,11 @@ func _physics_process(delta):
 	
 	
 	# Change Player Rotation to match Camera if moving
-	self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running * int(not is_rolling), TURNING_SPEED)
-	$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling)
+	self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running * int(not is_rolling) * int(not is_attacking), TURNING_SPEED)
+	$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling) * int(not is_attacking)
 
 
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), ($CameraRoot.rotation.y * int(not is_rolling)) + locked_rot * is_rolling)).normalized()
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), ($CameraRoot.rotation.y * int(not is_rolling)) * int(not is_attacking) + locked_rot * is_rolling)).normalized()
 	if direction:
 		velocity.x = direction.x * (SPEED + (is_sprinting * SPRINT_SPEED))
 		velocity.z = direction.z * (SPEED + (is_sprinting * SPRINT_SPEED))
