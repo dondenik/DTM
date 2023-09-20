@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="1_lpwdt"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_xvv5u"]
 [ext_resource type="Shader" path="res://compass.gdshader" id="4_h6pd4"]
-[ext_resource type="Texture2D" uid="uid://co5wsg4gwmtbh" path="res://Mesocompass.png" id="5_2y8yg"]
+[ext_resource type="Texture2D" uid="uid://dckl0dh7r6hho" path="res://Mesocompass.png" id="5_2y8yg"]
 
 [sub_resource type="Gradient" id="Gradient_s40l0"]
 interpolation_mode = 1
@@ -22,7 +22,7 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_qrmtb")
 width = 449
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvxfh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3ybp"]
 shader = ExtResource("4_h6pd4")
 shader_parameter/direction = 0.0
 
@@ -76,7 +76,7 @@ fill_mode = 1
 texture_progress = SubResource("GradientTexture1D_2oqpo")
 
 [node name="Mesocompass" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_lvxfh")
-position = Vector2(956, 68)
+material = SubResource("ShaderMaterial_x3ybp")
+position = Vector2(954, 75)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_2y8yg")

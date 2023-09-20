@@ -70,6 +70,7 @@ func stamina_cost(cost):
 func _physics_process(delta):
 	# Change compass input
 	get_node("UI/Mesocompass").material.set_shader_parameter("direction", $CameraRoot.global_rotation.y)
+
 	print($CameraRoot.global_rotation.y)
 
 	# Add the gravity.
