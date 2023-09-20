@@ -24,6 +24,7 @@ func _physics_process(delta):
 	
 	if is_running:
 		$AnimationPlayer.play("Run")
+	
 
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	var player_position = get_parent().get_node("CharacterBody3D").position
@@ -33,6 +34,10 @@ func _physics_process(delta):
 	target_basis.x = 0
 	target_basis.z = 0
 	basis = basis.slerp(target_basis, TURNING_SPEED * delta).get_rotation_quaternion()
+	
+	# check if near player:
+	var distance_to_player = self.global_position.distance_to(player_position)
+	
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
