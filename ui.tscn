@@ -22,7 +22,7 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_qrmtb")
 width = 449
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3ybp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvxfh"]
 shader = ExtResource("4_h6pd4")
 shader_parameter/direction = 0.0
 
@@ -76,7 +76,7 @@ fill_mode = 1
 texture_progress = SubResource("GradientTexture1D_2oqpo")
 
 [node name="Mesocompass" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_x3ybp")
-position = Vector2(954, 75)
+material = SubResource("ShaderMaterial_lvxfh")
+position = Vector2(956, 68)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_2y8yg")
