@@ -3,10 +3,12 @@ extends CharacterBody3D
 # ROLL CONSTANTS
 const ROLL_DURATION = 0.9
 const ROLL_COOLDOWN_DURATION = 0.23 # time between rolling
+const ROLL_IFRAMES = 1
 
 # ATTACK CONSTANTS
 const ATTACK_DURATION = 1
 const ATTACK_COOLDOWN_DURATION = 0.23
+
 
 # MOVEMENT CONSTANTS
 const SPEED = 5.0
@@ -25,7 +27,6 @@ const ROLL_STAMINA = 20
 const SPRINT_STAMINA = 10
 const JUMP_STAMINA = 10
 
-
 var jump_starting_point = self.position.y
 var roll_timer = 0
 var roll_cooldown = 0
@@ -33,7 +34,7 @@ var attack_cooldown = 0
 var attack_timer = 0
 var recovery_timer = 0
 var fighting = 0
-
+var iframes = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -103,6 +104,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
 			if stamina_cost(ROLL_STAMINA) == true:
 				roll_timer = ROLL_DURATION
+				iframes = ROLL_IFRAMES
 				attack_timer = 0
 				$AnimationPlayer.play("Roll", -1, 1.7)
 				self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
@@ -126,6 +128,9 @@ func _physics_process(delta):
 	
 	attack_timer -= (1 * delta * is_attacking)
 	attack_cooldown -= (1 * delta * int(not is_attacking))
+	
+	iframes -= (1 * delta)
+	print(iframes)
 	
 	if is_rolling or roll_timer > 0:
 		input_dir = locked_dir
