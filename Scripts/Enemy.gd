@@ -50,8 +50,7 @@ func _physics_process(delta):
 	
 	attack_cooldown -= 1 * delta
 	attack_timer -= 1 * delta
-	print("cool", attack_cooldown)
-	print("timer", attack_timer)
+
 	
 	
 	if aggro == 0:
