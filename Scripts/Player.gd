@@ -48,6 +48,8 @@ var health = 100
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$UI.bar_update(health, stamina)
+	
+	
 
 
 func _input(event):
@@ -59,6 +61,8 @@ func _input(event):
 		
 
 func stamina_cost(cost):
+	
+	$DialogueBox.display_text("hello")
 	if stamina >= cost:
 		stamina -= cost
 		recovery_timer = STAMINA_RECOVERY_CD

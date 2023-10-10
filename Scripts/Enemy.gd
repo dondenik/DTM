@@ -60,10 +60,7 @@ func _physics_process(delta):
 		if distance_to_player < AGGRO_DIST:
 			aggro = 1
 	
-	#get_node("mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D").disabled = not( is_attacking and (0.8 < attack_timer and attack_timer < 1.2))
-	
-	print(not is_attacking and not (0.1 < attack_timer and attack_timer < 0.2))
-	print(attack_timer)
+
 	
 	if distance_to_player < 2:
 		if attack_cooldown <= 0 and not is_attacking and aggro == 1:

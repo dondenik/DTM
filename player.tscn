@@ -1,15 +1,16 @@
-[gd_scene load_steps=58 format=3 uid="uid://dyss8kyjnhmd7"]
+[gd_scene load_steps=59 format=3 uid="uid://dyss8kyjnhmd7"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p1q17"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
-[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_b3gso"]
-[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_iawkg"]
-[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_uffni"]
-[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_urdjw"]
-[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_4hmx7"]
+[ext_resource type="Texture2D" uid="uid://dx00yw7nfpky7" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_b3gso"]
+[ext_resource type="Texture2D" uid="uid://dgu1jktds0vjb" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_iawkg"]
+[ext_resource type="Texture2D" uid="uid://ci3scjloxgwte" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_uffni"]
+[ext_resource type="Texture2D" uid="uid://1dutqxg3kdcl" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_urdjw"]
+[ext_resource type="Texture2D" uid="uid://c4p4rvfjg5sh" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_4hmx7"]
 [ext_resource type="PackedScene" uid="uid://bwlgx27edur1y" path="res://ui.tscn" id="6_4sntj"]
-[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
-[ext_resource type="PackedScene" uid="uid://b8qy311fqpb0i" path="res://axe.tscn" id="8_v6fla"]
+[ext_resource type="Texture2D" uid="uid://ceyio5mwt3t68" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
+[ext_resource type="PackedScene" path="res://axe.tscn" id="8_v6fla"]
+[ext_resource type="PackedScene" uid="uid://edyjwsmsxdoo" path="res://dialoguebox.tscn" id="10_1qb16"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i76r5"]
 resource_name = "aiStandardSurface3"
@@ -5448,6 +5449,18 @@ tracks/22/path = NodePath("mesoman1_Reference/Skeleton3D:mesoman1_LeftToeBase")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = PackedFloat32Array(0, 1, 2.83633e-08, 1.35949e-05, -2.37507e-08, 1)
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D:disabled")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_re4gg"]
 resource_name = "Sprint"
@@ -6499,12 +6512,15 @@ mesh = SubResource("ArrayMesh_ndpqp")
 skin = SubResource("Skin_yrfiv")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D"]
-transform = Transform3D(0.513605, -0.353771, -0.781701, -0.47926, -0.873961, 0.0806348, -0.711702, 0.333223, -0.618419, -1.24482, -1.13433, -2.70354)
+transform = Transform3D(0.513605, -0.353771, -0.781701, -0.47926, -0.873961, 0.0806346, -0.711702, 0.333223, -0.618419, -1.24482, -1.13433, -2.70354)
 bone_name = "mesoman1_RightHand"
 bone_idx = 19
 
 [node name="copper_axe" parent="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D" instance=ExtResource("8_v6fla")]
 transform = Transform3D(-0.830679, -0.275313, -0.483916, 0.130326, -0.941183, 0.311751, -0.541283, 0.195898, 0.817702, -0.694033, -1.36659, 0.0701911)
+
+[node name="CollisionShape3D" parent="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D" index="0"]
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../mesoman1")
@@ -6534,9 +6550,17 @@ spring_length = 3.0
 [node name="FirstPersonCamera" parent="CameraRoot" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.367473, 0)
 
+[node name="DialogueBox" parent="." instance=ExtResource("10_1qb16")]
+offset_left = 512.0
+offset_top = 754.0
+offset_right = 511.72
+offset_bottom = 753.64
+
 [node name="UI" parent="." instance=ExtResource("6_4sntj")]
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 
+[editable path="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe"]
 [editable path="CameraRoot"]
+[editable path="DialogueBox"]
 [editable path="UI"]
