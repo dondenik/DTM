@@ -68,6 +68,12 @@ func stamina_cost(cost):
 
 
 
+func _on_area_3d_area_entered(area):
+	if iframes <= 0:
+		health -= 10
+		iframes = 1
+
+
 func _physics_process(delta):
 	# Change compass input
 	get_node("UI/Mesocompass").material.set_shader_parameter("direction", $CameraRoot.global_rotation.y)
@@ -130,7 +136,9 @@ func _physics_process(delta):
 	attack_cooldown -= (1 * delta * int(not is_attacking))
 	
 	iframes -= (1 * delta)
-	print(iframes)
+	if iframes < 0:
+		iframes = 0
+	
 	
 	if is_rolling or roll_timer > 0:
 		input_dir = locked_dir
@@ -198,3 +206,4 @@ func _physics_process(delta):
 	
 	
 	move_and_slide()
+

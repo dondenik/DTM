@@ -8,6 +8,7 @@ const ATTACK_COOLDOWN = 2
 const ATTACK_TIME = 1.5
 const AGGRO_DIST = 3
 const ATK_SPEED = 0.75
+const HIT_STUN = 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -16,7 +17,7 @@ var health = 100
 var attack_cooldown = 0
 var attack_timer = 0
 var aggro = 0
-
+var iframes = 0
 
 func _ready():
 	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
@@ -51,7 +52,9 @@ func _physics_process(delta):
 	attack_cooldown -= 1 * delta
 	attack_timer -= 1 * delta
 
-	
+	iframes -= (1 * delta)
+	if iframes < 0:
+		iframes = 0
 	
 	if aggro == 0:
 		$AnimationPlayer.play("Idle")
@@ -80,5 +83,7 @@ func _physics_process(delta):
 
 
 func _on_area_3d_area_entered(area):
-	health -= 10
-	$Sprite3D/SubViewport/Health.value = 100 - health
+	if iframes <= 0:
+		health -= 10
+		iframes = HIT_STUN
+		$Sprite3D/SubViewport/Health.value = 100 - health
