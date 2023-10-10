@@ -1,12 +1,12 @@
 [gd_scene load_steps=71 format=3 uid="uid://da50typp0jffj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_036pf"]
-[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
-[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
-[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
-[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
-[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_77421"]
-[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ud4rl"]
+[ext_resource type="Texture2D" uid="uid://dx00yw7nfpky7" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
+[ext_resource type="Texture2D" uid="uid://dgu1jktds0vjb" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
+[ext_resource type="Texture2D" uid="uid://ci3scjloxgwte" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
+[ext_resource type="Texture2D" uid="uid://1dutqxg3kdcl" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
+[ext_resource type="Texture2D" uid="uid://c4p4rvfjg5sh" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_77421"]
+[ext_resource type="Texture2D" uid="uid://ceyio5mwt3t68" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ud4rl"]
 [ext_resource type="Texture2D" uid="uid://dkb73igmns2we" path="res://copper_axe_Bronze_003_COLOR.png" id="8_8sc35"]
 [ext_resource type="Texture2D" uid="uid://8lg13iqvprmm" path="res://Assets/UI Elements/HealthBar.png" id="8_ffgsm"]
 [ext_resource type="Texture2D" uid="uid://druqq71d40ts3" path="res://copper_axe_Bronze_003_SPEC.png" id="9_w0om3"]
@@ -6627,7 +6627,7 @@ mesh = SubResource("ArrayMesh_ct51m")
 skin = SubResource("Skin_p0apn")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D"]
-transform = Transform3D(0.513605, -0.353771, -0.781701, -0.47926, -0.873961, 0.0806348, -0.711702, 0.333223, -0.618419, -1.24482, -1.13433, -2.70354)
+transform = Transform3D(0.513605, -0.353771, -0.781701, -0.47926, -0.873961, 0.0806346, -0.711702, 0.333223, -0.618419, -1.24482, -1.13433, -2.70354)
 bone_name = "mesoman1_RightHand"
 bone_idx = 19
 

@@ -53,8 +53,7 @@ func _physics_process(delta):
 	attack_timer -= 1 * delta
 
 	iframes -= (1 * delta)
-	if iframes < 0:
-		iframes = 0
+	iframes = iframes * int(iframes < 0)
 	
 	if aggro == 0:
 		$AnimationPlayer.play("Idle")
