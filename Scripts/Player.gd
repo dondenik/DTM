@@ -126,8 +126,10 @@ func _physics_process(delta):
 		if stamina_cost(ATTACK_STAMINA) == true:
 			attack_timer = ATTACK_DURATION
 			$AnimationPlayer.play("Slash")
+			# make attacks rotate player
 			self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
 			$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+			# -----------
 			locked_dir = Vector2(0,0)
 	
 	
