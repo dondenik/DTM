@@ -8,7 +8,7 @@ const ROLL_IFRAMES = 1
 # ATTACK CONSTANTS
 const ATTACK_DURATION = 1
 const ATTACK_COOLDOWN_DURATION = 0.23
-
+const HITSTUN = 1
 
 # MOVEMENT CONSTANTS
 const SPEED = 5.0
@@ -35,6 +35,8 @@ var attack_timer = 0
 var recovery_timer = 0
 var fighting = 0
 var iframes = 0
+var hitstun = 0
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -75,7 +77,8 @@ func stamina_cost(cost):
 func _on_area_3d_area_entered(area):
 	if iframes <= 0:
 		health -= 10
-		iframes = 1
+		iframes = HITSTUN
+		hitstun = HITSTUN
 
 
 func _physics_process(delta):
@@ -100,7 +103,7 @@ func _physics_process(delta):
 	var is_falling = (not on_ground) and (not is_jumping)
 	var is_rolling = int(roll_timer > 0)
 	var is_attacking = int(attack_timer > 0)
-	
+	var is_hitstun = int(hitstun > 0)
 	
 		# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_rolling:
@@ -146,9 +149,13 @@ func _physics_process(delta):
 	iframes -= (1 * delta)
 	iframes = iframes * int(iframes > 0)
 	
+	hitstun -= (1 * delta)
+	hitstun = hitstun * int(hitstun > 0)
 	
 	
-	if is_rolling or roll_timer > 0:
+	if is_hitstun > 0:
+		$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget", 0.5)
+	elif is_rolling or roll_timer > 0:
 		input_dir = locked_dir
 		roll_cooldown = ROLL_COOLDOWN_DURATION
 	elif is_attacking or attack_timer > 0:
@@ -171,7 +178,7 @@ func _physics_process(delta):
 			if fighting == 1:
 				$AnimationPlayer.play("Fight Idle")
 			else:
-				$AnimationPlayer.play("Idle")
+				$AnimationPlayer.play("Idle", 0.4)
 			if recovery_timer <= 0:
 				stamina += STAMINA_RECOVERY * delta
 			else:
