@@ -6542,7 +6542,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950222, 0)
 shape = SubResource("CapsuleShape3D_h3mih")
 
 [node name="CameraRoot" parent="." instance=ExtResource("2_3r3rg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78856, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5155, 0)
 
 [node name="SpringArm3D" parent="CameraRoot" index="0"]
 spring_length = 3.0

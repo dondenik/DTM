@@ -144,7 +144,8 @@ func _physics_process(delta):
 	attack_cooldown -= (1 * delta * int(not is_attacking))
 	
 	iframes -= (1 * delta)
-	iframes = iframes * int(iframes < 0)
+	iframes = iframes * int(iframes > 0)
+	
 	
 	
 	if is_rolling or roll_timer > 0:

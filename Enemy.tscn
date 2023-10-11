@@ -5582,6 +5582,18 @@ tracks/22/path = NodePath("mesoman1_Reference/Skeleton3D:mesoman1_LeftToeBase")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = PackedFloat32Array(0, 1, 2.83633e-08, 1.35949e-05, -2.37507e-08, 1)
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D:disabled")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_re4gg"]
 resource_name = "Sprint"
@@ -6656,7 +6668,6 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10226, -0.646208, 0)
 shape = SubResource("CapsuleShape3D_vp6wn")
-disabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950222, 0)
