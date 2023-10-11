@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4flegtqbdgqu"
-path.s3tc="res://.godot/imported/copper_axe_Bronze_003_NRM.png-256949c9999d46a3e7a8b1ed71dc9138.s3tc.ctex"
+uid="uid://dafepof4tdi4f"
+path.s3tc="res://.godot/imported/copper_axe_Wood_022_height.png-d8906d1231cafe5684a59914f63a255e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://copper_axe_Bronze_003_NRM.png"
-dest_files=["res://.godot/imported/copper_axe_Bronze_003_NRM.png-256949c9999d46a3e7a8b1ed71dc9138.s3tc.ctex"]
+source_file="res://Assets/Models/Textures/copper_axe_Wood_022_height.png"
+dest_files=["res://.godot/imported/copper_axe_Wood_022_height.png-d8906d1231cafe5684a59914f63a255e.s3tc.ctex"]
 
 [params]
 
@@ -26,7 +26,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://copper_axe_Bronze_003_NRM.png"
+roughness/src_normal="res://copper_axe_Wood_022_height.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

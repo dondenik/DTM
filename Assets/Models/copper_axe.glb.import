@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d13juvdvjbdxw"
-path="res://.godot/imported/copper_axe.glb-3c549911fde6e193c290a61110b1dcd8.scn"
+path="res://.godot/imported/copper_axe.glb-9c7f543ead0c0492f542fb94245944db.scn"
 
 [deps]
 
-source_file="res://copper_axe.glb"
-dest_files=["res://.godot/imported/copper_axe.glb-3c549911fde6e193c290a61110b1dcd8.scn"]
+source_file="res://Assets/Models/copper_axe.glb"
+dest_files=["res://.godot/imported/copper_axe.glb-9c7f543ead0c0492f542fb94245944db.scn"]
 
 [params]
 

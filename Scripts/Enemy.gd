@@ -18,6 +18,8 @@ var attack_cooldown = 0
 var attack_timer = 0
 var aggro = 0
 var iframes = 0
+var hitstun = 0
+
 
 func _ready():
 	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
@@ -48,6 +50,7 @@ func _physics_process(delta):
 	
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
+
 	
 	attack_cooldown -= 1 * delta
 	attack_timer -= 1 * delta
@@ -55,14 +58,18 @@ func _physics_process(delta):
 	iframes -= (1 * delta)
 	iframes = iframes * int(iframes > 0)
 	
+	hitstun -= (1 * delta)
+	hitstun = hitstun * int(hitstun > 0)
+	
 	if aggro == 0:
 		$AnimationPlayer.play("Idle")
 		if distance_to_player < AGGRO_DIST:
 			aggro = 1
 	
 
-	
-	if distance_to_player < 2:
+	if hitstun > 0:
+		$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget")
+	elif distance_to_player < 2:
 		if attack_cooldown <= 0 and not is_attacking and aggro == 1:
 			$AnimationPlayer.play("Slash", -1, ATK_SPEED)
 			attack_cooldown = ATTACK_COOLDOWN
@@ -86,4 +93,6 @@ func _on_area_3d_area_entered(area):
 	if iframes <= 0:
 		health -= 10
 		iframes = HIT_STUN
+		hitstun = HIT_STUN
+		$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 		$Sprite3D/SubViewport/Health.value = 100 - health

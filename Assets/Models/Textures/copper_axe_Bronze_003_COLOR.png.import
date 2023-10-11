@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deyx5vbo3j5c6"
-path.s3tc="res://.godot/imported/copper_axe_Wood_022_basecolor.png-b49624d6fe0610fb9192574ec8bffffc.s3tc.ctex"
+uid="uid://dkb73igmns2we"
+path.s3tc="res://.godot/imported/copper_axe_Bronze_003_COLOR.png-c285d650da132bd4f271ca20fce35aee.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://copper_axe_Wood_022_basecolor.png"
-dest_files=["res://.godot/imported/copper_axe_Wood_022_basecolor.png-b49624d6fe0610fb9192574ec8bffffc.s3tc.ctex"]
+source_file="res://Assets/Models/Textures/copper_axe_Bronze_003_COLOR.png"
+dest_files=["res://.godot/imported/copper_axe_Bronze_003_COLOR.png-c285d650da132bd4f271ca20fce35aee.s3tc.ctex"]
 
 [params]
 

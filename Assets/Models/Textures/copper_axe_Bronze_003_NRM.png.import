@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkb73igmns2we"
-path.s3tc="res://.godot/imported/copper_axe_Bronze_003_COLOR.png-f992d6934883cba4213ff675a1da2694.s3tc.ctex"
+uid="uid://4flegtqbdgqu"
+path.s3tc="res://.godot/imported/copper_axe_Bronze_003_NRM.png-0d2446857794ea4080639a6048a661d6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://copper_axe_Bronze_003_COLOR.png"
-dest_files=["res://.godot/imported/copper_axe_Bronze_003_COLOR.png-f992d6934883cba4213ff675a1da2694.s3tc.ctex"]
+source_file="res://Assets/Models/Textures/copper_axe_Bronze_003_NRM.png"
+dest_files=["res://.godot/imported/copper_axe_Bronze_003_NRM.png-0d2446857794ea4080639a6048a661d6.s3tc.ctex"]
 
 [params]
 
@@ -21,12 +21,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://copper_axe_Bronze_003_NRM.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
