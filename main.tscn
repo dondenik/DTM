@@ -79,5 +79,6 @@ environment = SubResource("Environment_kxqk5")
 
 [node name="Node3D" parent="." instance=ExtResource("2_dgw65")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22893, -3.46346)
+visible = false
 
 [node name="NPC" parent="." instance=ExtResource("3_avu4w")]

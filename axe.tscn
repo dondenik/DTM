@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8qy311fqpb0i"]
 
-[ext_resource type="PackedScene" uid="uid://d13juvdvjbdxw" path="res://copper_axe.glb" id="1_pv06n"]
+[ext_resource type="PackedScene" uid="uid://d13juvdvjbdxw" path="res://Assets/Models/copper_axe.glb" id="1_pv06n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vp6wn"]
 radius = 0.35

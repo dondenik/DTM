@@ -47,6 +47,8 @@ var locked_rot = 0
 var stamina = 100
 var health = 100
 
+signal request_dialogue
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$UI.bar_update(health, stamina)
@@ -222,3 +224,11 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
+func _in_dialogue_range():
+	request_dialogue.emit()
+
+func _left_dialogue_range():
+	$DialogueBox.hide_dialogue()
+
+func _recieve_dialogue(dialogue):
+	$DialogueBox.display_text(dialogue)
