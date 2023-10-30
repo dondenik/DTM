@@ -7014,6 +7014,7 @@ shape = SubResource("CapsuleShape3D_ybx45")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950222, 0)

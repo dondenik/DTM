@@ -6669,6 +6669,7 @@ height = 1.9
 height = 1.9
 
 [node name="CharacterBody3D2" type="CharacterBody3D"]
+collision_layer = 9
 script = ExtResource("1_p1q17")
 
 [node name="mesoman1" type="Node3D" parent="."]
@@ -6852,6 +6853,9 @@ bone_idx = 19
 
 [node name="copper_axe" parent="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D" instance=ExtResource("8_v6fla")]
 transform = Transform3D(-0.830679, -0.275313, -0.483916, 0.130326, -0.941183, 0.311751, -0.541283, 0.195898, 0.817702, -0.694033, -1.36659, 0.0701911)
+
+[node name="Area3D" parent="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe" index="1"]
+collision_layer = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../mesoman1")

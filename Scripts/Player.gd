@@ -165,7 +165,7 @@ func _physics_process(delta):
 		
 		hitstun -= (1 * delta)
 		hitstun = hitstun * int(hitstun > 0)
-		
+		print("test1", $mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled)
 		
 		if is_hitstun > 0:
 			$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget", 0.5)
@@ -177,12 +177,15 @@ func _physics_process(delta):
 			attack_cooldown = ATTACK_COOLDOWN_DURATION
 		elif in_water:
 			$AnimationPlayer.play("Swim")
+			$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 		elif on_ground:
 			if is_running:
 				if is_sprinting:
+					$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 					$AnimationPlayer.play("Sprint")
 					stamina_cost(SPRINT_STAMINA * delta)
 				else:
+					$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 					$AnimationPlayer.play("Run")
 					if recovery_timer <= 0:
 						stamina += STAMINA_RECOVERY * delta
@@ -191,18 +194,22 @@ func _physics_process(delta):
 			else:
 				if fighting == 1:
 					$AnimationPlayer.play("Fight Idle")
+					$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 				else:
 					$AnimationPlayer.play("Idle", 0.4)
+					$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 				if recovery_timer <= 0:
 					stamina += STAMINA_RECOVERY * delta
 				else:
 					recovery_timer -= 1 * delta
 		elif is_falling:
 			$AnimationPlayer.play("Fall")
+			$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 		elif is_jumping:
 			$AnimationPlayer.play("Jump")
+			$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 	
-	
+		print("test2", $mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled)
 		# Remove built up camera rotation to ensure goober turning is optimal
 		if $CameraRoot.rotation.y > PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)):
 			$CameraRoot.rotation.y -= 2*PI
