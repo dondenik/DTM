@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxuislbnjonsu"]
+[gd_scene load_steps=12 format=3 uid="uid://bxuislbnjonsu"]
 
 [ext_resource type="PackedScene" uid="uid://dyss8kyjnhmd7" path="res://player.tscn" id="1_jj07p"]
-[ext_resource type="PackedScene" uid="uid://da50typp0jffj" path="res://Enemy.tscn" id="2_dgw65"]
 [ext_resource type="PackedScene" uid="uid://b5lhe8c8inlly" path="res://NPC.tscn" id="3_avu4w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_701ky"]
@@ -76,9 +75,5 @@ shape = SubResource("ConcavePolygonShape3D_1ekjv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kxqk5")
-
-[node name="Node3D" parent="." instance=ExtResource("2_dgw65")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22893, -3.46346)
-visible = false
 
 [node name="NPC" parent="." instance=ExtResource("3_avu4w")]

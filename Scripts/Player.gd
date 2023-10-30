@@ -37,6 +37,8 @@ var fighting = 0
 var iframes = 0
 var hitstun = 0
 
+var in_dialogue = 0
+var in_dia_range = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -66,7 +68,6 @@ func _input(event):
 
 func stamina_cost(cost):
 	
-	$DialogueBox.display_text("hello")
 	if stamina >= cost:
 		stamina -= cost
 		recovery_timer = STAMINA_RECOVERY_CD
@@ -117,6 +118,7 @@ func _physics_process(delta):
 
 	
 	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
+		if in_dia_range == 0:
 			if stamina_cost(ROLL_STAMINA) == true:
 				roll_timer = ROLL_DURATION
 				iframes = ROLL_IFRAMES
@@ -128,6 +130,10 @@ func _physics_process(delta):
 					input_dir = Vector2(0, -1)
 				locked_rot = $CameraRoot.rotation.y
 				locked_dir = input_dir
+		else:
+			if in_dialogue == 0:
+				in_dialogue = 1
+				request_dialogue.emit()
 
 
 	
@@ -225,9 +231,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _in_dialogue_range():
-	request_dialogue.emit()
+	in_dia_range = 1
 
 func _left_dialogue_range():
+	in_dia_range = 0
+	in_dialogue = 0
 	$DialogueBox.hide_dialogue()
 
 func _recieve_dialogue(dialogue):

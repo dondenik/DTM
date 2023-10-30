@@ -23,16 +23,13 @@ func _ready():
 	self.body_left_talking_range.connect(player._left_dialogue_range)
 	player.request_dialogue.connect(_on_dialogue_request)
 	self.return_dialogue_request.connect(player._recieve_dialogue)
-
+	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 	$AnimationPlayer.play("Idle")
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -51,11 +48,14 @@ func _physics_process(delta):
 
 func _on_talking_hitbox_body_entered(body):
 	body_in_talking_range.emit()
+	$Sprite3D.show()
 
 
 
 func _on_talking_hitbox_body_exited(body):
 	body_left_talking_range.emit()
+	$Sprite3D.hide()
+
 
 func _on_dialogue_request():
 	return_dialogue_request.emit(self.dialogue)
