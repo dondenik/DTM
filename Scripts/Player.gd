@@ -169,6 +169,7 @@ func _physics_process(delta):
 		if is_hitstun > 0:
 			$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget", 0.5)
 			$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
+			input_dir = Vector2(0,0)
 		elif is_rolling or roll_timer > 0:
 			input_dir = locked_dir
 			roll_cooldown = ROLL_COOLDOWN_DURATION
@@ -217,8 +218,9 @@ func _physics_process(delta):
 		
 		
 		# Change Player Rotation to match Camera if moving
-		self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running * int(not is_rolling) * int(not is_attacking), TURNING_SPEED)
-		$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling) * int(not is_attacking)
+		if hitstun <= 0:
+			self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running * int(not is_rolling) * int(not is_attacking), TURNING_SPEED)
+			$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling) * int(not is_attacking)
 	
 	
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), ($CameraRoot.rotation.y * int(not is_rolling)) * int(not is_attacking) + locked_rot * is_rolling)).normalized()

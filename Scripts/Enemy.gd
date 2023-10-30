@@ -86,6 +86,7 @@ func _physics_process(delta):
 			if hitstun > 0:
 				$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget")
 				$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
+				input_dir = Vector2(0,0)
 			elif distance_to_player < 2:
 				if attack_cooldown <= 0 and not is_attacking and aggro == 1:
 					$AnimationPlayer.play("Slash", -1, ATK_SPEED)
