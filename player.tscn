@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dyss8kyjnhmd7"]
+[gd_scene load_steps=63 format=3 uid="uid://dyss8kyjnhmd7"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p1q17"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" path="res://axe.tscn" id="8_v6fla"]
 [ext_resource type="PackedScene" uid="uid://edyjwsmsxdoo" path="res://dialoguebox.tscn" id="10_1qb16"]
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="11_6dokn"]
+[ext_resource type="PackedScene" uid="uid://b05kiqvk3otu5" path="res://death_message.tscn" id="12_2mv8k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yynsu"]
 resource_name = "aiStandardSurface3"
@@ -6894,6 +6895,9 @@ offset_bottom = 753.64
 theme_override_fonts/font = ExtResource("11_6dokn")
 theme_override_font_sizes/font_size = 24
 text = "---"
+
+[node name="TextureRect" parent="." instance=ExtResource("12_2mv8k")]
+visible = false
 
 [node name="UI" parent="." instance=ExtResource("6_4sntj")]
 

@@ -47,7 +47,9 @@ var locked_dir = Vector2(0,0)
 var locked_rot = 0
 
 var stamina = 100
-var health = 100
+var health = 10
+
+var dead = false 
 
 signal request_dialogue
 
@@ -55,8 +57,8 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$UI.bar_update(health, stamina)
 	
-	
 
+	
 
 func _input(event):
 	if event.is_action_pressed("pause"):
@@ -75,7 +77,10 @@ func stamina_cost(cost):
 	else:
 		return false
 
-
+func die():
+	$TextureRect.show()
+	$AnimationPlayer.play("Die")
+	dead = true
 
 func _on_area_3d_area_entered(area):
 	if iframes <= 0:
@@ -86,149 +91,151 @@ func _on_area_3d_area_entered(area):
 
 
 func _physics_process(delta):
-	# Change compass input
+		# Change compass input
 	get_node("UI/Mesocompass").material.set_shader_parameter("direction", $CameraRoot.global_rotation.y)
-
-
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
-	# Get the input direction and handle the movement/deceleration.
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
-	# Define state related variables
-	# These are boolean values stored in integers for easier usage
-	var is_running = int((abs(input_dir.x) or abs(input_dir.y)))
-	var in_water = 0 # replace with water detection
-	var is_sprinting = int(Input.is_action_pressed("sprint"))
-	var on_ground = is_on_floor() # need to test this but should work
-	var is_jumping = (not (self.position.y < (jump_starting_point - FALL_HEIGHT_OFFSET))) and (not on_ground)
-	var is_falling = (not on_ground) and (not is_jumping)
-	var is_rolling = int(roll_timer > 0)
-	var is_attacking = int(attack_timer > 0)
-	var is_hitstun = int(hitstun > 0)
-	
-		# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_rolling:
-		if stamina_cost(JUMP_STAMINA) == true:
-			jump_starting_point = self.position.y
-			velocity.y = JUMP_VELOCITY
+	if not dead:
 		
-
+		# Add the gravity.
+		if not is_on_floor():
+			velocity.y -= gravity * delta
 	
-	if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
-		if in_dia_range == 0:
-			if stamina_cost(ROLL_STAMINA) == true:
-				roll_timer = ROLL_DURATION
-				iframes = ROLL_IFRAMES
-				attack_timer = 0
-				$AnimationPlayer.play("Roll", -1, 1.7)
+		# Get the input direction and handle the movement/deceleration.
+		var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+		
+		# Define state related variables
+		# These are boolean values stored in integers for easier usage
+		var is_running = int((abs(input_dir.x) or abs(input_dir.y)))
+		var in_water = 0 # replace with water detection
+		var is_sprinting = int(Input.is_action_pressed("sprint"))
+		var on_ground = is_on_floor() # need to test this but should work
+		var is_jumping = (not (self.position.y < (jump_starting_point - FALL_HEIGHT_OFFSET))) and (not on_ground)
+		var is_falling = (not on_ground) and (not is_jumping)
+		var is_rolling = int(roll_timer > 0)
+		var is_attacking = int(attack_timer > 0)
+		var is_hitstun = int(hitstun > 0)
+		
+			# Handle Jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor() and not is_rolling:
+			if stamina_cost(JUMP_STAMINA) == true:
+				jump_starting_point = self.position.y
+				velocity.y = JUMP_VELOCITY
+			
+	
+		
+		if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
+			if in_dia_range == 0:
+				if stamina_cost(ROLL_STAMINA) == true:
+					roll_timer = ROLL_DURATION
+					iframes = ROLL_IFRAMES
+					attack_timer = 0
+					$AnimationPlayer.play("Roll", -1, 1.7)
+					self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+					$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+					if input_dir == Vector2(0, 0):
+						input_dir = Vector2(0, -1)
+					locked_rot = $CameraRoot.rotation.y
+					locked_dir = input_dir
+			else:
+				if in_dialogue == 0:
+					in_dialogue = 1
+					request_dialogue.emit()
+	
+	
+		
+		if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling :
+			if stamina_cost(ATTACK_STAMINA) == true:
+				attack_timer = ATTACK_DURATION
+				$AnimationPlayer.play("Slash")
+				# make attacks rotate player
 				self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
 				$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-				if input_dir == Vector2(0, 0):
-					input_dir = Vector2(0, -1)
-				locked_rot = $CameraRoot.rotation.y
-				locked_dir = input_dir
-		else:
-			if in_dialogue == 0:
-				in_dialogue = 1
-				request_dialogue.emit()
-
-
-	
-	if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling :
-		if stamina_cost(ATTACK_STAMINA) == true:
-			attack_timer = ATTACK_DURATION
-			$AnimationPlayer.play("Slash")
-			# make attacks rotate player
-			self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-			$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-			# -----------
-			locked_dir = Vector2(0,0)
-	
-	
-	roll_timer -= (1 * delta * is_rolling)
-	roll_cooldown -= (1 * delta * int(not is_rolling))
-	
-	attack_timer -= (1 * delta * is_attacking)
-	attack_cooldown -= (1 * delta * int(not is_attacking))
-	
-	iframes -= (1 * delta)
-	iframes = iframes * int(iframes > 0)
-	
-	hitstun -= (1 * delta)
-	hitstun = hitstun * int(hitstun > 0)
-	
-	
-	if is_hitstun > 0:
-		$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget", 0.5)
-	elif is_rolling or roll_timer > 0:
-		input_dir = locked_dir
-		roll_cooldown = ROLL_COOLDOWN_DURATION
-	elif is_attacking or attack_timer > 0:
-		input_dir = locked_dir
-		attack_cooldown = ATTACK_COOLDOWN_DURATION
-	elif in_water:
-		$AnimationPlayer.play("Swim")
-	elif on_ground:
-		if is_running:
-			if is_sprinting:
-				$AnimationPlayer.play("Sprint")
-				stamina_cost(SPRINT_STAMINA * delta)
+				# -----------
+				locked_dir = Vector2(0,0)
+		
+		
+		roll_timer -= (1 * delta * is_rolling)
+		roll_cooldown -= (1 * delta * int(not is_rolling))
+		
+		attack_timer -= (1 * delta * is_attacking)
+		attack_cooldown -= (1 * delta * int(not is_attacking))
+		
+		iframes -= (1 * delta)
+		iframes = iframes * int(iframes > 0)
+		
+		hitstun -= (1 * delta)
+		hitstun = hitstun * int(hitstun > 0)
+		
+		
+		if is_hitstun > 0:
+			$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget", 0.5)
+		elif is_rolling or roll_timer > 0:
+			input_dir = locked_dir
+			roll_cooldown = ROLL_COOLDOWN_DURATION
+		elif is_attacking or attack_timer > 0:
+			input_dir = locked_dir
+			attack_cooldown = ATTACK_COOLDOWN_DURATION
+		elif in_water:
+			$AnimationPlayer.play("Swim")
+		elif on_ground:
+			if is_running:
+				if is_sprinting:
+					$AnimationPlayer.play("Sprint")
+					stamina_cost(SPRINT_STAMINA * delta)
+				else:
+					$AnimationPlayer.play("Run")
+					if recovery_timer <= 0:
+						stamina += STAMINA_RECOVERY * delta
+					else:
+						recovery_timer -= 1 * delta
 			else:
-				$AnimationPlayer.play("Run")
+				if fighting == 1:
+					$AnimationPlayer.play("Fight Idle")
+				else:
+					$AnimationPlayer.play("Idle", 0.4)
 				if recovery_timer <= 0:
 					stamina += STAMINA_RECOVERY * delta
 				else:
 					recovery_timer -= 1 * delta
+		elif is_falling:
+			$AnimationPlayer.play("Fall")
+		elif is_jumping:
+			$AnimationPlayer.play("Jump")
+	
+	
+		# Remove built up camera rotation to ensure goober turning is optimal
+		if $CameraRoot.rotation.y > PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)):
+			$CameraRoot.rotation.y -= 2*PI
+		if $CameraRoot.rotation.y < -PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)):
+			$CameraRoot.rotation.y += 2*PI
+		
+		
+	
+		
+		
+		# Change Player Rotation to match Camera if moving
+		self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running * int(not is_rolling) * int(not is_attacking), TURNING_SPEED)
+		$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling) * int(not is_attacking)
+	
+	
+		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), ($CameraRoot.rotation.y * int(not is_rolling)) * int(not is_attacking) + locked_rot * is_rolling)).normalized()
+		if direction:
+			velocity.x = direction.x * (SPEED + (is_sprinting * SPRINT_SPEED))
+			velocity.z = direction.z * (SPEED + (is_sprinting * SPRINT_SPEED))
 		else:
-			if fighting == 1:
-				$AnimationPlayer.play("Fight Idle")
-			else:
-				$AnimationPlayer.play("Idle", 0.4)
-			if recovery_timer <= 0:
-				stamina += STAMINA_RECOVERY * delta
-			else:
-				recovery_timer -= 1 * delta
-	elif is_falling:
-		$AnimationPlayer.play("Fall")
-	elif is_jumping:
-		$AnimationPlayer.play("Jump")
-
-
-	# Remove built up camera rotation to ensure goober turning is optimal
-	if $CameraRoot.rotation.y > PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)):
-		$CameraRoot.rotation.y -= 2*PI
-	if $CameraRoot.rotation.y < -PI + Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)):
-		$CameraRoot.rotation.y += 2*PI
-	
-	
-
-	
-	
-	# Change Player Rotation to match Camera if moving
-	self.rotation.y = lerp(self.rotation.y, self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0))) * is_running * int(not is_rolling) * int(not is_attacking), TURNING_SPEED)
-	$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))  * TURNING_SPEED * is_running * int(not is_rolling) * int(not is_attacking)
-
-
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), ($CameraRoot.rotation.y * int(not is_rolling)) * int(not is_attacking) + locked_rot * is_rolling)).normalized()
-	if direction:
-		velocity.x = direction.x * (SPEED + (is_sprinting * SPRINT_SPEED))
-		velocity.z = direction.z * (SPEED + (is_sprinting * SPRINT_SPEED))
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-	
-	if stamina >= 100:
-		stamina = 100
-	elif stamina <= 0:
-		stamina = 0
-	
-	$UI.bar_update(health, stamina)
-	
-	
-	move_and_slide()
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+		if stamina >= 100:
+			stamina = 100
+		elif stamina <= 0:
+			stamina = 0
+		
+		$UI.bar_update(health, stamina)
+		
+		if health <= 0:
+			die()
+		move_and_slide()
 
 func _in_dialogue_range():
 	in_dia_range = 1

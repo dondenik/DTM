@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b05kiqvk3otu5"]
+
+[ext_resource type="Texture2D" uid="uid://vpq4bd1xqp8b" path="res://Assets/UI Elements/You died.png" id="1_8u0ra"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8u0ra")
