@@ -1,14 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b05kiqvk3otu5"]
+[gd_scene load_steps=3 format=3 uid="uid://b05kiqvk3otu5"]
 
 [ext_resource type="Texture2D" uid="uid://vpq4bd1xqp8b" path="res://Assets/UI Elements/You died.png" id="1_8u0ra"]
-[ext_resource type="Shader" path="res://death_message.gdshader" id="1_eovmd"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqynj"]
-shader = ExtResource("1_eovmd")
+[ext_resource type="Material" uid="uid://cykqsneaxdbrm" path="res://death_message_shader.tres" id="1_ddhcg"]
 
 [node name="TextureRect" type="TextureRect"]
-material = SubResource("ShaderMaterial_mqynj")
-offset_left = -2.0
-offset_right = 1918.0
-offset_bottom = 1080.0
+material = ExtResource("1_ddhcg")
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("1_8u0ra")

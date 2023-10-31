@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cykqsneaxdbrm"]
+
+[ext_resource type="Shader" path="res://death_message.gdshader" id="1_77088"]
+
+[resource]
+shader = ExtResource("1_77088")

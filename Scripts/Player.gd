@@ -51,7 +51,7 @@ var health = 100
 
 var dead = false 
 
-var death_message = preload("res://death_message.tscn").instantiate()
+var death_message = preload("res://death_message.tscn")
 signal request_dialogue
 
 func _ready():
@@ -79,7 +79,7 @@ func stamina_cost(cost):
 		return false
 
 func die():
-	add_child(death_message)
+	add_child(death_message.instantiate())
 	$AnimationPlayer.play("Die")
 	dead = true
 	$CollisionShape3D.disabled = true
