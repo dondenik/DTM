@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b05kiqvk3otu5"]
+[gd_scene load_steps=4 format=3 uid="uid://b05kiqvk3otu5"]
 
-[ext_resource type="Texture2D" uid="uid://bie3rnkrv1f25" path="res://Assets/UI Elements/Game over.png" id="1_7fm85"]
+[ext_resource type="Shader" path="res://death_message.gdshader" id="1_eovmd"]
+[ext_resource type="Texture2D" uid="uid://bie3rnkrv1f25" path="res://Assets/UI Elements/Game over.png" id="2_sysvr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqynj"]
+render_priority = 0
+shader = ExtResource("1_eovmd")
 
 [node name="TextureRect" type="TextureRect"]
 modulate = Color(1, 1, 1, 0)
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_7fm85")
+material = SubResource("ShaderMaterial_mqynj")
+offset_left = -2.0
+offset_right = 1918.0
+offset_bottom = 1080.0
+texture = ExtResource("2_sysvr")

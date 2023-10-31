@@ -1,12 +1,11 @@
 extends CharacterBody3D
 
-
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 const TURNING_SPEED = 5.0
 const ATTACK_COOLDOWN = 2
 const ATTACK_TIME = 1.5
-const AGGRO_DIST = 3
+var AGGRO_DIST = 3
 const ATK_SPEED = 0.75
 const HIT_STUN = 1
 
@@ -27,6 +26,7 @@ func _ready():
 	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
 	$Sprite3D/SubViewport/Health.value = 100 - health
 	$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
+	extension_func()
 
 func die():
 	$AnimationPlayer.play("Die")
@@ -117,3 +117,6 @@ func _on_area_3d_area_entered(area):
 		hitstun = HIT_STUN
 		$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 		$Sprite3D/SubViewport/Health.value = 100 - health
+
+func extension_func():
+	pass

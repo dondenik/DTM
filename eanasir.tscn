@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhcg24ciq0cr1"]
+
+[ext_resource type="PackedScene" uid="uid://da50typp0jffj" path="res://Enemy.tscn" id="1_6v0t3"]
+[ext_resource type="Script" path="res://eanasir.gd" id="2_cbggu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nj063"]
+size = Vector3(0.598758, 0.664693, 0.0926709)
+
+[node name="Ea Nasir" instance=ExtResource("1_6v0t3")]
+script = ExtResource("2_cbggu")
+
+[node name="Skeleton3D" parent="mesoman1/mesoman1_Reference" index="0"]
+bones/0/position = Vector3(-0.686707, -3.17401, -0.39794)
+bones/0/rotation = Quaternion(-0.345914, 0.574585, -0.571206, 0.473203)
+bones/1/rotation = Quaternion(0.286145, -0.185246, 0.924718, 0.169417)
+bones/2/rotation = Quaternion(-0.254744, -0.0401177, 0.0432311, 0.965208)
+bones/3/rotation = Quaternion(-0.0655673, 0.148127, -0.275899, 0.947438)
+bones/4/rotation = Quaternion(0.0481003, 0.000213098, -0.0272523, 0.998471)
+bones/5/rotation = Quaternion(0.0682092, -0.245112, -0.351607, 0.900911)
+bones/6/rotation = Quaternion(0.0355549, -0.0762438, 0.700943, 0.708239)
+bones/7/rotation = Quaternion(-0.040909, 0.0905627, -0.0643676, 0.992966)
+bones/8/rotation = Quaternion(0.00989867, -0.00215038, -0.0120991, 0.999876)
+bones/9/rotation = Quaternion(-0.00352577, 0.00331678, -0.0829852, 0.996539)
+bones/10/rotation = Quaternion(-0.00628313, -0.00383893, -0.000622972, 0.999973)
+bones/11/rotation = Quaternion(-0.00624944, -0.00389344, -0.00931515, 0.99993)
+bones/12/rotation = Quaternion(-0.531748, -0.518808, -0.418113, 0.522746)
+bones/13/rotation = Quaternion(0.613077, -0.0554106, -0.253387, 0.746231)
+bones/14/rotation = Quaternion(-0.039356, -0.0210842, 0.0780619, 0.995948)
+bones/15/rotation = Quaternion(-0.361226, 0.285103, -0.0616324, 0.885682)
+bones/16/rotation = Quaternion(0.467841, -0.529932, 0.572816, 0.414944)
+bones/17/rotation = Quaternion(0.538032, -0.392773, -0.450923, 0.59407)
+bones/18/rotation = Quaternion(0.04741, -0.506996, 0.612619, 0.604488)
+bones/19/rotation = Quaternion(0.402597, 0.101153, 0.0241961, 0.909449)
+bones/20/rotation = Quaternion(0.105643, -0.0403514, -0.0176273, 0.993429)
+bones/21/rotation = Quaternion(0.0800037, 0.0400657, 0.0455872, 0.994945)
+
+[node name="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D" index="3"]
+transform = Transform3D(-0.520927, -0.184847, -0.833347, 0.141329, 0.94412, -0.297763, 0.84182, -0.272889, -0.465694, -1.1515, -3.7635, -0.894887)
+
+[node name="tablet" type="Area3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97901, 1.91805)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tablet" index="0"]
+shape = SubResource("BoxShape3D_nj063")
