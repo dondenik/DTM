@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://b05kiqvk3otu5"]
 
-[ext_resource type="Texture2D" uid="uid://vpq4bd1xqp8b" path="res://Assets/UI Elements/You died.png" id="1_8u0ra"]
+[ext_resource type="Texture2D" uid="uid://bie3rnkrv1f25" path="res://Assets/UI Elements/Game over.png" id="1_7fm85"]
 
 [node name="TextureRect" type="TextureRect"]
 modulate = Color(1, 1, 1, 0)
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_8u0ra")
+texture = ExtResource("1_7fm85")
