@@ -90,6 +90,7 @@ func _physics_process(delta):
 			elif distance_to_player < 2:
 				if attack_cooldown <= 0 and not is_attacking and aggro == 1:
 					$AnimationPlayer.play("Slash", -1, ATK_SPEED)
+					$AudioStreamPlayer3D.play()
 					attack_cooldown = ATTACK_COOLDOWN
 					attack_timer = ATTACK_TIME
 				else:

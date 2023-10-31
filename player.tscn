@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dyss8kyjnhmd7"]
+[gd_scene load_steps=64 format=3 uid="uid://dyss8kyjnhmd7"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p1q17"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://edyjwsmsxdoo" path="res://dialoguebox.tscn" id="10_1qb16"]
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="11_6dokn"]
 [ext_resource type="PackedScene" uid="uid://b05kiqvk3otu5" path="res://death_message.tscn" id="12_2mv8k"]
+[ext_resource type="AudioStream" uid="uid://dwp2uoii3y1ct" path="res://swing-6045.mp3" id="14_5mplx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yynsu"]
 resource_name = "aiStandardSurface3"
@@ -6668,7 +6669,7 @@ height = 1.9
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h3mih"]
 height = 1.9
 
-[node name="CharacterBody3D2" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D"]
 collision_layer = 9
 script = ExtResource("1_p1q17")
 
@@ -6901,6 +6902,9 @@ text = "---"
 visible = false
 
 [node name="UI" parent="." instance=ExtResource("6_4sntj")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("14_5mplx")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 
