@@ -47,11 +47,11 @@ var locked_dir = Vector2(0,0)
 var locked_rot = 0
 
 var stamina = 100
-var health = 100
+var health = 10
 
 var dead = false 
 
-var death_message = preload("res://death_message.tscn")
+var death_message = load("res://death_message.tscn").instantiate()
 signal request_dialogue
 
 func _ready():
@@ -79,7 +79,8 @@ func stamina_cost(cost):
 		return false
 
 func die():
-	add_child(death_message.instantiate())
+	add_child(death_message)
+	self.create_tween().tween_property(death_message, "modulate", Color(1, 1, 1, 1), 0.5)
 	$AnimationPlayer.play("Die")
 	dead = true
 	$CollisionShape3D.disabled = true
