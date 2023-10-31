@@ -125,7 +125,7 @@ func _physics_process(delta):
 			
 	
 		
-		if Input.is_action_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
+		if Input.is_action_just_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
 			if in_dia_range == 0:
 				if stamina_cost(ROLL_STAMINA) == true:
 					roll_timer = ROLL_DURATION
