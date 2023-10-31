@@ -1,19 +1,18 @@
-[gd_scene load_steps=74 format=3 uid="uid://da50typp0jffj"]
+[gd_scene load_steps=73 format=3 uid="uid://da50typp0jffj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_036pf"]
-[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
-[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
-[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
-[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
-[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_77421"]
-[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ud4rl"]
+[ext_resource type="Texture2D" uid="uid://bkwk5yitagpxa" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
+[ext_resource type="Texture2D" uid="uid://4ojrshteokie" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
+[ext_resource type="Texture2D" uid="uid://cvsvxeo2d8qtc" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
+[ext_resource type="Texture2D" uid="uid://ogg8p6m7y3cy" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
+[ext_resource type="Texture2D" uid="uid://cwhcls4uoubj8" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_77421"]
+[ext_resource type="Texture2D" uid="uid://dqpi4chphygar" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ud4rl"]
 [ext_resource type="Texture2D" uid="uid://8lg13iqvprmm" path="res://Assets/UI Elements/HealthBar.png" id="8_ffgsm"]
 [ext_resource type="Texture2D" uid="uid://dkb73igmns2we" path="res://Assets/Models/Textures/copper_axe_Bronze_003_COLOR.png" id="8_h7v7x"]
 [ext_resource type="Texture2D" uid="uid://druqq71d40ts3" path="res://Assets/Models/Textures/copper_axe_Bronze_003_SPEC.png" id="9_aygor"]
 [ext_resource type="Texture2D" uid="uid://4flegtqbdgqu" path="res://Assets/Models/Textures/copper_axe_Bronze_003_NRM.png" id="10_y8lhb"]
 [ext_resource type="Texture2D" uid="uid://deyx5vbo3j5c6" path="res://Assets/Models/Textures/copper_axe_Wood_022_basecolor.png" id="11_nbh1c"]
 [ext_resource type="Texture2D" uid="uid://dafepof4tdi4f" path="res://Assets/Models/Textures/copper_axe_Wood_022_height.png" id="12_q0p00"]
-[ext_resource type="AudioStream" uid="uid://dwp2uoii3y1ct" path="res://swing-6045.mp3" id="14_krh7j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yynsu"]
 resource_name = "aiStandardSurface3"
@@ -7048,8 +7047,5 @@ size_flags_vertical = 4
 value = 100.0
 fill_mode = 1
 texture_progress = SubResource("GradientTexture1D_0qsd7")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("14_krh7j")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
