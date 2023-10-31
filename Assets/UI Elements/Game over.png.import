@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vpq4bd1xqp8b"
-path="res://.godot/imported/You died.png-bc1806883db791918ae4ad49d5fa929b.ctex"
+uid="uid://bie3rnkrv1f25"
+path="res://.godot/imported/Game over.png-01c875bb9c39ffeb68a04f729ae01c4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI Elements/You died.png"
-dest_files=["res://.godot/imported/You died.png-bc1806883db791918ae4ad49d5fa929b.ctex"]
+source_file="res://Assets/UI Elements/Game over.png"
+dest_files=["res://.godot/imported/Game over.png-01c875bb9c39ffeb68a04f729ae01c4c.ctex"]
 
 [params]
 

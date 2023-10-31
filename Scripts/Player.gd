@@ -80,7 +80,7 @@ func stamina_cost(cost):
 
 func die():
 	add_child(death_message)
-	self.create_tween().tween_property(death_message, "modulate", Color(1, 1, 1, 1), 0.5)
+	self.create_tween().tween_property(death_message, "modulate", Color(1, 1, 1, 1), 0.8)
 	$AnimationPlayer.play("Die")
 	dead = true
 	$CollisionShape3D.disabled = true
