@@ -51,6 +51,7 @@ var health = 100
 
 var dead = false 
 
+var death_message = preload("res://death_message.tscn").instantiate()
 signal request_dialogue
 
 func _ready():
@@ -78,9 +79,10 @@ func stamina_cost(cost):
 		return false
 
 func die():
-	$TextureRect.show()
+	add_child(death_message)
 	$AnimationPlayer.play("Die")
 	dead = true
+	$CollisionShape3D.disabled = true
 
 func _on_area_3d_area_entered(area):
 	if iframes <= 0:

@@ -32,6 +32,7 @@ func die():
 	$AnimationPlayer.play("Die")
 	$Sprite3D.hide()
 	dead = true
+	$CollisionShape3D.disabled = true
 	$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 
 
@@ -60,7 +61,6 @@ func _physics_process(delta):
 		var is_running = int((abs(input_dir.x) or abs(input_dir.y)))
 		
 		
-		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	
 		
@@ -97,7 +97,8 @@ func _physics_process(delta):
 			elif is_running:
 				$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 				$AnimationPlayer.play("Run")
-			
+
+			var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 			if direction:
 				velocity.x = direction.x * SPEED
 				velocity.z = direction.z * SPEED
