@@ -5,10 +5,11 @@ signal body_in_talking_range
 signal body_left_talking_range
 signal return_dialogue_request(dialogue)
 
-var dialogue = "Greetings"
+var dialogue = ""
 
-var npc_dialogue_options = []
+var npc_dialogue_options = ["Gret"]
 var npc_dialogue_mode = "sequential"
+var npc_dialogue_counter = 0
 
 @onready var player = get_parent().get_node("CharacterBody3D")
 
@@ -24,6 +25,7 @@ func _ready():
 	player.request_dialogue.connect(_on_dialogue_request)
 	self.return_dialogue_request.connect(player._recieve_dialogue)
 	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
+	self.dialogue = npc_dialogue_options[npc_dialogue_counter]
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -59,3 +61,7 @@ func _on_talking_hitbox_body_exited(body):
 
 func _on_dialogue_request():
 	return_dialogue_request.emit(self.dialogue)
+	if npc_dialogue_mode == "sequential":
+		if self.npc_dialogue_counter < len(self.npc_dialogue_options) - 1:
+			self.npc_dialogue_counter += 1
+			self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
