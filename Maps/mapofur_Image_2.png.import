@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://t1gphqpbsb30"
+<<<<<<< HEAD:mapofur_Image_2.png.import
+path="res://.godot/imported/mapofur_Image_2.png-6c4e48fec46e495c78d7c2e444721da2.ctex"
+=======
+path="res://.godot/imported/mapofur_Image_2.png-9f4aeba01caee345b0d59dd73a591b21.ctex"
+>>>>>>> 3b45431ccea94276864eb48f065ca752ad46b3c0:Maps/mapofur_Image_2.png.import
+metadata={
+"vram_texture": false
+}
+generator_parameters={}
+
+[deps]
+
+<<<<<<< HEAD:mapofur_Image_2.png.import
+source_file="res://mapofur_Image_2.png"
+dest_files=["res://.godot/imported/mapofur_Image_2.png-6c4e48fec46e495c78d7c2e444721da2.ctex"]
+=======
+source_file="res://Maps/mapofur_Image_2.png"
+dest_files=["res://.godot/imported/mapofur_Image_2.png-9f4aeba01caee345b0d59dd73a591b21.ctex"]
+>>>>>>> 3b45431ccea94276864eb48f065ca752ad46b3c0:Maps/mapofur_Image_2.png.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
