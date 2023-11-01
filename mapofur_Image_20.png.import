@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cec5h3xsgskdb"
-path="res://.godot/imported/mapofur_Image_20.png-3b491b8ae7421c2e9f60b0248f22bb6a.ctex"
+path="res://.godot/imported/mapofur_Image_20.png-c3007726ef2d49aaf8370ae5ee4a14c3.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,8 +11,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res:///mapofur_Image_20.png"
-dest_files=["res://.godot/imported/mapofur_Image_20.png-3b491b8ae7421c2e9f60b0248f22bb6a.ctex"]
+source_file="res://mapofur_Image_20.png"
+dest_files=["res://.godot/imported/mapofur_Image_20.png-c3007726ef2d49aaf8370ae5ee4a14c3.ctex"]
 
 [params]
 

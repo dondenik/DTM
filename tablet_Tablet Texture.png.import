@@ -2,21 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k71sb8dvhmua"
-path="res://.godot/imported/mapofur_Image.png-5b1c4b6cf075786a66f019bf603351b1.ctex"
+uid="uid://b1sc3aje3t20l"
+path.s3tc="res://.godot/imported/tablet_Tablet Texture.png-3d02983d7e58df1b49950f249f21718e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={}
 
 [deps]
 
-source_file="res://mapofur_Image.png"
-dest_files=["res://.godot/imported/mapofur_Image.png-5b1c4b6cf075786a66f019bf603351b1.ctex"]
+source_file="res://tablet_Tablet Texture.png"
+dest_files=["res://.godot/imported/tablet_Tablet Texture.png-3d02983d7e58df1b49950f249f21718e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -32,4 +33,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
