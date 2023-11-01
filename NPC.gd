@@ -68,3 +68,8 @@ func _on_dialogue_request():
 			if self.npc_dialogue_counter < len(self.npc_dialogue_options) - 1:
 				self.npc_dialogue_counter += 1
 				self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
+			else:
+				post_dialogue_func()
+
+func post_dialogue_func():
+	pass
