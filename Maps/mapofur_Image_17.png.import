@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://devwec4jgj8sv"
-<<<<<<< HEAD:mapofur_Image_17.png.import
-path="res://.godot/imported/mapofur_Image_17.png-aa783953480339806117129126cda1b0.ctex"
-=======
+uid="uid://b1k1adwrtbvde"
 path="res://.godot/imported/mapofur_Image_17.png-7cde37fbfad32facc56c642ad86066ca.ctex"
->>>>>>> 3b45431ccea94276864eb48f065ca752ad46b3c0:Maps/mapofur_Image_17.png.import
 metadata={
 "vram_texture": false
 }
-generator_parameters={}
 
 [deps]
 
-<<<<<<< HEAD:mapofur_Image_17.png.import
-source_file="res://mapofur_Image_17.png"
-dest_files=["res://.godot/imported/mapofur_Image_17.png-aa783953480339806117129126cda1b0.ctex"]
-=======
 source_file="res://Maps/mapofur_Image_17.png"
 dest_files=["res://.godot/imported/mapofur_Image_17.png-7cde37fbfad32facc56c642ad86066ca.ctex"]
->>>>>>> 3b45431ccea94276864eb48f065ca752ad46b3c0:Maps/mapofur_Image_17.png.import
 
 [params]
 
@@ -31,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
