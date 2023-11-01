@@ -1,7 +1,7 @@
 extends Area3D
 
 var finished_start_animation = 0
-var homing = true
+var homing = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,4 +23,4 @@ func _process(delta):
 	
 	
 	
-	self.position -= self.transform.basis.z * 0.1 * finished_start_animation
+	self.position -= self.transform.basis.z * 1.0 * finished_start_animation

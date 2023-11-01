@@ -15,7 +15,7 @@ func timer_func(seconds, fn: Callable):
 
 func attack_tablet():
 	create_tablet()
-	timer_func(2, attack_tablet)
+	timer_func(1, attack_tablet)
 
 func create_tablet():
 	var tab = tablet.instantiate()
