@@ -81,3 +81,4 @@ attack={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+viewport/use_occlusion_culling=false

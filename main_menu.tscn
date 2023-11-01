@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b60twc2sk4q6f"]
+[gd_scene load_steps=4 format=3 uid="uid://bcxccvec1i1fx"]
 
 [ext_resource type="Script" path="res://main_menu_buttons.gd" id="1_6di8w"]
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="2_f8rab"]

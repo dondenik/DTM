@@ -4,8 +4,7 @@ var tablet = preload("res://tablet.tscn")
 
 func extension_func():
 	self.AGGRO_DIST = 0
-	timer_func(2, create_tablet)
-	timer_func(4, create_tablet)
+	timer_func(2, attack_tablet)
 
 func timer(seconds):
 	await get_tree().create_timer(seconds).timeout
@@ -13,6 +12,10 @@ func timer(seconds):
 func timer_func(seconds, fn: Callable):
 	await get_tree().create_timer(seconds).timeout
 	fn.call()
+
+func attack_tablet():
+	create_tablet()
+	timer_func(2, attack_tablet)
 
 func create_tablet():
 	var tab = tablet.instantiate()
