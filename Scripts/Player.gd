@@ -47,7 +47,7 @@ var locked_dir = Vector2(0,0)
 var locked_rot = 0
 
 var stamina = 100
-var health = 10
+var health = 100
 
 var dead = false 
 

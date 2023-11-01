@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhcg24ciq0cr1"]
+[gd_scene load_steps=3 format=3 uid="uid://dhcg24ciq0cr1"]
 
 [ext_resource type="PackedScene" uid="uid://da50typp0jffj" path="res://Enemy.tscn" id="1_6v0t3"]
 [ext_resource type="Script" path="res://eanasir.gd" id="2_cbggu"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_nj063"]
-size = Vector3(0.598758, 0.664693, 0.0926709)
 
 [node name="Ea Nasir" instance=ExtResource("1_6v0t3")]
 script = ExtResource("2_cbggu")
@@ -36,9 +33,3 @@ bones/21/rotation = Quaternion(0.0800037, 0.0400657, 0.0455872, 0.994945)
 
 [node name="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D" index="3"]
 transform = Transform3D(-0.520927, -0.184847, -0.833347, 0.141329, 0.94412, -0.297763, 0.84182, -0.272889, -0.465694, -1.1515, -3.7635, -0.894887)
-
-[node name="tablet" type="Area3D" parent="." index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97901, 1.91805)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tablet" index="0"]
-shape = SubResource("BoxShape3D_nj063")
