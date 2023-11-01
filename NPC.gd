@@ -1,5 +1,4 @@
 extends CharacterBody3D
-class_name npc
 
 signal body_in_talking_range
 signal body_left_talking_range
@@ -7,7 +6,7 @@ signal return_dialogue_request(dialogue)
 
 var dialogue = ""
 
-var npc_dialogue_options = ["Gret"]
+@export var npc_dialogue_options = ["Gret"]
 var npc_dialogue_mode = "sequential"
 var npc_dialogue_counter = 0
 

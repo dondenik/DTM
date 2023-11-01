@@ -143,6 +143,8 @@ func _physics_process(delta):
 				if in_dialogue == 0:
 					in_dialogue = 1
 					request_dialogue.emit()
+				else:
+					request_dialogue.emit()
 	
 	
 		

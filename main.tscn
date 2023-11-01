@@ -18,19 +18,19 @@ data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, 
 offsets = PackedFloat32Array(0.394958)
 colors = PackedColorArray(0.491081, 0.748447, 0.872169, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_w15id"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l1p81"]
 gradient = SubResource("Gradient_4dgxa")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bhoaq"]
-panorama = SubResource("GradientTexture1D_w15id")
+panorama = SubResource("GradientTexture1D_l1p81")
 
-[sub_resource type="Sky" id="Sky_x87cl"]
+[sub_resource type="Sky" id="Sky_kw12r"]
 sky_material = SubResource("PanoramaSkyMaterial_bhoaq")
 
 [sub_resource type="Environment" id="Environment_kxqk5"]
 background_mode = 2
 background_energy_multiplier = 1.2
-sky = SubResource("Sky_x87cl")
+sky = SubResource("Sky_kw12r")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.68
