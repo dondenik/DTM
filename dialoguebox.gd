@@ -9,6 +9,7 @@ var letterqueue = []
 
 func display_text(text):
 	$Dialogue.text = ""
+	letterqueue = []
 	self.show()
 	for letter in text:
 		letterqueue.append(letter)
