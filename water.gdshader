@@ -2,6 +2,8 @@ shader_type spatial;
 
 uniform sampler2D baseTex;
 
+uniform sampler2D waterize;
+
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, repeat_disable, filter_nearest; 
 
 uniform float depth_fade_distance : hint_range(0.0, 10.0) = 1.0;
@@ -43,7 +45,7 @@ void fragment()
 {
 	// Depth texture magic
 	float depth = texture(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
-  	vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
+  	vec3 ndc = vec3(SCREEN_UV * 1.0, depth);
 	vec4 world = INV_VIEW_MATRIX * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
 	float depth_texture_y = world.y / world.w;
 	float vertex_y = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).y;
@@ -70,10 +72,14 @@ void fragment()
 	vec2 normal_offset2 = (TIME * wave_dir2) * wave_speed;
 	vec3 normal_blend = mix(texture(normal1, uv_world_pos.xz / wave_scale + normal_offset1), texture(normal2, uv_world_pos.xz / wave_scale + normal_offset2), 0.5).rgb;
 	
+	
+	vec4 deepity = texture(waterize, UV);
+	
+	
 	vec4 base = texture(baseTex, UV);
 	ALBEDO = base.rgb;
 	
-	if (base.b > 0.2 && base.r < 0.3){
+	if (deepity.r > 0.7){
 	ALBEDO = color_out;
 	ALPHA = alpha_blend;
 	ROUGHNESS = roughness;
