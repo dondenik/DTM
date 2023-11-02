@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 signal body_in_talking_range
 signal body_left_talking_range
-signal return_dialogue_request(dialogue)
+signal return_dialogue_request(dialogue, speaker_name)
 
 @export var dialogue_enable = false
 
@@ -65,7 +65,7 @@ func _on_talking_hitbox_body_exited(body):
 
 func _on_dialogue_request():
 	if player_in_range and dialogue_enable:
-		return_dialogue_request.emit(self.dialogue)
+		return_dialogue_request.emit(self.dialogue, self.name)
 		if npc_dialogue_mode == "sequential":
 			if self.npc_dialogue_counter < len(self.npc_dialogue_options) - 1:
 				self.npc_dialogue_counter += 1

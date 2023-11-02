@@ -258,6 +258,6 @@ func _left_dialogue_range():
 	dia_counter = 0
 	$DialogueBox.hide_dialogue()
 
-func _recieve_dialogue(dialogue):
+func _recieve_dialogue(dialogue, speaker_name):
 	dia_counter += 1
-	$DialogueBox.display_text(dialogue, dia_counter)
+	$DialogueBox.display_text(dialogue, dia_counter, speaker_name)

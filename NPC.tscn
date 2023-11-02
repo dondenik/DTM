@@ -1,12 +1,12 @@
 [gd_scene load_steps=56 format=3 uid="uid://b5lhe8c8inlly"]
 
 [ext_resource type="Script" path="res://NPC.gd" id="1_ws8dm"]
-[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_jvmet"]
-[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_f3omn"]
-[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_1wsfp"]
-[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_x661d"]
-[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_dtfsj"]
-[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_nusf1"]
+[ext_resource type="Texture2D" uid="uid://bkwk5yitagpxa" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_jvmet"]
+[ext_resource type="Texture2D" uid="uid://4ojrshteokie" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_f3omn"]
+[ext_resource type="Texture2D" uid="uid://cvsvxeo2d8qtc" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_1wsfp"]
+[ext_resource type="Texture2D" uid="uid://ogg8p6m7y3cy" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_x661d"]
+[ext_resource type="Texture2D" uid="uid://cwhcls4uoubj8" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_dtfsj"]
+[ext_resource type="Texture2D" uid="uid://dqpi4chphygar" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_nusf1"]
 [ext_resource type="PackedScene" uid="uid://bu5oont0l4upi" path="res://dialogue_button_prompt.tscn" id="8_4a18w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajm3x"]

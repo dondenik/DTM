@@ -7,7 +7,8 @@ func set_speaker(speaker):
 func _ready():
 	$Dialogue.set_use_bbcode(true)
 
-func display_text(text, id):
+func display_text(text, id, speaker):
+	set_speaker(speaker)
 	$Dialogue.text = text
 	$Dialogue.visible_characters = 0
 	self.show()
