@@ -73,10 +73,10 @@ void fragment()
 	vec4 base = texture(baseTex, UV);
 	ALBEDO = base.rgb;
 	
-	//if (base.b > 0.45) {
-	//ALBEDO = color_out;
-	//ALPHA = alpha_blend;
-	//ROUGHNESS = roughness;
-	//NORMAL_MAP = normal_blend;
-	//}
+	if (base.b > 0.2 && base.r < 0.3){
+	ALBEDO = color_out;
+	ALPHA = alpha_blend;
+	ROUGHNESS = roughness;
+	NORMAL_MAP = normal_blend;
+	}
 }
