@@ -4,6 +4,8 @@ signal body_in_talking_range
 signal body_left_talking_range
 signal return_dialogue_request(dialogue)
 
+@export var dialogue_enable = false
+
 var dialogue = ""
 
 @export var npc_dialogue_options = ["Gret"]
@@ -62,7 +64,7 @@ func _on_talking_hitbox_body_exited(body):
 
 
 func _on_dialogue_request():
-	if player_in_range:
+	if player_in_range and dialogue_enable:
 		return_dialogue_request.emit(self.dialogue)
 		if npc_dialogue_mode == "sequential":
 			if self.npc_dialogue_counter < len(self.npc_dialogue_options) - 1:
