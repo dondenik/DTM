@@ -5,16 +5,14 @@ func set_speaker(speaker):
 	$SpeakerName.text = speaker
 
 
-var letterqueue = []
-
-func display_text(text):
+func display_text(text, id):
 	$Dialogue.text = ""
-	letterqueue = []
 	self.show()
+	var current_id = id
 	for letter in text:
-		letterqueue.append(letter)
-		$Dialogue.text = $Dialogue.text + letter
-		await get_tree().create_timer(0.02).timeout
+		if get_parent().dia_counter == current_id:
+			$Dialogue.text = $Dialogue.text + letter
+			await get_tree().create_timer(0.02).timeout
 
 func hide_dialogue():
 	self.hide()

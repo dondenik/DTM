@@ -39,6 +39,7 @@ var hitstun = 0
 
 var in_dialogue = 0
 var in_dia_range = 0
+var dia_counter = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -254,7 +255,9 @@ func _in_dialogue_range():
 func _left_dialogue_range():
 	in_dia_range = 0
 	in_dialogue = 0
+	dia_counter = 0
 	$DialogueBox.hide_dialogue()
 
 func _recieve_dialogue(dialogue):
-	$DialogueBox.display_text(dialogue)
+	dia_counter += 1
+	$DialogueBox.display_text(dialogue, dia_counter)
