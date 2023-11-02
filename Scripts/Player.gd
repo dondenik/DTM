@@ -8,10 +8,11 @@ const ROLL_IFRAMES = 1
 # ATTACK CONSTANTS
 const ATTACK_DURATION = 1
 const ATTACK_COOLDOWN_DURATION = 0.23
-const HITSTUN = 1
+const HITSTUN = 1.0
+const HITSTUN_IFRAMES = 0.2
 
 # MOVEMENT CONSTANTS
-const SPEED = 3.5
+const SPEED = 2.0
 const JUMP_VELOCITY = 4
 const TURNING_SPEED = 0.15 #should be between 0-1, higher = fast
 const SPRINT_SPEED = 2.5 #this is added to SPEED when sprinting
@@ -24,7 +25,7 @@ const STAMINA_RECOVERY_CD = 0.3
 # STAMINA COSTS
 const ATTACK_STAMINA = 15
 const ROLL_STAMINA = 20
-const SPRINT_STAMINA = 20
+const SPRINT_STAMINA = 25
 const JUMP_STAMINA = 10
 
 var jump_starting_point = self.position.y
@@ -89,7 +90,7 @@ func die():
 func _on_area_3d_area_entered(area):
 	if iframes <= 0:
 		health -= 10
-		iframes = HITSTUN
+		iframes = HITSTUN_IFRAMES
 		hitstun = HITSTUN
 		$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 

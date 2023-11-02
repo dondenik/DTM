@@ -6,7 +6,7 @@ const TURNING_SPEED = 5.0
 const ATTACK_COOLDOWN = 2
 const ATTACK_TIME = 1.5
 @export var AGGRO_DIST = 3
-const ATK_SPEED = 0.75
+const ATK_SPEED = 0.85
 const HIT_STUN = 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -56,7 +56,7 @@ func _physics_process(delta):
 		var distance_to_player = self.global_position.distance_to(player_position)
 	
 		# input_dir, (0, -1) = towards player
-		var input_dir = Vector2(0, -1) * int(not (distance_to_player < 2)) * int(not is_attacking) * aggro
+		var input_dir = Vector2(0, -1) * int(not (distance_to_player < 1.2)) * int(not is_attacking) * aggro
 	
 		var is_running = int((abs(input_dir.x) or abs(input_dir.y)))
 		
@@ -89,7 +89,7 @@ func _physics_process(delta):
 				$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget")
 				$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 				input_dir = Vector2(0,0)
-			elif distance_to_player < 2:
+			elif distance_to_player < 1.2:
 				if attack_cooldown <= 0 and not is_attacking and aggro == 1:
 					$AnimationPlayer.play("Slash", -1, ATK_SPEED)
 					#$AudioStreamPlayer3D.play()
