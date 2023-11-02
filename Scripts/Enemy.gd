@@ -5,7 +5,7 @@ const JUMP_VELOCITY = 4.5
 const TURNING_SPEED = 5.0
 const ATTACK_COOLDOWN = 2
 const ATTACK_TIME = 1.5
-var AGGRO_DIST = 3
+@export var AGGRO_DIST = 3
 const ATK_SPEED = 0.75
 const HIT_STUN = 1
 
