@@ -75,6 +75,8 @@ func _physics_process(delta):
 		
 		if health <= 0:
 			die()
+			$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
+		
 		
 		else:
 			if aggro == 0:
