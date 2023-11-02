@@ -11,7 +11,7 @@ const ATTACK_COOLDOWN_DURATION = 0.23
 const HITSTUN = 1
 
 # MOVEMENT CONSTANTS
-const SPEED = 5.0
+const SPEED = 3.5
 const JUMP_VELOCITY = 4
 const TURNING_SPEED = 0.15 #should be between 0-1, higher = fast
 const SPRINT_SPEED = 2.5 #this is added to SPEED when sprinting
@@ -24,7 +24,7 @@ const STAMINA_RECOVERY_CD = 0.3
 # STAMINA COSTS
 const ATTACK_STAMINA = 15
 const ROLL_STAMINA = 20
-const SPRINT_STAMINA = 10
+const SPRINT_STAMINA = 20
 const JUMP_STAMINA = 10
 
 var jump_starting_point = self.position.y
