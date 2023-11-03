@@ -15,5 +15,6 @@ tilt_enabled = false
 
 [node name="NPC" parent="PathFollow3D" instance=ExtResource("1_a47a1")]
 script = ExtResource("2_qw0cq")
+force_dialogue = false
 move_along_path = false
 SPEED = 0.005
