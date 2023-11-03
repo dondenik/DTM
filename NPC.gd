@@ -8,16 +8,18 @@ signal return_dialogue_request(dialogue, speaker_name)
 
 var dialogue = ""
 
+@export var force_dialogue = false
+
 @export var npc_dialogue_options = ["Gret"]
 var npc_dialogue_mode = "sequential"
 var npc_dialogue_counter = 0
 var player_in_range = false
 
-@export var force_dialogue = false
+@onready var player = self.owner.get_node("CharacterBody3D")
 
-@onready var player = get_parent().get_node("CharacterBody3D")
+@export var move_along_path: bool = false
 
-@export var SPEED = 5.0
+@export var SPEED = 0.005
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -38,8 +40,10 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
-	$AnimationPlayer.play("Idle")
+	if move_along_path:
+		$AnimationPlayer.play("Run")
+	else:
+		$AnimationPlayer.play("Idle")
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#var input_dir = Vector2(randf_range(-1,1),randf_range(-1,1))
@@ -51,8 +55,13 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
+	
+	if not move_along_path:
+		move_and_slide()
+	else:
+		get_parent().progress_ratio += SPEED
+		if get_parent().progress_ratio >= 1.0:
+			post_destination_func()
 
 
 func _on_talking_hitbox_body_entered(body):
@@ -61,7 +70,13 @@ func _on_talking_hitbox_body_entered(body):
 	if not force_dialogue and dialogue_enable:
 		$Sprite3D.show()
 	if force_dialogue:
-		return_dialogue_request.emit(self.dialogue, self.name)
+		if npc_dialogue_mode == "sequential":
+			if self.npc_dialogue_counter < len(self.npc_dialogue_options) - 1:
+				self.npc_dialogue_counter += 1
+				self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
+			else:
+				post_dialogue_func()
+
 
 
 func _on_talking_hitbox_body_exited(body):
@@ -81,4 +96,7 @@ func _on_dialogue_request():
 				post_dialogue_func()
 
 func post_dialogue_func():
+	pass
+
+func post_destination_func():
 	pass
