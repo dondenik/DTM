@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve3D" id="Curve3D_b71lp"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -28.32, 20.2815, -14.6136, 0, 0, 0, 0, 0, 0, -26.5844, 51.7243, -31.7595),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -31, 14, 2, 0, 0, 0, 0, 0, 0, -26.5844, 51.7243, -31.7595),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -13,7 +13,7 @@ point_count = 2
 curve = SubResource("Curve3D_b71lp")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-progress = 7.81994
+transform = Transform3D(0.991554, 0, -0.129691, 0, 1, 0, 0.129691, 0, 0.991554, -31, 14, 2)
 rotation_mode = 1
 tilt_enabled = false
 
