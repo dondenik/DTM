@@ -67,7 +67,8 @@ func _physics_process(delta):
 func _on_talking_hitbox_body_entered(body):
 	body_in_talking_range.emit()
 	player_in_range = true
-	$Sprite3D.show()
+	if not force_dialogue and dialogue_enable:
+		$Sprite3D.show()
 	if force_dialogue:
 		return_dialogue_request.emit(self.dialogue, self.name)
 
