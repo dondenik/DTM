@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dyss8kyjnhmd7"]
+[gd_scene load_steps=63 format=3 uid="uid://dyss8kyjnhmd7"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p1q17"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
 [ext_resource type="PackedScene" uid="uid://b8qy311fqpb0i" path="res://axe.tscn" id="8_v6fla"]
 [ext_resource type="PackedScene" uid="uid://edyjwsmsxdoo" path="res://dialoguebox.tscn" id="10_1qb16"]
-[ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="11_6dokn"]
 [ext_resource type="PackedScene" uid="uid://b05kiqvk3otu5" path="res://death_message.tscn" id="12_2mv8k"]
 [ext_resource type="AudioStream" uid="uid://dwp2uoii3y1ct" path="res://swing-6045.mp3" id="14_5mplx"]
 
@@ -6896,15 +6895,14 @@ offset_top = 754.0
 offset_right = 511.72
 offset_bottom = 753.64
 
-[node name="Dialogue" parent="DialogueBox" index="0"]
-theme_override_fonts/font = ExtResource("11_6dokn")
-theme_override_font_sizes/font_size = 24
+[node name="Dialogue" parent="DialogueBox" index="2"]
 text = "---"
 
 [node name="TextureRect" parent="." instance=ExtResource("12_2mv8k")]
 visible = false
 
 [node name="UI" parent="." instance=ExtResource("6_4sntj")]
+unique_name_in_owner = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("14_5mplx")

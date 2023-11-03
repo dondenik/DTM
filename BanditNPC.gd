@@ -1,6 +1,8 @@
 extends "res://NPC.gd"
 
 func post_dialogue_func():
+	Global.sub_quest = "Defeat the bandits"
+	$"../CharacterBody3D".ui.quest_update()
 	await timer(0.8)
 	self.hide()
 	var old_pos = self.position

@@ -3,6 +3,8 @@ extends "res://NPC.gd"
 var enemy = load("res://thiefEnemy.tscn")
 
 func post_dialogue_func():
+	Global.sub_quest = "Recover the money from the thief"
+	$"../CharacterBody3D".ui.quest_update()
 	await timer(0.5)
 	self.rotation = Vector3(0,0,0)
 	get_parent().get_parent().rotation = Vector3(0,0,0)
