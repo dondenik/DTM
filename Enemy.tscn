@@ -1,12 +1,12 @@
 [gd_scene load_steps=74 format=3 uid="uid://da50typp0jffj"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_036pf"]
-[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
-[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
-[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
-[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
-[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_77421"]
-[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ud4rl"]
+[ext_resource type="Texture2D" uid="uid://bkwk5yitagpxa" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_oy6st"]
+[ext_resource type="Texture2D" uid="uid://4ojrshteokie" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_8svi6"]
+[ext_resource type="Texture2D" uid="uid://cvsvxeo2d8qtc" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_h2fl8"]
+[ext_resource type="Texture2D" uid="uid://ogg8p6m7y3cy" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_oufkl"]
+[ext_resource type="Texture2D" uid="uid://cwhcls4uoubj8" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_77421"]
+[ext_resource type="Texture2D" uid="uid://dqpi4chphygar" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ud4rl"]
 [ext_resource type="Texture2D" uid="uid://8lg13iqvprmm" path="res://Assets/UI Elements/HealthBar.png" id="8_ffgsm"]
 [ext_resource type="Texture2D" uid="uid://dkb73igmns2we" path="res://Assets/Models/Textures/copper_axe_Bronze_003_COLOR.png" id="8_h7v7x"]
 [ext_resource type="Texture2D" uid="uid://druqq71d40ts3" path="res://Assets/Models/Textures/copper_axe_Bronze_003_SPEC.png" id="9_aygor"]
@@ -6808,29 +6808,29 @@ bones/0/name = "mesoman1_Hips"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0, 1.11759e-08, 1, 0.0895923, 0.995978, -1.11759e-08, -0.995978, 0.0895923, 0, -3.20435e-06, -1.41723, -2.472)
 bones/0/enabled = true
-bones/0/position = Vector3(-0.0107791, -0.268249, -2.10214)
-bones/0/rotation = Quaternion(-0.0454432, 0.679954, 0.225131, 0.696357)
+bones/0/position = Vector3(-0.00914944, -0.374354, -1.88006)
+bones/0/rotation = Quaternion(-0.327479, 0.561037, 0.460094, 0.605235)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "mesoman1_LeftUpLeg"
 bones/1/parent = 0
 bones/1/rest = Transform3D(-0.994304, -0.0563728, 0.0904839, 0.0552887, -0.998366, -0.0144479, 0.0911507, -0.00936282, 0.995793, -0.028897, 0.0169922, 0.239183)
 bones/1/enabled = true
 bones/1/position = Vector3(-0.028897, 0.0169922, 0.239183)
-bones/1/rotation = Quaternion(0.140604, 0.0314734, 0.824781, 0.546786)
+bones/1/rotation = Quaternion(0.365404, -0.155604, 0.793071, 0.46185)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "mesoman1_LeftLeg"
 bones/2/parent = 1
 bones/2/rest = Transform3D(0.998655, -0.0518472, 6.83532e-05, 0.0518471, 0.998648, -0.00384892, 0.000131295, 0.00384729, 0.999993, 1.13642, 4.94323e-06, 0.000157177)
 bones/2/enabled = true
 bones/2/position = Vector3(1.13642, 4.94323e-06, 0.000157177)
-bones/2/rotation = Quaternion(-0.0611149, -0.0114035, 0.538319, 0.840445)
+bones/2/rotation = Quaternion(-0.0561303, -0.0229102, 0.672119, 0.737957)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "mesoman1_LeftFoot"
 bones/3/parent = 2
 bones/3/rest = Transform3D(0.62553, 0.775278, 0.0874992, -0.777901, 0.628356, -0.00629549, -0.0598614, -0.0641277, 0.996145, 0.938242, 3.0268e-08, 4.99422e-06)
 bones/3/enabled = true
 bones/3/position = Vector3(0.938242, 3.0268e-08, 4.99422e-06)
-bones/3/rotation = Quaternion(-0.0399659, 0.086438, -0.472984, 0.875909)
+bones/3/rotation = Quaternion(-0.158548, 0.17354, -0.535011, 0.811486)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "mesoman1_LeftToeBase"
 bones/4/parent = 3
@@ -6844,119 +6844,119 @@ bones/5/parent = 0
 bones/5/rest = Transform3D(0.99429, 0.0563495, -0.0906231, -0.0552633, 0.998367, 0.0144524, 0.0912895, -0.00936169, 0.99578, -0.028897, 0.0169921, -0.239183)
 bones/5/enabled = true
 bones/5/position = Vector3(-0.028897, 0.0169921, -0.239183)
-bones/5/rotation = Quaternion(-0.183928, -0.0876716, -0.310905, 0.928344)
+bones/5/rotation = Quaternion(-0.0263596, -0.0139609, -0.472458, 0.880848)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "mesoman1_RightLeg"
 bones/6/parent = 5
 bones/6/rest = Transform3D(0.998658, -0.0517904, 0.000206415, 0.0517908, 0.998651, -0.00387354, -5.52487e-06, 0.00387903, 0.999992, -1.13642, -9.86527e-06, -2.41213e-07)
 bones/6/enabled = true
 bones/6/position = Vector3(-1.13642, -9.86527e-06, -2.41213e-07)
-bones/6/rotation = Quaternion(-0.0164899, -0.0736906, 0.565843, 0.821048)
+bones/6/rotation = Quaternion(0.0567052, 0.00778019, 0.696711, 0.715064)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/name = "mesoman1_RightFoot"
 bones/7/parent = 6
 bones/7/rest = Transform3D(0.625556, 0.775257, 0.0875029, -0.777881, 0.628381, -0.00626671, -0.0598434, -0.0641466, 0.996145, -0.938245, 4.88479e-07, -1.15135e-06)
 bones/7/enabled = true
 bones/7/position = Vector3(-0.938245, 4.88479e-07, -1.15135e-06)
-bones/7/rotation = Quaternion(-0.162332, 0.171869, -0.659623, 0.713447)
+bones/7/rotation = Quaternion(-0.0329816, 0.0753941, -0.676464, 0.731864)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/name = "mesoman1_RightToeBase"
 bones/8/parent = 7
 bones/8/rest = Transform3D(1, 1.33665e-06, 3.07799e-05, -1.33508e-06, 1, -5.07998e-05, -3.078e-05, 5.07997e-05, 1, -0.353162, -5.68029e-08, 7.12636e-06)
 bones/8/enabled = true
 bones/8/position = Vector3(-0.353162, -5.68029e-08, 7.12636e-06)
-bones/8/rotation = Quaternion(1.65324e-05, 1.24748e-05, -0.00228008, 0.999997)
+bones/8/rotation = Quaternion(2.83558e-05, 1.26598e-05, -7.10888e-07, 1)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "mesoman1_Spine"
 bones/9/parent = 0
 bones/9/rest = Transform3D(0.986337, 0.164742, -5.44061e-09, -0.164742, 0.986337, -6.39215e-09, 4.31321e-09, 7.20111e-09, 1, 0.270488, -5.51343e-07, 1.18232e-08)
 bones/9/enabled = true
 bones/9/position = Vector3(0.270488, -5.51343e-07, 1.18232e-08)
-bones/9/rotation = Quaternion(-0.0373752, 0.0511767, -0.0229531, 0.997726)
+bones/9/rotation = Quaternion(-0.0572309, 0.00531209, -0.000968904, 0.998346)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "mesoman1_Spine1"
 bones/10/parent = 9
 bones/10/rest = Transform3D(1, -1.15484e-07, 5.37162e-10, 1.15484e-07, 1, 3.86086e-15, -5.37162e-10, -3.79883e-15, 1, 0.268167, 1.3411e-07, 1.04054e-08)
 bones/10/enabled = true
 bones/10/position = Vector3(0.268167, 1.3411e-07, 1.04054e-08)
-bones/10/rotation = Quaternion(-0.0377498, 0.0484228, 0.0738821, 0.995375)
+bones/10/rotation = Quaternion(-0.0473607, -0.0221005, 0.0787106, 0.995527)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/name = "mesoman1_Spine2"
 bones/11/parent = 10
 bones/11/rest = Transform3D(0.999849, 0.0173868, -1.21368e-09, -0.0173868, 0.999849, -6.62959e-10, 1.20197e-09, 6.8396e-10, 1, 0.268167, -1.49012e-07, 1.05494e-08)
 bones/11/enabled = true
 bones/11/position = Vector3(0.268167, -1.49012e-07, 1.05494e-08)
-bones/11/rotation = Quaternion(-0.0390136, 0.0479934, 0.0648105, 0.995979)
+bones/11/rotation = Quaternion(-0.0481701, -0.02251, 0.0694036, 0.996171)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/name = "mesoman1_LeftShoulder"
 bones/12/parent = 11
 bones/12/rest = Transform3D(1.3113e-06, 0.995663, -0.0930362, -1.51098e-05, 0.0930362, 0.995663, 1, 2.98023e-08, 1.51396e-05, 0.460701, -0.0807152, 0.189659)
 bones/12/enabled = true
 bones/12/position = Vector3(0.460701, -0.0807152, 0.189659)
-bones/12/rotation = Quaternion(-0.558306, -0.521564, -0.366403, 0.53105)
+bones/12/rotation = Quaternion(-0.514207, -0.540222, -0.419022, 0.517853)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "mesoman1_LeftArm"
 bones/13/parent = 12
 bones/13/rest = Transform3D(0.624546, -0.0875437, -0.776066, -0.780679, -0.0979227, -0.617213, -0.0219614, 0.991336, -0.129501, 0.284488, -1.82774e-07, 4.24882e-06)
 bones/13/enabled = true
 bones/13/position = Vector3(0.284488, -1.82774e-07, 4.24882e-06)
-bones/13/rotation = Quaternion(0.858386, -0.331601, -0.288315, 0.264742)
+bones/13/rotation = Quaternion(0.737496, -0.0992476, -0.225884, 0.62867)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "mesoman1_LeftForeArm"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.875201, -0.483759, 0.000153683, 0.483759, 0.875201, 6.42826e-05, -0.000165601, 1.80853e-05, 1, 0.608512, 1.16229e-06, -3.53009e-05)
 bones/14/enabled = true
 bones/14/position = Vector3(0.608512, 1.16229e-06, -3.53009e-05)
-bones/14/rotation = Quaternion(-0.000285519, 0.0178426, 0.304447, 0.952362)
+bones/14/rotation = Quaternion(-0.000851498, 0.0358605, 0.433129, 0.900618)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/name = "mesoman1_LeftHand"
 bones/15/parent = 14
 bones/15/rest = Transform3D(1, 1.28895e-06, 4.13321e-06, -1.28895e-06, 1, -1.5907e-06, -4.13321e-06, 1.5907e-06, 1, 0.781868, -2.71201e-06, 0.000102818)
 bones/15/enabled = true
 bones/15/position = Vector3(0.781868, -2.71201e-06, 0.000102818)
-bones/15/rotation = Quaternion(-0.022493, 0.34354, -0.177167, 0.922001)
+bones/15/rotation = Quaternion(-0.00653826, 0.467238, -0.0977939, 0.878682)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/name = "mesoman1_RightShoulder"
 bones/16/parent = 11
 bones/16/rest = Transform3D(1.2517e-06, -0.995663, 0.0930368, -1.4931e-05, -0.0930368, -0.995663, 1, -1.49012e-07, -1.50204e-05, 0.460701, -0.0807152, -0.189659)
 bones/16/enabled = true
 bones/16/position = Vector3(0.460701, -0.0807152, -0.189659)
-bones/16/rotation = Quaternion(0.467009, -0.533354, 0.581318, 0.399382)
+bones/16/rotation = Quaternion(0.443878, -0.520591, 0.594805, 0.422094)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/name = "mesoman1_RightArm"
 bones/17/parent = 16
 bones/17/rest = Transform3D(0.621609, -0.0495493, -0.781759, -0.783018, -0.0673821, -0.618339, -0.0220384, 0.996496, -0.0806834, -0.284488, 5.17002e-07, 4.34057e-06)
 bones/17/enabled = true
 bones/17/position = Vector3(-0.284488, 5.17002e-07, 4.34057e-06)
-bones/17/rotation = Quaternion(0.264336, -0.122445, -0.338352, 0.894791)
+bones/17/rotation = Quaternion(0.819486, -0.195809, -0.385589, 0.376062)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/name = "mesoman1_RightForeArm"
 bones/18/parent = 17
 bones/18/rest = Transform3D(0.86598, -0.500079, 0.000102325, 0.500079, 0.86598, 6.7535e-05, -0.000122384, -7.31352e-06, 1, -0.606674, 1.78814e-07, 1.10865e-05)
 bones/18/enabled = true
 bones/18/position = Vector3(-0.606674, 1.78814e-07, 1.10865e-05)
-bones/18/rotation = Quaternion(-0.00571508, 0.049444, 0.694252, 0.718009)
+bones/18/rotation = Quaternion(-0.00549526, 0.0479978, 0.678949, 0.732594)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/name = "mesoman1_RightHand"
 bones/19/parent = 18
 bones/19/rest = Transform3D(1, 5.43892e-07, -2.04891e-07, -5.43892e-07, 1, -1.41561e-06, 2.04891e-07, 1.41561e-06, 1, -0.76638, 1.93715e-06, -0.000100002)
 bones/19/enabled = true
 bones/19/position = Vector3(-0.76638, 1.93715e-06, -0.000100002)
-bones/19/rotation = Quaternion(-0.106974, 0.320669, 0.0014936, 0.94113)
+bones/19/rotation = Quaternion(0.302824, 0.256454, 0.139591, 0.907217)
 bones/19/scale = Vector3(1, 1, 1)
 bones/20/name = "mesoman1_Neck"
 bones/20/parent = 11
 bones/20/rest = Transform3D(0.957157, -0.28957, 6.85311e-09, 0.28957, 0.957157, 1.36089e-08, -1.05002e-08, -1.10414e-08, 1, 0.713022, 1.07288e-06, 2.71874e-08)
 bones/20/enabled = true
 bones/20/position = Vector3(0.713022, 1.07288e-06, 2.71874e-08)
-bones/20/rotation = Quaternion(0.041466, 0.0109751, 0.194281, 0.980008)
+bones/20/rotation = Quaternion(0.0925221, -0.0181485, 0.188897, 0.97746)
 bones/20/scale = Vector3(1, 1, 1)
 bones/21/name = "mesoman1_Head"
 bones/21/parent = 20
 bones/21/rest = Transform3D(1, -1.04308e-07, 4.44089e-16, 1.04308e-07, 1, -5.036e-15, -4.44089e-16, 5.036e-15, 1, 0.275895, 1.60933e-06, 1.29661e-08)
 bones/21/enabled = true
 bones/21/position = Vector3(0.275895, 1.60933e-06, 1.29661e-08)
-bones/21/rotation = Quaternion(0.227671, -0.215211, -0.125966, 0.941267)
+bones/21/rotation = Quaternion(0.433517, -0.181317, -0.196302, 0.860612)
 bones/21/scale = Vector3(1, 1, 1)
 
 [node name="man" type="MeshInstance3D" parent="mesoman1/mesoman1_Reference/Skeleton3D"]
@@ -6972,12 +6972,12 @@ mesh = SubResource("ArrayMesh_ncab2")
 skin = SubResource("Skin_4kvi6")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D"]
-transform = Transform3D(0.713826, -0.51844, 0.470821, 0.101347, -0.588742, -0.801943, 0.692951, 0.620164, -0.367717, -1.61911, -0.424807, -3.20575)
+transform = Transform3D(0.873705, -0.0109846, -0.486332, 0.2045, -0.89882, 0.38769, -0.441383, -0.438181, -0.783057, -0.218882, -1.33979, -2.7566)
 bone_name = "mesoman1_RightHand"
 bone_idx = 19
 
 [node name="copper_axe" type="Node3D" parent="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D"]
-transform = Transform3D(-0.830679, -0.275313, -0.483916, 0.130326, -0.941183, 0.311751, -0.541283, 0.195898, 0.817702, -0.694033, -1.36659, 0.0701911)
+transform = Transform3D(-1.07988, -0.357907, -0.62909, 0.169424, -1.22354, 0.405276, -0.703668, 0.254667, 1.06301, -0.960652, -1.79851, 0.0475957)
 
 [node name="group1" type="Node3D" parent="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe"]
 transform = Transform3D(0.01, 0, 0, 0, -0.01, 1.50996e-09, 0, -1.50996e-09, -0.01, 0, 0, 0)
@@ -7001,6 +7001,7 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10226, -0.646208, 0)
 shape = SubResource("CapsuleShape3D_vp6wn")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../mesoman1")
