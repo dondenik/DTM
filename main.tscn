@@ -79,7 +79,6 @@ shape = SubResource("ConcavePolygonShape3D_1ekjv")
 environment = SubResource("Environment_kxqk5")
 
 [node name="NPC" parent="." instance=ExtResource("3_avu4w")]
-dialogue_enable = true
 
 [node name="CharacterBody3D2" parent="." instance=ExtResource("3_omq31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.35838)

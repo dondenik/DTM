@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhihegbofscmo"]
+
+[ext_resource type="PackedScene" uid="uid://b5lhe8c8inlly" path="res://NPC.tscn" id="1_a47a1"]
+[ext_resource type="Script" path="res://walkingNPC.gd" id="2_qw0cq"]
+
+[sub_resource type="Curve3D" id="Curve3D_b71lp"]
+
+[node name="Path3D" type="Path3D"]
+curve = SubResource("Curve3D_b71lp")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+progress = 7.81994
+rotation_mode = 1
+tilt_enabled = false
+
+[node name="NPC" parent="PathFollow3D" instance=ExtResource("1_a47a1")]
+script = ExtResource("2_qw0cq")
+move_along_path = false
+SPEED = 0.005

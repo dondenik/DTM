@@ -13,9 +13,11 @@ var npc_dialogue_mode = "sequential"
 var npc_dialogue_counter = 0
 var player_in_range = false
 
-@onready var player = get_parent().get_node("CharacterBody3D")
+@onready var player = get_parent().get_parent().get_parent().get_node("CharacterBody3D")
 
-@export var SPEED = 5.0
+@export var move_along_path: bool = false
+
+@export var SPEED = 0.005
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -36,8 +38,10 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
-	$AnimationPlayer.play("Idle")
+	if move_along_path:
+		$AnimationPlayer.play("Run")
+	else:
+		$AnimationPlayer.play("Idle")
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#var input_dir = Vector2(randf_range(-1,1),randf_range(-1,1))
@@ -49,8 +53,13 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
+	
+	if not move_along_path:
+		move_and_slide()
+	else:
+		get_parent().progress_ratio += SPEED
+		if get_parent().progress_ratio >= 1.0:
+			post_destination_func()
 
 
 func _on_talking_hitbox_body_entered(body):
@@ -77,4 +86,7 @@ func _on_dialogue_request():
 				post_dialogue_func()
 
 func post_dialogue_func():
+	pass
+
+func post_destination_func():
 	pass
