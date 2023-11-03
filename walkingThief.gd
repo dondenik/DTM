@@ -13,6 +13,7 @@ func post_dialogue_func():
 	self.get_node("../../../Raft Guy").has_money = false
 
 func post_destination_func():
+	self.move_along_path = false
 	var thief = enemy.instantiate()
 	self.hide()
 	thief.position = self.global_position

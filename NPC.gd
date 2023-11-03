@@ -62,8 +62,6 @@ func _physics_process(delta):
 	else:
 		get_parent().progress += SPEED * delta
 		if get_parent().progress_ratio >= 0.9:
-			self.move_along_path = false
-			print("hfuidbgkjsfjksfjksnfj")
 			post_destination_func()
 
 
