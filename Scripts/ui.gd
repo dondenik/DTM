@@ -3,7 +3,7 @@ extends Control
 
 func _ready():
 	$VBoxContainer/RichTextLabel.add_theme_font_size_override("normal_font_size", int(round(23*Global.font_scale)))
-	$VBoxContainer/RichTextLabel.add_theme_font_size_override("normal_font_size", int(round(23*Global.font_scale)))
+	$VBoxContainer/RichTextLabel2.add_theme_font_size_override("normal_font_size", int(round(23*Global.font_scale)))
 	quest_update()
 
 func bar_update(health, stamina):

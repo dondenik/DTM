@@ -6887,7 +6887,6 @@ current = false
 
 [node name="FirstPersonCamera" parent="CameraRoot" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.367473, 0)
-current = true
 
 [node name="DialogueBox" parent="." instance=ExtResource("10_1qb16")]
 visible = false
