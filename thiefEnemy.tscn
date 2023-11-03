@@ -7,4 +7,4 @@
 script = ExtResource("2_t07fk")
 
 [node name="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D" index="3"]
-transform = Transform3D(0.713826, -0.51844, 0.470821, 0.101347, -0.588742, -0.801943, 0.692951, 0.620164, -0.367717, -1.61911, -0.424807, -3.20575)
+transform = Transform3D(0.873705, -0.0109845, -0.486331, 0.2045, -0.89882, 0.38769, -0.441383, -0.438181, -0.783057, -0.218882, -1.33979, -2.7566)

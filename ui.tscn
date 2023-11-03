@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwlgx27edur1y"]
+[gd_scene load_steps=13 format=3 uid="uid://bwlgx27edur1y"]
 
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_3vvkm"]
+[ext_resource type="Shader" path="res://screen.gdshader" id="1_7rp3y"]
 [ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="1_lpwdt"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_xvv5u"]
 [ext_resource type="Shader" path="res://compass.gdshader" id="4_h6pd4"]
@@ -25,6 +26,12 @@ width = 449
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lvxfh"]
 shader = ExtResource("4_h6pd4")
 shader_parameter/direction = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0imxr"]
+shader = ExtResource("1_7rp3y")
+shader_parameter/circle_size = 1.05
+shader_parameter/screen_width = 1.0
+shader_parameter/screen_height = 0.6
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -113,3 +120,12 @@ text = "Sub Quest Text"
 fit_content = true
 scroll_active = false
 text_direction = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0imxr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
