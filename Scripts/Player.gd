@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@onready var ui = %UI
+
 # ROLL CONSTANTS
 const ROLL_DURATION = 0.9
 const ROLL_COOLDOWN_DURATION = 0.23 # time between rolling

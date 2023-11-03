@@ -6902,6 +6902,7 @@ text = "---"
 visible = false
 
 [node name="UI" parent="." instance=ExtResource("6_4sntj")]
+unique_name_in_owner = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("14_5mplx")
