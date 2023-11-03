@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var SPEED = 3.0
+@export var SPEED = 4
 const JUMP_VELOCITY = 4.5
 const TURNING_SPEED = 5.0
 @export var ATTACK_COOLDOWN = 2
