@@ -6,6 +6,7 @@ func set_speaker(speaker):
 
 func _ready():
 	$Dialogue.set_use_bbcode(true)
+	$Dialogue.add_theme_font_size_override("normal_font_size", int(round(23*Global.font_scale)))
 
 func display_text(text, id, speaker):
 	set_speaker(speaker)

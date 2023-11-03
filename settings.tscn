@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://1fh44b36brcq"]
+[gd_scene load_steps=4 format=3 uid="uid://1fh44b36brcq"]
 
 [ext_resource type="Script" path="res://settingsmenu.gd" id="1_ad82o"]
+[ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="2_6ggvb"]
 [ext_resource type="Script" path="res://controlsbutton.gd" id="2_j17nu"]
 
 [node name="Control" type="Control"]
@@ -25,6 +26,8 @@ size_flags_vertical = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+theme_override_font_sizes/normal_font_size = 16
 text = "Move Forward"
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
@@ -40,6 +43,7 @@ size_flags_vertical = 3
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 text = "Move Back"
 
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2"]
@@ -122,3 +126,26 @@ layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 658.0
+offset_top = 32.0
+offset_right = 1168.0
+offset_bottom = 66.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Font Size"
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 200.0
+value = 100.0
+rounded = true
+
+[connection signal="value_changed" from="HBoxContainer/HSlider" to="VBoxContainer" method="_on_h_slider_value_changed"]
