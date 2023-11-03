@@ -94,6 +94,7 @@ func _on_dialogue_request():
 				self.npc_dialogue_counter += 1
 				self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
 			else:
+				self.dialogue_enable = false
 				post_dialogue_func()
 
 func post_dialogue_func():
