@@ -19,7 +19,7 @@ var player_in_range = false
 
 @export var move_along_path: bool = false
 
-@export var SPEED = 0.005
+@export var SPEED = 1.0
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -59,7 +59,7 @@ func _physics_process(delta):
 	if not move_along_path:
 		move_and_slide()
 	else:
-		get_parent().progress_ratio += SPEED
+		get_parent().progress += SPEED * delta
 		if get_parent().progress_ratio >= 1.0:
 			post_destination_func()
 
