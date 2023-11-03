@@ -1,4 +1,4 @@
 extends "res://NPC.gd"
 
 func post_dialogue_func():
-	print("Theihevd")
+	self.move_along_path = true
