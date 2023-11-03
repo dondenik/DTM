@@ -6,146 +6,169 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.657
+anchor_bottom = 0.56
+offset_right = -0.440063
+offset_bottom = 0.200012
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
-offset_right = 483.0
-offset_bottom = 1080.0
-theme_override_constants/separation = 50
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 1
+offset_right = 924.0
+offset_bottom = 605.0
 script = ExtResource("1_ad82o")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="GridContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+text = "Font Size"
+text_direction = 2
+
+[node name="HSlider" type="HSlider" parent="GridContainer2/HBoxContainer7"]
+custom_minimum_size = Vector2(620, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 5.0
+max_value = 200.0
+value = 100.0
+rounded = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 theme_override_font_sizes/normal_font_size = 16
 text = "Move Forward"
+text_direction = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="GridContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="GridContainer2"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 text = "Move Back"
+text_direction = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2"]
+[node name="Button" type="Button" parent="GridContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer3"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 text = "Move Left"
+text_direction = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer3"]
+[node name="Button" type="Button" parent="GridContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer4"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 text = "Move Right"
+text_direction = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer4"]
+[node name="Button" type="Button" parent="GridContainer2/HBoxContainer4"]
+custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer5"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 text = "Sprint"
+text_direction = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer5"]
+[node name="Button" type="Button" parent="GridContainer2/HBoxContainer5"]
+custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer6"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="GridContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 text = "Jump"
+text_direction = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer6"]
+[node name="Button" type="Button" parent="GridContainer2/HBoxContainer6"]
+custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer8" type="HBoxContainer" parent="GridContainer2"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/HBoxContainer8"]
+[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer8"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 text = "Roll"
+text_direction = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer8"]
+[node name="Button" type="Button" parent="GridContainer2/HBoxContainer8"]
+custom_minimum_size = Vector2(620, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 658.0
-offset_top = 32.0
-offset_right = 1168.0
-offset_bottom = 66.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Font Size"
-
-[node name="HSlider" type="HSlider" parent="HBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = 1.0
-max_value = 200.0
-value = 100.0
-rounded = true
-
-[connection signal="value_changed" from="HBoxContainer/HSlider" to="VBoxContainer" method="_on_h_slider_value_changed"]
