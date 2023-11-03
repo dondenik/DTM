@@ -41,7 +41,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	if move_along_path:
-		$AnimationPlayer.play("Run")
+		$AnimationPlayer.play("Walk")
 	else:
 		$AnimationPlayer.play("Idle")
 	# Get the input direction and handle the movement/deceleration.
