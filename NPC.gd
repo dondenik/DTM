@@ -9,6 +9,7 @@ signal return_dialogue_request(dialogue, speaker_name)
 var dialogue = ""
 
 @export var force_dialogue = false
+@export var no_repeating_enable = false
 
 @export var npc_dialogue_options = ["Gret"]
 var npc_dialogue_mode = "sequential"
@@ -96,7 +97,8 @@ func _on_dialogue_request():
 				self.npc_dialogue_counter += 1
 				self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
 			else:
-				self.dialogue_enable = false
+				if no_repeating_enable:
+					self.dialogue_enable = false
 				post_dialogue_func()
 
 func post_dialogue_func():

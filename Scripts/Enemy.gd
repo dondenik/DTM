@@ -34,6 +34,7 @@ func die():
 	dead = true
 	$CollisionShape3D.disabled = true
 	$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
+	post_death_func()
 
 
 
@@ -121,4 +122,7 @@ func _on_area_3d_area_entered(area):
 		$Sprite3D/SubViewport/Health.value = 100 - health
 
 func extension_func():
+	pass
+
+func post_death_func():
 	pass

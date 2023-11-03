@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6nl4mauydqa1"]
+
+[ext_resource type="PackedScene" uid="uid://da50typp0jffj" path="res://enemy.tscn" id="1_o542q"]
+[ext_resource type="Script" path="res://thiefEnemy.gd" id="2_t07fk"]
+
+[node name="CharacterBody3D" instance=ExtResource("1_o542q")]
+script = ExtResource("2_t07fk")
+
+[node name="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D" index="3"]
+transform = Transform3D(0.713826, -0.51844, 0.470821, 0.101347, -0.588742, -0.801943, 0.692951, 0.620164, -0.367717, -1.61911, -0.424807, -3.20575)
