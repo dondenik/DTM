@@ -16,6 +16,7 @@ func post_destination_func():
 	var thief = enemy.instantiate()
 	self.hide()
 	thief.position = self.position
+	self.get_node("../../Node3D2").add_child(thief)
 
 func timer(seconds):
 	await get_tree().create_timer(seconds).timeout
