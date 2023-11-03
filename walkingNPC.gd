@@ -70,7 +70,12 @@ func _on_talking_hitbox_body_entered(body):
 	if not force_dialogue and dialogue_enable:
 		$Sprite3D.show()
 	if force_dialogue:
-		return_dialogue_request.emit(self.dialogue, self.name)
+		if npc_dialogue_mode == "sequential":
+			if self.npc_dialogue_counter < len(self.npc_dialogue_options) - 1:
+				self.npc_dialogue_counter += 1
+				self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
+			else:
+				post_dialogue_func()
 
 
 
