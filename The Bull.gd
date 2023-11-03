@@ -9,6 +9,7 @@ func post_dialogue_func():
 	get_parent().get_node("bull").position = old_pos
 	get_parent().get_node("bull").show()
 	get_parent().get_node("bull").AGGRO_DIST = 6
+	get_parent().get_node("bull").scale = Vector3(2,2,2)
 	self.queue_free()
 
 func timer(seconds):

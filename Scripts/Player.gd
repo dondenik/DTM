@@ -12,10 +12,10 @@ const HITSTUN = 1.0
 const HITSTUN_IFRAMES = 0.2
 
 # MOVEMENT CONSTANTS
-const SPEED = 2.0
+const SPEED = 3.0
 const JUMP_VELOCITY = 4
 const TURNING_SPEED = 0.15 #should be between 0-1, higher = fast
-const SPRINT_SPEED = 2.5 #this is added to SPEED when sprinting
+const SPRINT_SPEED = 1.5 #this is added to SPEED when sprinting
 const FALL_HEIGHT_OFFSET = 0 #how far the player can fall past the point they intially jumped from before falling
 
 # STAMINA RECOVERY 
