@@ -92,7 +92,7 @@ func _on_area_3d_area_entered(area):
 		health -= 10
 		iframes = HITSTUN_IFRAMES
 		hitstun = HITSTUN
-		$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
+		set_deferred("$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled", true)
 
 
 func _physics_process(delta):
@@ -233,8 +233,8 @@ func _physics_process(delta):
 	
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y).rotated(Vector3(0, 1, 0), ($CameraRoot.rotation.y * int(not is_rolling)) * int(not is_attacking) + locked_rot * is_rolling)).normalized()
 		if direction:
-			velocity.x = direction.x * (SPEED + (is_sprinting * SPRINT_SPEED))
-			velocity.z = direction.z * (SPEED + (is_sprinting * SPRINT_SPEED))
+			velocity.x = direction.x * (SPEED + (is_sprinting * SPRINT_SPEED - int(not stamina > 1)))
+			velocity.z = direction.z * (SPEED + (is_sprinting * SPRINT_SPEED - int(not stamina > 1)))
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)

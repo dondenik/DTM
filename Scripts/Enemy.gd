@@ -117,7 +117,7 @@ func _on_area_3d_area_entered(area):
 		health -= 10
 		iframes = HIT_STUN
 		hitstun = HIT_STUN
-		$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
+		set_deferred("$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled", true)
 		$Sprite3D/SubViewport/Health.value = 100 - health
 
 func extension_func():

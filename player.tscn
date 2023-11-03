@@ -1,16 +1,17 @@
-[gd_scene load_steps=63 format=3 uid="uid://dyss8kyjnhmd7"]
+[gd_scene load_steps=64 format=3 uid="uid://dyss8kyjnhmd7"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p1q17"]
 [ext_resource type="PackedScene" uid="uid://dc85aig6hvvoq" path="res://PlayerCamera.tscn" id="2_3r3rg"]
-[ext_resource type="Texture2D" uid="uid://bkwk5yitagpxa" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_b3gso"]
-[ext_resource type="Texture2D" uid="uid://4ojrshteokie" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_iawkg"]
-[ext_resource type="Texture2D" uid="uid://cvsvxeo2d8qtc" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_uffni"]
-[ext_resource type="Texture2D" uid="uid://ogg8p6m7y3cy" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_urdjw"]
-[ext_resource type="Texture2D" uid="uid://cwhcls4uoubj8" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_4hmx7"]
+[ext_resource type="Texture2D" uid="uid://c2qj8f0erv7dh" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_COLOR.png" id="2_b3gso"]
+[ext_resource type="Texture2D" uid="uid://j10mpy7guohr" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_SPEC.png" id="3_iawkg"]
+[ext_resource type="Texture2D" uid="uid://p1rxypmxxwqi" path="res://Assets/Models/Textures/mesoman1_Skin_Human_002_NRM.png" id="4_uffni"]
+[ext_resource type="Texture2D" uid="uid://dch6k44rph7kk" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_BaseColor.png" id="5_urdjw"]
+[ext_resource type="Texture2D" uid="uid://b5ae5cnhqyw0j" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Roughness.png" id="6_4hmx7"]
 [ext_resource type="PackedScene" uid="uid://bwlgx27edur1y" path="res://ui.tscn" id="6_4sntj"]
-[ext_resource type="Texture2D" uid="uid://dqpi4chphygar" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
-[ext_resource type="PackedScene" path="res://axe.tscn" id="8_v6fla"]
+[ext_resource type="Texture2D" uid="uid://ytremuu5v2tb" path="res://Assets/Models/Textures/mesoman1_Substance_Graph_Height.png" id="7_ickjn"]
+[ext_resource type="PackedScene" uid="uid://b8qy311fqpb0i" path="res://axe.tscn" id="8_v6fla"]
 [ext_resource type="PackedScene" uid="uid://edyjwsmsxdoo" path="res://dialoguebox.tscn" id="10_1qb16"]
+[ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="11_6dokn"]
 [ext_resource type="PackedScene" uid="uid://b05kiqvk3otu5" path="res://death_message.tscn" id="12_2mv8k"]
 [ext_resource type="AudioStream" uid="uid://dwp2uoii3y1ct" path="res://swing-6045.mp3" id="14_5mplx"]
 
@@ -6668,7 +6669,7 @@ height = 1.9
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h3mih"]
 height = 1.9
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D2" type="CharacterBody3D"]
 collision_layer = 9
 script = ExtResource("1_p1q17")
 
@@ -6887,7 +6888,6 @@ current = false
 
 [node name="FirstPersonCamera" parent="CameraRoot" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.367473, 0)
-current = true
 
 [node name="DialogueBox" parent="." instance=ExtResource("10_1qb16")]
 visible = false
@@ -6896,7 +6896,9 @@ offset_top = 754.0
 offset_right = 511.72
 offset_bottom = 753.64
 
-[node name="Dialogue" parent="DialogueBox" index="2"]
+[node name="Dialogue" parent="DialogueBox" index="0"]
+theme_override_fonts/font = ExtResource("11_6dokn")
+theme_override_font_sizes/font_size = 24
 text = "---"
 
 [node name="TextureRect" parent="." instance=ExtResource("12_2mv8k")]
