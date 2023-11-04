@@ -172,3 +172,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
+
+[connection signal="value_changed" from="GridContainer2/HBoxContainer7/HSlider" to="GridContainer2" method="_on_h_slider_value_changed"]

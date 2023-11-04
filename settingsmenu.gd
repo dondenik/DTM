@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends GridContainer
 
 func _ready():
 	for container in get_children():
