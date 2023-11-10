@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxuislbnjonsu"]
+[gd_scene load_steps=13 format=3 uid="uid://bxuislbnjonsu"]
 
 [ext_resource type="PackedScene" uid="uid://dyss8kyjnhmd7" path="res://player.tscn" id="1_jj07p"]
 [ext_resource type="PackedScene" uid="uid://b5lhe8c8inlly" path="res://NPC.tscn" id="3_avu4w"]
 [ext_resource type="PackedScene" uid="uid://da50typp0jffj" path="res://Enemy.tscn" id="3_omq31"]
-[ext_resource type="PackedScene" uid="uid://dhcg24ciq0cr1" path="res://eanasir.tscn" id="4_whi8e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_701ky"]
 
@@ -37,7 +36,7 @@ ambient_light_sky_contribution = 0.68
 ambient_light_energy = 1.6
 volumetric_fog_density = 1.0
 
-[node name="Node3D3" type="Node3D"]
+[node name="Node3D4" type="Node3D"]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_jj07p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98928, 1.81927, 0)
@@ -86,6 +85,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.35838)
 
 [node name="CharacterBody3D3" parent="." instance=ExtResource("3_omq31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.60413)
-
-[node name="Ea Nasir" parent="." instance=ExtResource("4_whi8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3094, 2.45345)
