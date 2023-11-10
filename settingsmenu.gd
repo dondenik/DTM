@@ -14,4 +14,10 @@ func _on_h_slider_value_changed(value):
 	Global.font_scale = value/100
 	for container in get_children():
 		container.get_node("RichTextLabel").add_theme_font_size_override("normal_font_size", int(round(24 * (Global.font_scale))))
+	get_parent().get_node("HBoxContainer9/RichTextLabel").add_theme_font_size_override("normal_font_size", int(round(24 * (Global.font_scale))))
+	get_parent().get_node("HBoxContainer10/RichTextLabel").add_theme_font_size_override("normal_font_size", int(round(24 * (Global.font_scale))))
 
+func _on_h_slider_2_value_changed(value):
+	Global.colour_mode = value
+	get_parent().get_node("HBoxContainer10/TextureRect").material = load("res://colourblind.tres")
+	get_parent().get_node("HBoxContainer10/TextureRect").material.set_shader_parameter("mode", value)

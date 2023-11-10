@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://1fh44b36brcq"]
+[gd_scene load_steps=5 format=3 uid="uid://1fh44b36brcq"]
 
 [ext_resource type="Script" path="res://settingsmenu.gd" id="1_ad82o"]
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="2_6ggvb"]
 [ext_resource type="Script" path="res://controlsbutton.gd" id="2_j17nu"]
+[ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="4_y0hg7"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,24 +14,22 @@ offset_bottom = 0.200012
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer2" type="GridContainer" parent="."]
-layout_mode = 1
-offset_right = 924.0
-offset_bottom = 605.0
-script = ExtResource("1_ad82o")
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="GridContainer2"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="."]
 layout_mode = 2
+offset_left = 976.0
+offset_top = 8.0
+offset_right = 1900.0
+offset_bottom = 81.0
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GridContainer2/HBoxContainer7"]
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer7"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("2_6ggvb")
 text = "Font Size"
 text_direction = 2
 
-[node name="HSlider" type="HSlider" parent="GridContainer2/HBoxContainer7"]
+[node name="HSlider" type="HSlider" parent="HBoxContainer7"]
 custom_minimum_size = Vector2(620, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -38,6 +37,12 @@ min_value = 5.0
 max_value = 200.0
 value = 100.0
 rounded = true
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 1
+offset_right = 924.0
+offset_bottom = 605.0
+script = ExtResource("1_ad82o")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GridContainer2"]
 layout_mode = 2
@@ -173,4 +178,87 @@ size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
 
-[connection signal="value_changed" from="GridContainer2/HBoxContainer7/HSlider" to="GridContainer2" method="_on_h_slider_value_changed"]
+[node name="HBoxContainer9" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 970.0
+offset_top = 88.0
+offset_right = 1894.0
+offset_bottom = 213.0
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+text = "Colour Blind Mode"
+text_direction = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer9"]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer9/VBoxContainer"]
+custom_minimum_size = Vector2(620, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Off, Protanopia, Deuteranopia, Tritanopia"
+min_value = -1.0
+max_value = 2.0
+value = -1.0
+rounded = true
+tick_count = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer9/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer9/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+text = "Off"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="HBoxContainer9/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+text = "Protanopia"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="HBoxContainer9/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+text = "Deuteranopia"
+text_direction = 2
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="HBoxContainer9/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+text = "Tritanopia"
+text_direction = 2
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 970.0
+offset_top = 190.0
+offset_right = 1894.0
+offset_bottom = 285.0
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+text = "Example Bars"
+text_direction = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer10"]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_y0hg7")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="value_changed" from="HBoxContainer7/HSlider" to="GridContainer2" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="HBoxContainer9/VBoxContainer/HSlider" to="GridContainer2" method="_on_h_slider_2_value_changed"]
