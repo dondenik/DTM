@@ -9,9 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dckl0dh7r6hho" path="res://Mesocompass.png" id="5_2y8yg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dl630"]
+render_priority = 0
 shader = ExtResource("3_lv2el")
-shader_parameter/mode = 0
-shader_parameter/intensity = 1.0
 
 [sub_resource type="Gradient" id="Gradient_s40l0"]
 interpolation_mode = 1
