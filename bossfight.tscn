@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://4kt7kq1yipoe"]
+[gd_scene load_steps=53 format=3 uid="uid://3fswkfxmqgor"]
 
 [ext_resource type="PackedScene" uid="uid://42to12lfciv1" path="res://Maps/bossroom.glb" id="1_wthbr"]
 [ext_resource type="Texture2D" uid="uid://b7hbcr8l6jxu0" path="res://Maps/mapofur_Mesopotamian Door.png" id="2_rppog"]

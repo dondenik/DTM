@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dv3di5csex8tn"]
+
+[ext_resource type="Shader" path="res://screen.gdshader" id="1_22aua"]
+
+[resource]
+shader = ExtResource("1_22aua")
+shader_parameter/mode = 0
+shader_parameter/intensity = 1.0
