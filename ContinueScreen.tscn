@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://soaa6yhhh2ev"]
+
+[ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_yt4u1"]
+[ext_resource type="Script" path="res://ContinueScreen.gd" id="2_fvj2g"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 187.0
+offset_right = 1294.0
+offset_bottom = 389.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/normal_font = ExtResource("1_yt4u1")
+theme_override_font_sizes/normal_font_size = 160
+text = "Continue?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 573.0
+offset_right = 1446.0
+offset_bottom = 788.0
+theme_override_constants/separation = 100
+script = ExtResource("2_fvj2g")
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_yt4u1")
+theme_override_font_sizes/font_size = 80
+text = "Yes"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_yt4u1")
+theme_override_font_sizes/font_size = 80
+text = "No"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="HBoxContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="HBoxContainer" method="_on_button_2_pressed"]
