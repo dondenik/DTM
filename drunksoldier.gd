@@ -3,7 +3,7 @@ extends "res://NPC.gd"
 var enemy = load("res://thiefEnemy.tscn")
 
 func post_dialogue_func():
-	Global.sub_quest = "Eh aahh youu wannnnaa go maaatee"
+	Global.sub_quest = "Defeat the drunk soldier"
 	$"../../../CharacterBody3D".ui.quest_update()
 	self.move_along_path = false
 	var thief = enemy.instantiate()
