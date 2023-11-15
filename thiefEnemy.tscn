@@ -5,3 +5,6 @@
 
 [node name="CharacterBody3D" instance=ExtResource("1_o542q")]
 script = ExtResource("2_t07fk")
+
+[node name="BoneAttachment3D" parent="mesoman1/mesoman1_Reference/Skeleton3D" index="3"]
+transform = Transform3D(-0.122521, -0.624908, -0.771025, -0.0724668, -0.769171, 0.634921, -0.989817, 0.133665, 0.0489543, -0.0568002, 1.01681, -2.0385)
