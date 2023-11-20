@@ -9,6 +9,8 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	if move_along_path:
 		$AnimationPlayer.play("Walk")
+	else:
+		$AnimationPlayer.play("Idle")
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	#var input_dir = Vector2(randf_range(-1,1),randf_range(-1,1))
@@ -29,9 +31,7 @@ func _physics_process(delta):
 			post_destination_func()
 
 func _ready():
-	$AnimationPlayer.play("Thrust Slash")
-	$AnimationPlayer.pause()
-	$AnimationPlayer.seek(0.0)
+	$"../CharacterBody3D".screenTrans.change_scene_to_file("res://Ur 3.tscn")
 	self.body_in_talking_range.connect(player._in_dialogue_range)
 	self.body_left_talking_range.connect(player._left_dialogue_range)
 	player.request_dialogue.connect(_on_dialogue_request)
@@ -46,7 +46,7 @@ func post_dialogue_func():
 	self.npc_dialogue_options = ["Do you have the copper yet?"]
 	if self.get_node("../Ea Nasir").gave_copper:
 		self.npc_dialogue_options.append("Good job, now let me take a look at that copper...")
-		# Ur 3 swap
+		$"../CharacterBody3D".screenTrans.change_scene_to_file("res://Ur 3.tscn")
 	else:
 		self.npc_dialogue_options.append("Go collect the copper from Ea Nasir.")
 	self.npc_dialogue_counter = 0

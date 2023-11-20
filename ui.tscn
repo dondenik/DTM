@@ -1,16 +1,21 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwlgx27edur1y"]
+[gd_scene load_steps=14 format=3 uid="uid://bwlgx27edur1y"]
 
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_3vvkm"]
 [ext_resource type="Shader" path="res://screen.gdshader" id="1_7rp3y"]
 [ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="1_lpwdt"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_xvv5u"]
+[ext_resource type="Script" path="res://screenTrans.gd" id="3_5tdg4"]
 [ext_resource type="Shader" path="res://compass.gdshader" id="4_h6pd4"]
 [ext_resource type="Texture2D" uid="uid://dckl0dh7r6hho" path="res://Mesocompass.png" id="5_2y8yg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0imxr"]
 shader = ExtResource("1_7rp3y")
-shader_parameter/mode = 1
-shader_parameter/intensity = 1.0
+shader_parameter/progress = 0.0
+shader_parameter/multiplier = 3.0
+shader_parameter/angle = 0.0
+shader_parameter/anchor = Vector2(0.5, 0.5)
+shader_parameter/anchorOffset = 1.0
+shader_parameter/diamondPixelSize = 10.0
 
 [sub_resource type="Gradient" id="Gradient_s40l0"]
 interpolation_mode = 1
@@ -41,20 +46,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xvv5u")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
+[node name="screenTrans" type="ColorRect" parent="."]
+unique_name_in_owner = true
 z_index = 1
 material = SubResource("ShaderMaterial_0imxr")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 10.0
-offset_right = -24.0
-offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0)
+script = ExtResource("3_5tdg4")
 
 [node name="Location" type="RichTextLabel" parent="."]
 layout_mode = 0

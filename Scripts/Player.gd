@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var ui = %UI
+@onready var screenTrans = ui.get_node("screenTrans")
 
 # ROLL CONSTANTS
 const ROLL_DURATION = 0.9
