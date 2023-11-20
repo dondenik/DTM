@@ -58,8 +58,8 @@ func post_dialogue_func():
 	if self.get_node("../Ea Nasir").talked_to:
 		self.npc_dialogue_options = ["That scoundrel! I will have to pursue this further..."]
 		self.done_all_things = true
-	else:
-		self.npc_dialogue_options.append("Go ask Ea Nasir for a refund before he leaves for Babylon!")
+	#else:
+	#	self.npc_dialogue_options.append("Go ask Ea Nasir for a refund before he leaves for Babylon!")
 	self.npc_dialogue_counter = 0
 	self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
 	timer_start.emit()
