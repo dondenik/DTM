@@ -17,7 +17,7 @@ func display_text(text, id, speaker):
 	for letter in text:
 		if get_parent().dia_counter == current_id:
 			$Dialogue.visible_characters += 1
-			await get_tree().create_timer(0.02).timeout
+			await get_tree().create_timer(0.01).timeout
 
 func hide_dialogue():
 	self.hide()
