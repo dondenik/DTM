@@ -134,24 +134,24 @@ func _physics_process(delta):
 	
 		
 		if Input.is_action_just_pressed("roll") and roll_timer <= 0 and on_ground and roll_cooldown <= 0:
-			if in_dia_range == 0:
-				if stamina_cost(ROLL_STAMINA) == true:
-					roll_timer = ROLL_DURATION
-					iframes = ROLL_IFRAMES
-					attack_timer = 0
-					$AnimationPlayer.play("Roll", -1, 1.7)
-					self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-					$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
-					if input_dir == Vector2(0, 0):
-						input_dir = Vector2(0, -1)
-					locked_rot = $CameraRoot.rotation.y
-					locked_dir = input_dir
-			else:
-				if in_dialogue == 0:
+			if stamina_cost(ROLL_STAMINA) == true:
+				roll_timer = ROLL_DURATION
+				iframes = ROLL_IFRAMES
+				attack_timer = 0
+				$AnimationPlayer.play("Roll", -1, 1.7)
+				self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+				$CameraRoot.rotation.y -= ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
+				if input_dir == Vector2(0, 0):
+					input_dir = Vector2(0, -1)
+				locked_rot = $CameraRoot.rotation.y
+				locked_dir = input_dir
+
+		if Input.is_action_just_pressed("dialogue"):
+			if in_dialogue == 0:
 					in_dialogue = 1
 					request_dialogue.emit()
-				else:
-					request_dialogue.emit()
+			else:
+				request_dialogue.emit()
 	
 	
 		
