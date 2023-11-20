@@ -131,7 +131,7 @@ func _physics_process(delta):
 				jump_starting_point = self.position.y
 				velocity.y = JUMP_VELOCITY
 			
-		if Input.is_action_just_pressed("dialogue"):
+		if Input.is_action_just_pressed("dialogue") and in_dia_range == 1:
 			if in_dialogue == 0:
 					in_dialogue = 1
 					request_dialogue.emit()
