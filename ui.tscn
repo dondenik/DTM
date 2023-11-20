@@ -10,7 +10,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0imxr"]
 shader = ExtResource("1_7rp3y")
-shader_parameter/progress = 0.0
+shader_parameter/progress = 0.98
 shader_parameter/multiplier = 3.0
 shader_parameter/angle = 0.0
 shader_parameter/anchor = Vector2(0.5, 0.5)
@@ -56,7 +56,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.933333, 0.756863, 0.439216, 1)
 script = ExtResource("3_5tdg4")
+
+[node name="TextEdit" type="TextEdit" parent="screenTrans"]
+use_parent_material = true
+layout_mode = 0
+offset_left = 656.0
+offset_top = 680.0
+offset_right = 1274.0
+offset_bottom = 932.0
+theme_override_font_sizes/font_size = 60
+text = "hionlnlnlk"
 
 [node name="Location" type="RichTextLabel" parent="."]
 layout_mode = 0
