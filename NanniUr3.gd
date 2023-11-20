@@ -51,7 +51,7 @@ func _physics_process(delta):
 func post_dialogue_func():
 	if done_all_things:
 		$"../CharacterBody3D".screenTrans.change_scene_to_file("res://Ur 4.tscn")
-	Global.sub_quest = "30"
+	Global.sub_quest = "50"
 	Global.main_quest = "Run to Ea Nasir before he leaves"
 	$"../CharacterBody3D".ui.quest_update()
 	self.npc_dialogue_options = ["Have you spoken to Ea Nasir yet?"]

@@ -1,7 +1,7 @@
 extends Node3D
 
 var timer_on = false
-var start_time = 30.0
+var start_time = 50.0
 var time = 0.0
 
 func _on_nanni_timer_start():
