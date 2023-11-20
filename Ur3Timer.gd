@@ -15,4 +15,4 @@ func _process(delta):
 		$"../CharacterBody3D".ui.quest_update()
 		if self.time <= 0.0:
 			# kill the guy
-			print("bad")
+			get_node("../CharacterBody3D").die()
