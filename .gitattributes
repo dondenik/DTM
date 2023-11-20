@@ -3,3 +3,4 @@
 Maps/babylon.glb filter=lfs diff=lfs merge=lfs -text
 Ur.tscn filter=lfs diff=lfs merge=lfs -text
 Ur[[:space:]]2.tscn filter=lfs diff=lfs merge=lfs -text
+Ur[[:space:]]3.tscn filter=lfs diff=lfs merge=lfs -text
