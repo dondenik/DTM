@@ -38,7 +38,7 @@ theme_override_fonts/normal_font = ExtResource("1_6u72l")
 theme_override_font_sizes/normal_font_size = 23
 text = "test123"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="SpeakerName" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_right = 18.0
 offset_bottom = 54.0
@@ -51,7 +51,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
+[node name="ColorRect" type="ColorRect" parent="SpeakerName"]
 z_index = -1
 layout_mode = 2
 offset_left = -8.0
