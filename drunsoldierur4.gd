@@ -9,5 +9,5 @@ func post_dialogue_func():
 	var thief = enemy.instantiate()
 	self.hide()
 	thief.position = self.global_position
-	self.get_node("../../../../Node3D3").add_child(thief)
+	self.get_node("../../../../Node3D2").add_child(thief)
 	self.queue_free()
