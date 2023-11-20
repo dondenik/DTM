@@ -1,6 +1,7 @@
 extends "res://NanniUr2.gd"
 
 signal timer_start
+var done_all_things = false
 
 func _ready():
 	$AnimationPlayer.play("Thrust Slash")
@@ -48,16 +49,7 @@ func _physics_process(delta):
 			post_destination_func()
 
 func post_dialogue_func():
-	Global.sub_quest = "30"
-	Global.main_quest = "Run to Ea Nasir before he leaves"
+	Global.main_quest = "Take the complaint tablet to Ea Nasir"
+	Global.sub_quest = "Find a way to the port"
 	$"../CharacterBody3D".ui.quest_update()
-	self.npc_dialogue_options = ["Have you spoken to Ea Nasir yet?"]
-	if self.get_node("../Ea Nasir").talked_to:
-		self.npc_dialogue_options.append("That scoundrel! I will have to pursue this further...")
-		$"../CharacterBody3D".screenTrans.change_scene_to_file("res://Ur 3.tscn")
-	else:
-		self.npc_dialogue_options.append("Go ask Ea Nasir for a refund before he leaves for Babylon!")
-	self.npc_dialogue_counter = 0
-	self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
-	timer_start.emit()
 	
