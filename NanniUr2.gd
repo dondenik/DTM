@@ -31,7 +31,6 @@ func _physics_process(delta):
 			post_destination_func()
 
 func _ready():
-	$"../CharacterBody3D".screenTrans.change_scene_to_file("res://Ur 3.tscn")
 	self.body_in_talking_range.connect(player._in_dialogue_range)
 	self.body_left_talking_range.connect(player._left_dialogue_range)
 	player.request_dialogue.connect(_on_dialogue_request)
