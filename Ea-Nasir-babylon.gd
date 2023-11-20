@@ -10,4 +10,4 @@ func post_dialogue_func():
 	Global.sub_quest = "Talk to Nanni"
 	Global.checkpointscene = "res://Ur 2.tscn"
 	$"../CharacterBody3D".ui.quest_update()
-	get_tree().change_scene_to_file("res://Ur 2.tscn")
+	$"../CharacterBody3D".screenTrans.change_scene_to_file("res://Ur 2.tscn")

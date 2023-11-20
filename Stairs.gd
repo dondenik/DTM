@@ -10,5 +10,5 @@ func _on_body_entered(body):
 	Global.sub_quest = "Confont Ea-Nasir"
 	Global.checkpointscene = "res://bossfight.tscn"
 	$"../CharacterBody3D".ui.quest_update()
-	get_tree().change_scene_to_file("res://bossfight.tscn")
+	$"../CharacterBody3D".screenTrans.change_scene_to_file("res://bossfight.tscn")
 
