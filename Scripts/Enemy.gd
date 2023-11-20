@@ -11,7 +11,7 @@ const TURNING_SPEED = 5.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var health = 10
+var health = 100
 var dead = false
 var attack_cooldown = 0
 var attack_timer = 0

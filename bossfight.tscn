@@ -1,9 +1,10 @@
-[gd_scene load_steps=53 format=3 uid="uid://4kt7kq1yipoe"]
+[gd_scene load_steps=54 format=3 uid="uid://4kt7kq1yipoe"]
 
 [ext_resource type="PackedScene" uid="uid://42to12lfciv1" path="res://Maps/bossroom.glb" id="1_wthbr"]
 [ext_resource type="Texture2D" uid="uid://b7hbcr8l6jxu0" path="res://Maps/mapofur_Mesopotamian Door.png" id="2_rppog"]
 [ext_resource type="PackedScene" uid="uid://dyss8kyjnhmd7" path="res://player.tscn" id="3_ynhhq"]
 [ext_resource type="PackedScene" uid="uid://dhcg24ciq0cr1" path="res://eanasir.tscn" id="4_fjgnc"]
+[ext_resource type="PackedScene" uid="uid://nayb1pm2yjxg" path="res://tablet_wall.tscn" id="5_bvf0d"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4x5kx"]
 data = PackedVector3Array(-1500, -500, 0, 1500, 500, 0, 1500, -500, 0, -1500, -500, 0, -1500, 500, 0, 1500, 500, 0, -1500, -500, -1000, 1500, -500, 0, 1500, -500, -1000, -1500, -500, -1000, -1500, -500, 0, 1500, -500, 0, -1420.89, -442.034, -47.3235, 1420.89, 442.034, -47.3235, -1420.89, 442.034, -47.3235, -1420.89, -442.034, -47.3235, 1420.89, -442.034, -47.3235, 1420.89, 442.034, -47.3235, -1420.89, -442.034, -952.676, 1420.89, -442.034, -47.3235, -1420.89, -442.034, -47.3235, -1420.89, -442.034, -952.676, 1420.89, -442.034, -952.676, 1420.89, -442.034, -47.3235, -1420.89, 442.034, -47.3235, 1420.89, 442.034, -952.676, -1420.89, 442.034, -952.676, -1420.89, 442.034, -47.3235, 1420.89, 442.034, -47.3235, 1420.89, 442.034, -952.676, -1420.89, 442.034, -952.676, 1420.89, -442.034, -952.676, -1420.89, -442.034, -952.676, -1420.89, 442.034, -952.676, 1420.89, 442.034, -952.676, 1420.89, -442.034, -952.676, -1500, 500, 0, 1500, 500, -1000, 1500, 500, 0, -1500, 500, 0, -1500, 500, -1000, 1500, 500, -1000, -1500, 500, -1000, 1500, -500, -1000, 1500, 500, -1000, -1500, 500, -1000, -1500, -500, -1000, 1500, -500, -1000, 1420.89, 442.034, -47.3235, 1420.89, -442.034, -952.676, 1420.89, 442.034, -952.676, 1420.89, 442.034, -47.3235, 1420.89, -442.034, -47.3235, 1420.89, -442.034, -952.676, 1500, 500, 0, 1500, -500, -1000, 1500, -500, 0, 1500, 500, 0, 1500, 500, -1000, 1500, -500, -1000, -1420.89, -442.034, -47.3235, -1420.89, 442.034, -952.676, -1420.89, -442.034, -952.676, -1420.89, -442.034, -47.3235, -1420.89, 442.034, -47.3235, -1420.89, 442.034, -952.676, -1500, -500, 0, -1500, 500, -1000, -1500, 500, 0, -1500, -500, 0, -1500, -500, -1000, -1500, 500, -1000)
@@ -187,201 +188,281 @@ volumetric_fog_density = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.023, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/walls" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/walls/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4x5kx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/CHAIR_chair1" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/CHAIR_chair1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_811s6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar3" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_d4hod")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar2" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xyyeq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar1" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_vwpc6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar4" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4unh4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar5" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar5/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jehdy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar6" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar6/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_q3w3k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar7" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar7/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_otf14")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar8" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar8/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_s2boi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar9" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar9/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_3ysr2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar10" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar10/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2f8y5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar11" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar11/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7tqx1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar12" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar12/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_qjql0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar13" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar13/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_irtnq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar14" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar14/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_rsrqc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar15" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar15/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_lmbab")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar16" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar16/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xll1e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar17" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar17/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_u6f3f")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar18" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar18/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wra3g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar19" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar19/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_umnwx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar20" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar20/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7u08y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar21" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar21/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_bbt7o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar22" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar22/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_sn2gg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar23" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar23/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ye7d1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar24" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar24/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_rud20")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar25" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar25/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_44g6t")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar26" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar26/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7j8r7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar27" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar27/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pwwy0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar28" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar28/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jgo6n")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar29" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar29/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mxai0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar30" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar30/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hgabg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar31" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar31/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ulepy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar32" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar32/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7ublr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar33" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar33/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2bnhr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar34" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar34/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ijf7q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar35" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar35/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_y2ipv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar36" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar36/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_u5m36")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar37" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar37/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_irqv1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="bossroom/pillar38" index="0"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bossroom/pillar38/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5a83g")
@@ -399,5 +480,8 @@ environment = SubResource("Environment_7ocp2")
 
 [node name="Ea Nasir" parent="." instance=ExtResource("4_fjgnc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.6309, 0.809388, 0)
+
+[node name="tablet" parent="." instance=ExtResource("5_bvf0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85611, 1.76423, -4.36344)
 
 [editable path="bossroom"]

@@ -19,7 +19,7 @@ func _process(delta):
 		# commented out lines prevent uo and down rotation
 		#target_basis.x = 0
 		#target_basis.z = 0
-		basis = basis.slerp(target_basis, 4.5 * delta).get_rotation_quaternion()
+		basis = basis.slerp(target_basis, 1 * delta).get_rotation_quaternion()
 	
 	
 	
