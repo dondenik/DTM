@@ -1,7 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://soaa6yhhh2ev"]
+[gd_scene load_steps=8 format=3 uid="uid://soaa6yhhh2ev"]
 
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_yt4u1"]
 [ext_resource type="Script" path="res://ContinueScreen.gd" id="2_fvj2g"]
+[ext_resource type="Shader" path="res://screen.gdshader" id="3_b1prp"]
+[ext_resource type="Script" path="res://screenTrans.gd" id="4_7e6f7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3iiye"]
+shader = ExtResource("3_b1prp")
+shader_parameter/progress = 0.0
+shader_parameter/multiplier = 3.0
+shader_parameter/angle = 0.0
+shader_parameter/anchor = Vector2(0.5, 0.5)
+shader_parameter/anchorOffset = 1.0
+shader_parameter/diamondPixelSize = 10.0
+
+[sub_resource type="Gradient" id="Gradient_dxy1b"]
+colors = PackedColorArray(0.933333, 0.756863, 0.439216, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u4duo"]
+gradient = SubResource("Gradient_dxy1b")
+fill_from = Vector2(0.967949, 0.459402)
+fill_to = Vector2(0.104701, 0.369658)
+repeat = 2
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,6 +30,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="screenTrans" type="ColorRect" parent="."]
+unique_name_in_owner = true
+z_index = 1
+material = SubResource("ShaderMaterial_3iiye")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.933333, 0.756863, 0.439216, 1)
+script = ExtResource("4_7e6f7")
+
+[node name="RichText" type="RichTextLabel" parent="screenTrans"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -357.0
+offset_right = 155.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0.32549, 0.454902, 0.635294, 1)
+theme_override_fonts/normal_font = ExtResource("1_yt4u1")
+theme_override_font_sizes/normal_font_size = 80
+text = "Loading"
+fit_content = true
+scroll_active = false
+
+[node name="ColorRect" type="TextureRect" parent="screenTrans/RichText"]
+show_behind_parent = true
+use_parent_material = true
+layout_mode = 0
+offset_left = -44.0
+offset_top = -40.0
+offset_right = 336.0
+offset_bottom = 126.0
+texture = SubResource("GradientTexture2D_u4duo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
