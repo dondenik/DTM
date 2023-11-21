@@ -16,7 +16,7 @@ func _process(delta):
 	
 	
 	
-	self.position += self.transform.basis.z * 5.5 * finished_start_animation * delta
+	self.position += self.transform.basis.z * 6.5 * finished_start_animation * delta
 
 
 func _on_area_3d_body_entered(body):
