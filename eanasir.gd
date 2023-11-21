@@ -6,11 +6,10 @@ func _ready():
 	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
 	$Sprite3D/SubViewport/Health.value = 100 - health
 	$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
-	extension_func()
+	self.AGGRO_DIST = 0
 
 func extension_func():
-	self.AGGRO_DIST = 0
-#	timer_func(2, attack_tablet)
+	timer_func(2, attack_tablet)
 
 func timer(seconds):
 	await get_tree().create_timer(seconds).timeout
