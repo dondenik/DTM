@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcxccvec1i1fx"]
+[gd_scene load_steps=6 format=3 uid="uid://bcxccvec1i1fx"]
 
 [ext_resource type="Script" path="res://main_menu_buttons.gd" id="1_6di8w"]
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="2_f8rab"]
-[ext_resource type="Texture2D" uid="uid://cjen46c0ujppe" path="res://coollogo_com-20596803.png" id="2_qn826"]
+[ext_resource type="Texture2D" uid="uid://d0cj6nu6fqe2x" path="res://tablet-complaint-1.jpeg" id="3_ya23a"]
+[ext_resource type="Texture2D" uid="uid://bxc2wlxme6ua5" path="res://coollogo_com-27255330.png" id="4_qa6nt"]
+[ext_resource type="Texture2D" uid="uid://d4h13riiwskgk" path="res://coollogo_com-27259721.png" id="5_bcmsy"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -46,10 +48,22 @@ theme_override_fonts/font = ExtResource("2_f8rab")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
+[node name="Tablet-complaint-1" type="Sprite2D" parent="."]
+position = Vector2(307, 278)
+rotation = -0.274469
+scale = Vector2(1.13788, 1.13788)
+texture = ExtResource("3_ya23a")
+region_enabled = true
+region_rect = Rect2(372.4, 39.824, 165, 390)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(962.615, 277.569)
-scale = Vector2(2.63297, 2.63297)
-texture = ExtResource("2_qn826")
+position = Vector2(956.5, 277.569)
+scale = Vector2(1.4065, 2.63297)
+texture = ExtResource("4_qa6nt")
+
+[node name="CoollogoCom-27259721" type="Sprite2D" parent="."]
+position = Vector2(398, 143)
+texture = ExtResource("5_bcmsy")
 
 [connection signal="pressed" from="GridContainer/Button" to="GridContainer" method="_on_button_pressed"]
 [connection signal="pressed" from="GridContainer/Button2" to="GridContainer" method="_on_button_2_pressed"]

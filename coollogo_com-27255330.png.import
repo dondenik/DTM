@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjen46c0ujppe"
-path.s3tc="res://.godot/imported/coollogo_com-20596803.png-cb6196e8da7ee3f841b5ceeeea61a78e.s3tc.ctex"
+uid="uid://bxc2wlxme6ua5"
+path="res://.godot/imported/coollogo_com-27255330.png-8351920ec0747a3b10561f55c6e83d63.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://coollogo_com-20596803.png"
-dest_files=["res://.godot/imported/coollogo_com-20596803.png-cb6196e8da7ee3f841b5ceeeea61a78e.s3tc.ctex"]
+source_file="res://coollogo_com-27255330.png"
+dest_files=["res://.godot/imported/coollogo_com-27255330.png-8351920ec0747a3b10561f55c6e83d63.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
