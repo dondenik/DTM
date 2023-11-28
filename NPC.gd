@@ -27,12 +27,15 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
-	self.body_in_talking_range.connect(player._in_dialogue_range)
-	self.body_left_talking_range.connect(player._left_dialogue_range)
-	player.request_dialogue.connect(_on_dialogue_request)
-	self.return_dialogue_request.connect(player._recieve_dialogue)
-	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
-	self.dialogue = npc_dialogue_options[npc_dialogue_counter]
+	if self.dialogue_enable:
+		self.body_in_talking_range.connect(player._in_dialogue_range)
+		self.body_left_talking_range.connect(player._left_dialogue_range)
+		player.request_dialogue.connect(_on_dialogue_request)
+		self.return_dialogue_request.connect(player._recieve_dialogue)
+		$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
+		self.dialogue = npc_dialogue_options[npc_dialogue_counter]
+	else:
+		$TalkingHitbox.queue_free()
 
 func _physics_process(delta):
 	
