@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://1fh44b36brcq"]
+[gd_scene load_steps=8 format=3 uid="uid://1fh44b36brcq"]
 
 [ext_resource type="Script" path="res://settingsmenu.gd" id="1_ad82o"]
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="2_6ggvb"]
 [ext_resource type="Script" path="res://controlsbutton.gd" id="2_j17nu"]
 [ext_resource type="Material" uid="uid://dv3di5csex8tn" path="res://colourblind.tres" id="4_flvc4"]
 [ext_resource type="Texture2D" uid="uid://3i3dpty4atsf" path="res://Assets/UI Elements/Bars.png" id="4_y0hg7"]
+[ext_resource type="Script" path="res://fullscreen.gd" id="6_dx7j6"]
+[ext_resource type="Script" path="res://Button2.gd" id="7_o3xg3"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,30 +16,6 @@ offset_right = -0.440063
 offset_bottom = 0.200012
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="HBoxContainer7" type="HBoxContainer" parent="."]
-layout_mode = 2
-offset_left = 976.0
-offset_top = 8.0
-offset_right = 1900.0
-offset_bottom = 81.0
-size_flags_vertical = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer7"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/normal_font = ExtResource("2_6ggvb")
-text = "Font Size"
-text_direction = 2
-
-[node name="HSlider" type="HSlider" parent="HBoxContainer7"]
-custom_minimum_size = Vector2(620, 40)
-layout_mode = 2
-size_flags_horizontal = 3
-min_value = 5.0
-max_value = 200.0
-value = 100.0
-rounded = true
 
 [node name="GridContainer2" type="GridContainer" parent="."]
 layout_mode = 1
@@ -198,12 +176,36 @@ size_flags_horizontal = 3
 toggle_mode = true
 script = ExtResource("2_j17nu")
 
+[node name="HBoxContainer7" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 976.0
+offset_top = 42.0
+offset_right = 1900.0
+offset_bottom = 115.0
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6ggvb")
+text = "Font Size"
+text_direction = 2
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer7"]
+custom_minimum_size = Vector2(620, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 5.0
+max_value = 200.0
+value = 100.0
+rounded = true
+
 [node name="HBoxContainer9" type="HBoxContainer" parent="."]
 layout_mode = 2
 offset_left = 970.0
-offset_top = 88.0
+offset_top = 122.0
 offset_right = 1894.0
-offset_bottom = 213.0
+offset_bottom = 247.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer9"]
@@ -260,9 +262,9 @@ text_direction = 2
 [node name="HBoxContainer10" type="HBoxContainer" parent="."]
 layout_mode = 2
 offset_left = 970.0
-offset_top = 190.0
+offset_top = 224.0
 offset_right = 1894.0
-offset_bottom = 285.0
+offset_bottom = 319.0
 size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer10"]
@@ -281,5 +283,31 @@ texture = ExtResource("4_y0hg7")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1046.0
+offset_top = 373.0
+offset_right = 1898.0
+offset_bottom = 524.0
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_6ggvb")
+theme_override_font_sizes/font_size = 30
+text = "Fullscreen"
+script = ExtResource("6_dx7j6")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+offset_left = 560.0
+offset_top = 749.0
+offset_right = 1412.0
+offset_bottom = 900.0
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_6ggvb")
+theme_override_font_sizes/font_size = 30
+text = "Close"
+script = ExtResource("7_o3xg3")
+
 [connection signal="value_changed" from="HBoxContainer7/HSlider" to="GridContainer2" method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="HBoxContainer9/VBoxContainer/HSlider" to="GridContainer2" method="_on_h_slider_2_value_changed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
