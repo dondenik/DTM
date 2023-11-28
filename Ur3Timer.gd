@@ -9,7 +9,7 @@ func _on_nanni_timer_start():
 	self.time = self.start_time
 
 func _process(delta):
-	if self.timer_on:
+	if self.timer_on and self.time > 0.0:
 		self.time -= delta
 		Global.sub_quest = "Time till Ea Nasir leaves: " + str(self.time).substr(0, 4)
 		$"../CharacterBody3D".ui.quest_update()
