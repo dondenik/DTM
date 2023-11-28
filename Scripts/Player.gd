@@ -41,6 +41,8 @@ var fighting = 0
 var iframes = 0
 var hitstun = 0
 
+var combo = 0
+
 var in_dialogue = 0
 var in_dia_range = 0
 var dia_counter = 0
@@ -154,7 +156,12 @@ func _physics_process(delta):
 		if Input.is_action_pressed("attack") and attack_cooldown <= 0 and attack_timer <= 0 and not is_rolling :
 			if stamina_cost(ATTACK_STAMINA) == true:
 				attack_timer = ATTACK_DURATION
-				$AnimationPlayer.play("Slash")
+				if combo == 0:
+					$AnimationPlayer.play("Slash")
+					combo = 1
+				else:
+					$AnimationPlayer.play("Overhead Slash")
+					combo = 0
 				$AudioStreamPlayer3D.play()
 				# make attacks rotate player
 				self.rotation.y = self.rotation.y + ($CameraRoot.rotation.y - Vector3(input_dir.x, 0, input_dir.y).signed_angle_to(Vector3(0,0,-1), Vector3(0, 1, 0)))
@@ -179,6 +186,10 @@ func _physics_process(delta):
 			$AnimationPlayer.play("Armature|mixamo_com|Layer0_015 Retarget", 0.5)
 			$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
 			input_dir = Vector2(0,0)
+			if recovery_timer <= 0:
+				stamina += STAMINA_RECOVERY * delta
+			else:
+				recovery_timer -= 1 * delta
 		elif is_rolling or roll_timer > 0:
 			input_dir = locked_dir
 			roll_cooldown = ROLL_COOLDOWN_DURATION
