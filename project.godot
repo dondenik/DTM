@@ -13,6 +13,8 @@ config_version=5
 config/name="DTM"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
+boot_splash/image="res://coollogo_com-27255330.png"
+boot_splash/fullsize=false
 config/icon="res://Assets/UI Elements/icon.svg"
 
 [autoload]
@@ -90,4 +92,5 @@ dialogue={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/quality/msaa_3d=1
 viewport/use_occlusion_culling=false
