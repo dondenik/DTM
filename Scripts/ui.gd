@@ -17,4 +17,15 @@ func quest_update():
 	$VBoxContainer/RichTextLabel.text = Global.main_quest
 	$VBoxContainer/RichTextLabel2.text = Global.sub_quest
 
-	
+func show_pause_menu():
+	$PauseMenu.show()
+
+func hide_pause_menu():
+	$PauseMenu.hide()
+
+func _on_quit_to_menu_pressed():
+	$screenTrans.change_scene_to_file("res://main_menu.tscn")
+
+
+func _on_quit_to_desktop_pressed():
+	get_tree().quit()

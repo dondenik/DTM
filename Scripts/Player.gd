@@ -72,7 +72,9 @@ func _input(event):
 	if event.is_action_pressed("pause"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			$UI.show_pause_menu()
 		else:
+			$UI.hide_pause_menu()
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 
