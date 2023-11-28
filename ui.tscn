@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bwlgx27edur1y"]
+[gd_scene load_steps=17 format=3 uid="uid://bwlgx27edur1y"]
 
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="1_3vvkm"]
 [ext_resource type="Shader" path="res://screen.gdshader" id="1_7rp3y"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://screenTrans.gd" id="3_5tdg4"]
 [ext_resource type="Shader" path="res://compass.gdshader" id="4_h6pd4"]
 [ext_resource type="Texture2D" uid="uid://dckl0dh7r6hho" path="res://Mesocompass.png" id="5_2y8yg"]
+[ext_resource type="Script" path="res://Location.gd" id="5_ppr57"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0imxr"]
 shader = ExtResource("1_7rp3y")
@@ -101,13 +102,16 @@ texture = SubResource("GradientTexture2D_1c08h")
 
 [node name="Location" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 872.0
+offset_left = 861.0
 offset_top = 16.0
-offset_right = 1065.0
+offset_right = 1054.0
 offset_bottom = 66.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_3vvkm")
 theme_override_font_sizes/normal_font_size = 25
-text = "Ur City Centre"
+bbcode_enabled = true
+text = "[center] Ur City Centre"
+script = ExtResource("5_ppr57")
 
 [node name="Bars" type="TextureRect" parent="."]
 layout_mode = 0
