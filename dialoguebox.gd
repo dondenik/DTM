@@ -2,7 +2,7 @@ extends Control
 
 
 func set_speaker(speaker):
-	$SpeakerName.text = speaker
+	$SpeakerName.text = speaker.rstrip("0123456789")
 
 func _ready():
 	$Dialogue.set_use_bbcode(true)
