@@ -22,7 +22,7 @@ point_count = 2
 script = ExtResource("1_2wjw0")
 
 [node name="tablet" parent="." instance=ExtResource("1_s0fpy")]
-transform = Transform3D(-1.5299e-08, 1.22075e-16, 0.35, 1.22075e-16, 0.35, -1.22075e-16, -0.35, 1.22075e-16, -1.5299e-08, 2.08165e-12, -1, 2.08165e-12)
+transform = Transform3D(-1.5299e-08, 1.22075e-16, 0.35, 1.22075e-16, 0.35, -1.22075e-16, -0.35, 1.22075e-16, -1.5299e-08, 2.08165e-12, -1.5, 2.08165e-12)
 
 [node name="StaticBody3D" type="Area3D" parent="tablet"]
 collision_layer = 2

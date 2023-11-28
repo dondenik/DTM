@@ -2,7 +2,7 @@ extends Node3D
 
 func _ready():
 	var tween = get_tree().create_tween()
-	tween.tween_property($tablet, "position", Vector3(0.0, 1.5, 0.0), 0.8)
+	tween.tween_property($tablet, "position", Vector3(0.0, 1.5, 0.0), 1.0)
 	await timer(2)
 	self.queue_free()
 

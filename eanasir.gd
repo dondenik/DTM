@@ -2,7 +2,7 @@ extends "res://Scripts/Enemy.gd"
 
 var tablet = preload("res://tablet.tscn")
 
-var eanasir_dialogue_things = ["pahse 2!", "pahse 3!"]
+var eanasir_dialogue_things = ["Hmph you are tougher than you thought...", "Okay now things are getting serious!"]
 
 
 func _ready():
