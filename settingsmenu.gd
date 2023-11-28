@@ -1,6 +1,9 @@
 extends GridContainer
 
 func _ready():
+	get_parent().get_node("HBoxContainer10/TextureRect").material.set_shader_parameter("mode", Global.colour_mode)
+	get_parent().get_node("HBoxContainer9/VBoxContainer/HSlider").value = Global.colour_mode
+
 	for container in get_children():
 		container.get_node("RichTextLabel").add_theme_font_size_override("normal_font_size", int(round(24 * (Global.font_scale))))
 
@@ -22,5 +25,4 @@ func _on_h_slider_value_changed(value):
 
 func _on_h_slider_2_value_changed(value):
 	Global.colour_mode = value
-	get_parent().get_node("HBoxContainer10/TextureRect").material = load("res://colourblind.tres")
 	get_parent().get_node("HBoxContainer10/TextureRect").material.set_shader_parameter("mode", value)
