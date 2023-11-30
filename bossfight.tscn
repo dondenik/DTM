@@ -484,7 +484,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7ocp2")
 
-[node name="Ea Nasir" parent="." instance=ExtResource("4_fjgnc")]
+[node name="Ea Nasir Enemy" parent="." instance=ExtResource("4_fjgnc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.6309, 0.809388, 0)
 
 [node name="Node3D" type="Node3D" parent="."]
@@ -524,12 +524,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.08165e-12, 2.08165e-12)
 [node name="tablet5" parent="Node3D2" instance=ExtResource("5_bvf0d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2.08165e-12, 2.08165e-12)
 
-[node name="NPC" parent="." instance=ExtResource("6_o6mvo")]
+[node name="Ea Nasir" parent="." instance=ExtResource("6_o6mvo")]
 transform = Transform3D(0.128138, 0, -2.99726, 0, 3, 0, 2.99726, 0, 0.128138, -3.97488, 0.850043, 0)
 script = ExtResource("7_dss4x")
 dialogue_enable = true
 force_dialogue = true
-no_repeating_enable = true
 npc_dialogue_options = ["I am Ea Nasir. What buisness do you have?", "A complaint for Nanni?", "Ha! Look around you at the numerous complaint tablets on the walls!", "I couldn't care less about a complaint!", "Hey now don't get aggressive.", "If you want to go come at me!"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

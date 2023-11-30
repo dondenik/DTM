@@ -39,10 +39,10 @@ func create_tablet():
 
 func _on_area_3d_area_entered(area):
 	if iframes <= 0:
-		self.get_node("../NPC").npc_dialogue_options = [self.eanasir_dialogue_things[self.get_node("../NPC").phase_counter - 1]]
-		self.get_node("../NPC").npc_dialogue_counter = 0
-		self.get_node("../NPC").dialogue = self.get_node("../NPC").npc_dialogue_options[self.get_node("../NPC").npc_dialogue_counter]
-		self.get_node("../NPC").dialogue_enable = true
+		self.get_node("../Ea Nasir").npc_dialogue_options = [self.eanasir_dialogue_things[self.get_node("../Ea Nasir").phase_counter - 1]]
+		self.get_node("../Ea Nasir").npc_dialogue_counter = 0
+		self.get_node("../Ea Nasir").dialogue = self.get_node("../Ea Nasir").npc_dialogue_options[self.get_node("../Ea Nasir").npc_dialogue_counter]
+		self.get_node("../Ea Nasir").dialogue_enable = true
 		#self.get_node("../CharacterBody3D").velocity = Vector3(0,0,0)
 		health -= 10
 		iframes = HIT_STUN
