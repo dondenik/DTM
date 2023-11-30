@@ -56,7 +56,7 @@ func post_dialogue_func():
 	$"../CharacterBody3D".ui.quest_update()
 	self.npc_dialogue_options = ["Have you spoken to Ea Nasir yet?"]
 	if self.get_node("../Ea Nasir").talked_to:
-		self.npc_dialogue_options = ["That scoundrel! I will have to pursue this further..."]
+		self.npc_dialogue_options = ["That scoundrel! I will have to pursue this further...", ""]
 		self.done_all_things = true
 	#else:
 	#	self.npc_dialogue_options.append("Go ask Ea Nasir for a refund before he leaves for Babylon!")

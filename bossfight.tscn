@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://4kt7kq1yipoe"]
+[gd_scene load_steps=58 format=3 uid="uid://4kt7kq1yipoe"]
 
 [ext_resource type="PackedScene" uid="uid://42to12lfciv1" path="res://Maps/bossroom.glb" id="1_wthbr"]
 [ext_resource type="Texture2D" uid="uid://b7hbcr8l6jxu0" path="res://Maps/mapofur_Mesopotamian Door.png" id="2_rppog"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://nayb1pm2yjxg" path="res://tablet_wall.tscn" id="5_bvf0d"]
 [ext_resource type="PackedScene" uid="uid://b5lhe8c8inlly" path="res://NPC.tscn" id="6_o6mvo"]
 [ext_resource type="Script" path="res://bossfightdialogue.gd" id="7_dss4x"]
-[ext_resource type="PackedScene" uid="uid://cvetn3d2ne4qf" path="res://tablet_pillar.tscn" id="8_3v2b3"]
 [ext_resource type="Script" path="res://pillarControl.gd" id="9_p3cgh"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4x5kx"]
@@ -537,9 +536,6 @@ transform = Transform3D(0.427126, 0, -9.99087, 0, 10, 0, 9.99087, 0, 0.427126, -
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 5.31743e-09, 0, 1, 0, -3.39365e-09, 0, 1, 0, -0.433263, 0)
 shape = SubResource("BoxShape3D_reibe")
-
-[node name="Node3D3" parent="." instance=ExtResource("8_3v2b3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7276, 0, -0.557689)
 
 [node name="pillarControl" type="Node3D" parent="."]
 script = ExtResource("9_p3cgh")
