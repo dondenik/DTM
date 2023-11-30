@@ -529,7 +529,7 @@ transform = Transform3D(0.128138, 0, -2.99726, 0, 3, 0, 2.99726, 0, 0.128138, -3
 script = ExtResource("7_dss4x")
 dialogue_enable = true
 force_dialogue = true
-npc_dialogue_options = ["I am Ea Nasir. What buisness do you have?", "A complaint for Nanni?", "Ha! Look around you at the numerous complaint tablets on the walls!", "I couldn't care less about a complaint!", "Hey now don't get aggressive.", "If you want to go come at me!"]
+npc_dialogue_options = ["I am Ea Nasir. What business do you have?", "A complaint from Nanni?", "Ha! Look around you at the numerous complaint tablets on the walls!", "I couldn't care less about a complaint!", "Hey now don't get aggressive.", "If you want to go come at me!"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(0.427126, 0, -9.99087, 0, 10, 0, 9.99087, 0, 0.427126, -5.90594, 0.28308, 0)
