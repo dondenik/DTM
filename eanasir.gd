@@ -4,6 +4,7 @@ var tablet = preload("res://tablet.tscn")
 
 var eanasir_dialogue_things = ["Hmph you are tougher than I thought...", "Okay now things are getting serious!", "You can take my life, but you can never take my money..."]
 
+var throw_tablets = false
 
 func _ready():
 	self.health = 100
@@ -24,7 +25,8 @@ func timer_func(seconds, fn: Callable):
 
 func attack_tablet():
 	create_tablet()
-	timer_func(2, attack_tablet)
+	if self.throw_tablets == true:
+		timer_func(2, attack_tablet)
 
 func create_tablet():
 	var tab = tablet.instantiate()
