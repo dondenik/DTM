@@ -6,7 +6,7 @@ var eanasir_dialogue_things = ["Hmph you are tougher than I thought...", "Okay n
 
 
 func _ready():
-	self.health = 30
+	self.health = 100
 	$Sprite3D.texture = $Sprite3D/SubViewport.get_texture()
 	$Sprite3D/SubViewport/Health.value = 100 - health
 	$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled = true
@@ -49,5 +49,5 @@ func _on_area_3d_area_entered(area):
 		hitstun = HIT_STUN
 		set_deferred("$mesoman1/mesoman1_Reference/Skeleton3D/BoneAttachment3D/copper_axe/Area3D/CollisionShape3D.disabled", true)
 		$Sprite3D/SubViewport/Health.value = 100 - health
-		self.get_node("../CharacterBody3D").velocity = Vector3(-100, 20, 0)
+		self.get_node("../CharacterBody3D").velocity = Vector3(-100, 30, 0)
 		self.get_node("../CharacterBody3D").move_and_slide()
