@@ -12,5 +12,5 @@ func post_dialogue_func():
 		self.get_node("../Ea Nasir Enemy").throw_tablets = false
 		self.get_node("../pillarControl").start_pillarising()
 	elif phase_counter == 4:
-		%screenTrans.change_scene_to_file("res://main_menu.tscn")
+		$"../CharacterBody3D".screenTrans.change_scene_to_file("res://main_menu.tscn")
 	self.dialogue_enable = false

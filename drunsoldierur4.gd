@@ -8,6 +8,8 @@ func post_dialogue_func():
 	self.move_along_path = false
 	var thief = enemy.instantiate()
 	self.hide()
-	thief.position = self.global_position
+	var pos = self.global_position
+	self.position.y -= 20
+	thief.position = pos
 	self.get_node("../../Ur4Root").add_child(thief)
 	self.queue_free()
