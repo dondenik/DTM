@@ -76,11 +76,11 @@ func _on_talking_hitbox_body_entered(body):
 	if force_dialogue and dialogue_enable:
 		return_dialogue_request.emit(self.dialogue, self.name)
 		if npc_dialogue_mode == "sequential":
-			if self.npc_dialogue_counter <= len(self.npc_dialogue_options) - 1:
+			if self.npc_dialogue_counter >= len(self.npc_dialogue_options) - 1:
+				post_dialogue_func()
+			else:
 				self.npc_dialogue_counter += 1
 				self.dialogue = self.npc_dialogue_options[self.npc_dialogue_counter]
-			else:
-				post_dialogue_func()
 
 
 
