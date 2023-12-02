@@ -6,8 +6,8 @@ func _ready():
 	$VBoxContainer/RichTextLabel2.add_theme_font_size_override("normal_font_size", int(round(30*Global.font_scale)))
 	quest_update()
 	if Global.colour_mode != -1:
-		self.material = load("res://colourblind.tres")
-		self.material.set_shader_parameter("mode", Global.colour_mode)
+		self.get_node("Bars").material = load("res://colourblind.tres")
+		self.get_node("Bars").material.set_shader_parameter("mode", Global.colour_mode)
 	
 func bar_update(health, stamina):
 	$Health.value = 100 - health
