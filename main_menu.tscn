@@ -129,6 +129,50 @@ texture = ExtResource("4_qa6nt")
 position = Vector2(398, 143)
 texture = ExtResource("5_bcmsy")
 
+[node name="screenTrans" type="ColorRect" parent="."]
+unique_name_in_owner = true
+z_index = 1
+material = SubResource("ShaderMaterial_uelra")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.933333, 0.756863, 0.439216, 1)
+script = ExtResource("7_lfw6p")
+
+[node name="RichText" type="RichTextLabel" parent="screenTrans"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -357.0
+offset_right = 155.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0.32549, 0.454902, 0.635294, 1)
+theme_override_fonts/normal_font = ExtResource("2_f8rab")
+theme_override_font_sizes/normal_font_size = 80
+text = "Loading"
+fit_content = true
+scroll_active = false
+
+[node name="ColorRect" type="TextureRect" parent="screenTrans/RichText"]
+show_behind_parent = true
+use_parent_material = true
+layout_mode = 0
+offset_left = -44.0
+offset_top = -40.0
+offset_right = 336.0
+offset_bottom = 126.0
+texture = SubResource("GradientTexture2D_u5x8b")
+
 [connection signal="pressed" from="GridContainer/Button" to="GridContainer" method="_on_button_pressed"]
 [connection signal="pressed" from="GridContainer/Button2" to="GridContainer" method="_on_button_2_pressed"]
 [connection signal="pressed" from="GridContainer/Button3" to="GridContainer" method="_on_button_3_pressed"]
