@@ -46,6 +46,8 @@ func _on_area_3d_area_entered(area):
 		self.get_node("../Ea Nasir").npc_dialogue_counter = 0
 		self.get_node("../Ea Nasir").dialogue = self.get_node("../Ea Nasir").npc_dialogue_options[self.get_node("../Ea Nasir").npc_dialogue_counter]
 		self.get_node("../Ea Nasir").dialogue_enable = true
+		if self.get_node("../Ea Nasir").phase_counter - 1 > 2:
+			self.get_node("../Ea Nasir").npc_dialogue_options.append("")
 			#self.get_node("../CharacterBody3D").velocity = Vector3(0,0,0)
 		iframes = HIT_STUN
 		hitstun = HIT_STUN
