@@ -1,16 +1,80 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcxccvec1i1fx"]
+[gd_scene load_steps=11 format=3 uid="uid://bcxccvec1i1fx"]
 
 [ext_resource type="Script" path="res://main_menu_buttons.gd" id="1_6di8w"]
 [ext_resource type="FontFile" uid="uid://caf52fe8a36h" path="res://Assets/Fonts/CormorantSC-Medium.ttf" id="2_f8rab"]
 [ext_resource type="Texture2D" uid="uid://d0cj6nu6fqe2x" path="res://tablet-complaint-1.jpeg" id="3_ya23a"]
 [ext_resource type="Texture2D" uid="uid://bxc2wlxme6ua5" path="res://coollogo_com-27255330.png" id="4_qa6nt"]
 [ext_resource type="Texture2D" uid="uid://d4h13riiwskgk" path="res://coollogo_com-27259721.png" id="5_bcmsy"]
+[ext_resource type="Shader" path="res://screen.gdshader" id="6_yb5bn"]
+[ext_resource type="Script" path="res://screenTrans.gd" id="7_lfw6p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uelra"]
+shader = ExtResource("6_yb5bn")
+shader_parameter/progress = 0.0
+shader_parameter/multiplier = 3.0
+shader_parameter/angle = 0.0
+shader_parameter/anchor = Vector2(0.5, 0.5)
+shader_parameter/anchorOffset = 1.0
+shader_parameter/diamondPixelSize = 10.0
+
+[sub_resource type="Gradient" id="Gradient_dxy1b"]
+colors = PackedColorArray(0.933333, 0.756863, 0.439216, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u5x8b"]
+gradient = SubResource("Gradient_dxy1b")
+fill_from = Vector2(0.967949, 0.459402)
+fill_to = Vector2(0.104701, 0.369658)
+repeat = 2
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+
+[node name="screenTrans" type="ColorRect" parent="."]
+unique_name_in_owner = true
+z_index = 1
+material = SubResource("ShaderMaterial_uelra")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.933333, 0.756863, 0.439216, 1)
+script = ExtResource("7_lfw6p")
+
+[node name="RichText" type="RichTextLabel" parent="screenTrans"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = -357.0
+offset_right = 155.0
+offset_bottom = -252.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0.32549, 0.454902, 0.635294, 1)
+theme_override_fonts/normal_font = ExtResource("2_f8rab")
+theme_override_font_sizes/normal_font_size = 80
+text = "Loading"
+fit_content = true
+scroll_active = false
+
+[node name="ColorRect" type="TextureRect" parent="screenTrans/RichText"]
+show_behind_parent = true
+use_parent_material = true
+layout_mode = 0
+offset_left = -44.0
+offset_top = -40.0
+offset_right = 336.0
+offset_bottom = 126.0
+texture = SubResource("GradientTexture2D_u5x8b")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
