@@ -1,13 +1,9 @@
-[gd_resource type="Environment" load_steps=5 format=3 uid="uid://ca4pxj3wg0r0q"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://ca4pxj3wg0r0q"]
 
-[sub_resource type="Gradient" id="Gradient_1853o"]
-colors = PackedColorArray(0.774298, 0.85, 1, 1, 0.631163, 1, 0.995716, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6vdv7"]
-gradient = SubResource("Gradient_1853o")
+[ext_resource type="Texture2D" uid="uid://byvdg4ko4q62k" path="res://skyimage.hdr" id="1_ts0b6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xxklc"]
-panorama = SubResource("GradientTexture1D_6vdv7")
+panorama = ExtResource("1_ts0b6")
 
 [sub_resource type="Sky" id="Sky_kw12r"]
 sky_material = SubResource("PanoramaSkyMaterial_xxklc")

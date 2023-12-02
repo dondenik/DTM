@@ -33,8 +33,8 @@ func create_tablet():
 	self.add_sibling(tab)
 	tab.position = self.position
 	tab.rotation = self.rotation
-	self.create_tween().tween_property(tab, "position", Vector3(self.position.x, self.position.y + 3, self.position.z), 4)
-	await timer(5)
+	self.create_tween().tween_property(tab, "position", Vector3(self.position.x, self.position.y + 3, self.position.z), 1)
+	await timer(2)
 	tab.finished_start_animation = 1
 	await timer(15)
 	tab.queue_free()
@@ -46,7 +46,7 @@ func _on_area_3d_area_entered(area):
 		self.get_node("../Ea Nasir").npc_dialogue_counter = 0
 		self.get_node("../Ea Nasir").dialogue = self.get_node("../Ea Nasir").npc_dialogue_options[self.get_node("../Ea Nasir").npc_dialogue_counter]
 		self.get_node("../Ea Nasir").dialogue_enable = true
-		if self.get_node("../Ea Nasir").phase_counter - 1 > 2:
+		if self.get_node("../Ea Nasir").phase_counter == 3:
 			self.get_node("../Ea Nasir").npc_dialogue_options.append("")
 			#self.get_node("../CharacterBody3D").velocity = Vector3(0,0,0)
 		iframes = HIT_STUN
